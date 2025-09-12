@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Configurações globais */
+* {
+    margin: 0px;
+    padding: 0px;
+
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+}
+
+#indisponivel {
+    padding: 0 15px;
+    text-align: center;
+}
+
+/* Header e Menu */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+#logo img {
+    width: 110%;
+}
+
+#navPC ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 30px;
+}
+
+#navPC a {
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.nav1 {
+    color: black;
+    transition: color 0.3s;
+}
+
+.nav1:hover {
+    color: #4CAF4F;
+}
+
+#reciclarBtn {
+    background-color: #4CAF4F;
+    border-radius: 4px;
+    padding: 13px 30px;
+    transition: scale 0.5s;
+    cursor: pointer
+}
+
+#reciclarBtn:hover {
+    scale: 1.05;
+    transition: scale 0.5s;
+}
+
+#reciclarBtn > i {
+    margin-right: 10px;
+    font-size: 20px;
+    color: #fff;
+}
+
+#reciclarBtn > a {
+    color: #fff;
+}
+
+#user {
+    font-size: 30px;
+    color: #1a1a1a;
+    transition: color, 0.3s;
+}
+
+#user:hover {
+    color: #4CAF4F;
+}
+
+#menuIcon {
+    font-size: 25px;
+}
+
+#menuResp {
+    height: auto;
+    width: 100%;
+}
+
+#navMob {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    width: 100%;
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+#navMob.ativo {
+    max-height: 200px;
+    padding-bottom: 20px;
+    opacity: 1;
+}
+
+#navMob ul {
+    list-style: none;
+}
+
+#navMob ul li:not(#primeiroLink) {
+    margin-top: 10px;
+}
+
+#navMob ul li a {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#navMob ul li a i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Hero Section */
+
+#heroSection {
+    height: auto;
+    background-color: #F5F7FA;
+}
+
+#heroText, #heroImg {
+    height: 100%;
+    min-width: 50%;
+}
+
+#heroText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#heroText h1 {
+    font-weight: 600;
+    color: #2C2C2C;
+    width: 90%;
+}
+
+#heroText h1 span {
+    color: #4CAF4F;
+}
+
+#heroText p {
+    margin-top: 10px;
+    font-weight: 600;
+    color: #353535;
+}
+
+#heroText button {
+    cursor: pointer;
+    display: flex;
+    margin-top: 35px;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 50px;
+    font-weight: 500;
+    font-size: 17px;
+    color: white;
+    background-color: #4CAF4F;
+    border: none;
+    border-radius: 5px;
+
+    transition: scale, 0.5s;
+}
+
+#heroText button:hover {
+    scale: 103%;
+    transition: scale, 0.5s;
+}
+
+#heroText button i {
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+#heroImg {
+    text-align: center;
+}
+
+#heroImg img {
+    width: 55%;
+}
+
+/* Propósito */
+
+#propTitle {
+    color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    font-weight: 500;
+}
+
+#propDesc {
+    color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+#propContent {
+    margin-top: 40px;
+    display: flex;
+    gap: 100px;
+    align-items: stretch;
+    justify-content: center;
+}
+
+#propText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 26px;
+    width: 50%;
+    color: rgba(0,0,0,0.9);
+    text-align: justify;
+    font-weight: 400;
+}
+
+#propImg {
+    width: 50%;
+}
+
+#propTextResp {
+    margin-top: -20px;
+    width: 100%;
+    color: rgba(0,0,0,0.9);
+    text-align: justify;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+#propLerMais {
+    color: blue;
+    text-decoration: underline;
+    margin-top: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#processoInfo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.processoImg {
+    margin-top: 50px;
+    width: 80%;
+    text-align: center;
+}
+
+.processoImg img {
+    width: 100%;
+}

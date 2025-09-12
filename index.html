@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReSolar</title>
+    <link rel="icon" type="image/x-icon" href="/imgs/LogoSemNome.png">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Tela de indisponibilidade para telas muito pequenas -->
+    <div id="indisponivel">
+        <h2>Site indisponível para sua resolução de tela</h2>
+        <p>Lamentamos por isto! &#128546;</p>
+    </div>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div id="logo">
+            <img src="imgs/Logo.svg" alt="Logo">
+        </div>
+
+        <nav id="navPC">
+            <ul>
+                <li><a class="nav1" href="#proposito">Nosso propósito</a></li>
+                <li><a class="nav1" href="">Funcionamento</a></li>
+                <li><a class="nav1" href="">Dúvidas</a></li>
+                <li><a class="nav1" href="">Contato</a></li>
+                <li id="reciclarBtn" onmouseover="girarIcon()" onmouseout="desgirarIcon()">
+                    <i class="fa-solid fa-recycle c-white"></i>
+                    <a id="reciclar">Reciclar</a>
+                </li>
+                <li>
+                    <a href="">
+                        <i id="user" class="fa-solid fa-circle-user nav1"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="menu">
+            <i id="menuIcon" class="fa-solid fa-bars"></i>
+        </div>
+
+    </header>
+    
+    <div id="menuResp">
+        <nav id="navMob">
+            <ul>
+                <li id="primeiroLink"><a class="nav1" href="#proposito"><i class="fa-solid fa-sun iconesResponsivo"></i>Nosso propósito</a></li>
+                <li><a class="nav1" href=""><i class="fa-solid fa-briefcase iconesResponsivo"></i>Funcionamento</a></li>
+                <li><a class="nav1" href=""><i class="fa-solid fa-question iconesResponsivo"></i>Dúvidas</a></li>
+                <li><a class="nav1" href=""><i class="fa-solid fa-mobile-screen iconesResponsivo"></i>Contato</a></li>
+                <li><a class="nav1" href=""><i class="fa-solid fa-recycle iconesResponsivo"></i>Reciclar</a></li>
+                <li><a class="nav1" href=""><i class="fa-solid fa-circle-user iconesResponsivo"></i>Registrar ou Entrar</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+    <!-- Hero Section -->
+    <div id="heroSection">
+        <table width="100%" height="100%">
+            <tr>
+                <td id="heroText">
+                    <h1><span>Receba</span> pelo descarte correto</h1>
+                    <p>Participe do processo de reciclagem do seu painel e receba por isto.</p>
+                    <button id="saberMais" onmouseenter="saberMaisAnim()"><i id="saberMaisIcon" class="fa-solid fa-arrow-down"></i>Saber mais</button>
+                </td>
+                <td id="heroImg">
+                    <img src="imgs/Dinheiro.svg" alt="">
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Propósito -->
+    <div id="proposito" class="div">
+        <p id="propTitle">Por que existimos?</p>
+        <p id="propDesc">Nosso objetivo é facilitar o descarte correto de painéis solares</p>  
+        <div id="propContent">
+            <p id="propText">Nós exisitimos, simplesmente, para acabar com o ciclo maléfico do descarte de painéis solares. Atualmente, esses equipamentos, quando quebrados ou trocados, são descartados de uma maneira incorreta. Por causa deste descarte, daqui a alguns anos, quando diversos painéis chegarem ao fim da sua vida útil, causará diversos problemas no solo, nos mares e nos ecossistemas, por causa dos materiais que constituem esses equipamentos. Nós exisitimos, simplesmente, para acabar com o ciclo maléfico do descarte de painéis solares. Atualmente, esses equipamentos, quando quebrados ou trocados, são descartados de uma maneira incorreta. Por causa deste descarte, daqui a alguns anos, quando diversos painéis chegarem ao fim da sua vida útil. Por causa deste descarte, daqui a alguns anos, quando diversos painéis chegarem ao fim da sua vida útil. Por causa deste descarte, daqui a alguns anos, quando diversos painéis chegarem ao fim da sua vida útil. Por causa deste descarte, daqui a alguns anos, quando diversos painéis chegarem ao fim da sua vida útil.</p>
+            <p id="propTextResp">Nós exisitimos, simplesmente, para acabar com o ciclo maléfico do descarte de painéis solares. Atualmente, esses equipamentos, quando quebrados ou trocados, são descartados de uma maneira incorreta.</p>
+            <p id="propLerMais">Ler Mais</p>
+            <img id="propImg" src="imgs/Lixão 1.svg" alt="">
+        </div>
+
+        <div id="processoInfo">
+            <div class="processoImg">
+                <img src="imgs/Informações.svg" alt="">
+            </div>
+        </div>
+    </div> 
+    <script src="scripts/script.js"></script>
+</body>
+</html>

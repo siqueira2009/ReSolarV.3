@@ -1,0 +1,179 @@
+@media only screen and (min-width: 0px) and (max-width: 260px) {
+    
+    /* Indisponibilidade */
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    body > *:not(#indisponivel) {
+        display: none;
+    }
+    
+    
+    #indisponivel {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 260px) and (max-width: 1100px) {
+
+    /* Indisponibilidade */
+    #indisponivel {
+        display: none;
+    }
+
+    /* Header */
+    header {
+        padding: 10px 35px;
+    }
+
+    #navPC {
+        display: none;
+    }
+
+    #menuResp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Hero Section */
+
+    #heroSection {
+        padding: 50px 40px;
+    }
+    
+    #heroText h1 {
+        font-size: 45px;
+        line-height: 50px;
+    }
+
+    #heroImg {
+        display:none;
+    }
+
+    /* Propósito */
+
+    #proposito {
+        padding: 50px 40px;
+        text-align: center;
+    }
+
+    #propContent {
+        flex-direction: column;
+        gap: 0px;
+    }
+
+    #propTitle {
+        font-size: 30px;
+    }
+
+    #propDesc, #propText, #propImg, #processoInfo {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 1100px) and (max-width: 1920px) {
+
+    /* Menu e Indisponibilidade */
+    #menu, #indisponivel {
+        display: none;
+    }
+
+    /* Header */
+    header {
+        padding: 10px 75px;
+    }
+
+    /* Hero Section */
+    #heroSection {
+        padding: 50px 0px 50px 80px;
+    }
+
+    #heroText h1 {
+        font-size: 60px;
+        line-height: 60px;
+    }
+
+    /* Propósito */
+
+    #propTextResp, #propLerMais {
+        display: none;
+    }
+
+    #proposito {
+        padding: 50px 80px;
+    }
+
+    #propTitle {
+        font-size: 40px;
+    }
+
+    #propText {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+
+    /* Menu e Indiponibilidade */
+    #menu, #indisponivel {
+        display: none;
+    }
+
+    /* Header */
+    header {
+        padding: 10px 75px;
+    }
+    
+    /* Hero Section */
+    #heroSection {
+        padding: 50px 0px 50px 80px;
+    }
+
+    #heroText h1 {
+        font-size: 80px;
+        line-height: 95px;
+    }
+
+    #heroText p {
+        font-size: 20px;
+    }
+
+    #heroText button {
+        width: 200px;
+        height: 65px;
+        font-size: 21px;
+    }
+
+    #heroText button i {
+        font-size: 26px;
+    }
+
+    /* Propósito */
+
+    #propTextResp, #propLerMais {
+        display: none;
+    }
+
+    #proposito {
+        padding: 50px 80px;
+    }
+
+    #propTitle {
+        font-size: 40px;
+    }
+
+    #propText {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    #propImg {
+        width: 45%;
+    }
+}
