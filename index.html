@@ -50,7 +50,7 @@
         <nav id="navMob">
             <ul>
                 <li id="primeiroLink"><a class="nav1" href="#proposito"><i class="fa-solid fa-sun iconesResponsivo"></i>Nosso propósito</a></li>
-                <li><a class="nav1" href=""><i class="fa-solid fa-briefcase iconesResponsivo"></i>Funcionamento</a></li>
+                <li><a class="nav1" href="#funcionamento"><i class="fa-solid fa-briefcase iconesResponsivo"></i>Funcionamento</a></li>
                 <li><a class="nav1" href=""><i class="fa-solid fa-question iconesResponsivo"></i>Dúvidas</a></li>
                 <li><a class="nav1" href=""><i class="fa-solid fa-mobile-screen iconesResponsivo"></i>Contato</a></li>
                 <li><a class="nav1" href=""><i class="fa-solid fa-recycle iconesResponsivo"></i>Reciclar</a></li>
@@ -76,9 +76,9 @@
     </div>
 
     <!-- Propósito -->
-    <div id="proposito" class="div">
-        <p id="propTitle">Por que existimos?</p>
-        <p id="propDesc">Nosso objetivo é facilitar o descarte correto de painéis solares</p>  
+    <div id="proposito">
+        <p id="propTitle" class="title">Por que existimos?</p>
+        <p id="propDesc" class="desc">Nosso objetivo é facilitar o descarte correto de painéis solares</p>  
         <div id="propContent">
             <p id="propText">Nós exisitimos, simplesmente, para acabar com o ciclo maléfico do descarte de painéis solares. Atualmente, esses equipamentos, quando quebrados ou trocados, são descartados de uma maneira incorreta. Por causa deste descarte, daqui a alguns anos, quando diversos painéis chegarem ao fim da sua vida útil, causará diversos problemas no solo, nos mares e nos ecossistemas, por causa dos materiais que constituem esses equipamentos. Nós exisitimos, simplesmente, para acabar com o ciclo maléfico do descarte de painéis solares. Atualmente, esses equipamentos, quando quebrados ou trocados, são descartados de uma maneira incorreta. Por causa deste descarte, daqui a alguns anos, quando diversos painéis chegarem ao fim da sua vida útil. Por causa deste descarte, daqui a alguns anos, quando diversos painéis chegarem ao fim da sua vida útil. Por causa deste descarte, daqui a alguns anos, quando diversos painéis chegarem ao fim da sua vida útil. Por causa deste descarte, daqui a alguns anos, quando diversos painéis chegarem ao fim da sua vida útil.</p>
             <p id="propTextResp">Nós exisitimos, simplesmente, para acabar com o ciclo maléfico do descarte de painéis solares. Atualmente, esses equipamentos, quando quebrados ou trocados, são descartados de uma maneira incorreta.</p>
@@ -92,6 +92,38 @@
             </div>
         </div>
     </div> 
+
+    <!-- Funcionamento -->
+    <div id="funcionamento">
+        <p id="funcTitle" class="title">Como funciona?</p>
+        <p id="funcDesc" class="desc">Nosso processo passa por algumas etapas, veja-os aqui</p>
+        <ul id="funcOpts">
+            <li class="option" onclick="opt(0, 'normal')">Registro de Dados</li>
+            <li class="option" onclick="opt(1, 'normal')">Agendamento</li>
+            <li class="option" onclick="opt(2, 'normal')">Análise Técnica</li>
+            <li class="option" onclick="opt(3, 'normal')">Desmontagem</li>
+            <li class="option" onclick="opt(4, 'normal')">Venda</li>
+            <li class="option" onclick="opt(5, 'normal')">Benefícios</li>
+        </ul>
+        
+        <div id="funcOptsResp">
+            <ul id="funcOpts1">
+                <li class="optionResp" onclick="opt(0, 'mobile')">Registro de Dados</li>
+                <li class="optionResp" onclick="opt(1, 'mobile')">Agendamentos</li>
+                <li class="optionResp" onclick="opt(2, 'mobile')">Análise Técnica</li>
+            </ul>
+            <ul id="funcOpts2">
+                <li class="optionResp" onclick="opt(3, 'mobile')">Desmontagem</li>
+                <li class="optionResp" onclick="opt(4, 'mobile')">Venda</li>
+                <li class="optionResp" onclick="opt(5, 'mobile')">Benefícios</li>
+            </ul>
+        </div>
+
+        <div id="funcInfo">
+            <p id="funcText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nibh  velit, blandit at eleifend quis, efficitur sed ante. Nunc cursus, ipsum  et laoreet sagittis, quam elit interdum lectus, vitae aliquam dolor risus in massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nibh  velit, blandit at eleifend quis, efficitur sed ante. Nunc cursus, ipsum  et laoreet sagittis, quam elit interdum lectus, vitae aliquam dolor risus in massa.</p>
+        </div>
+    
+    </div>
     <script src="scripts/script.js"></script>
 </body>
 </html>

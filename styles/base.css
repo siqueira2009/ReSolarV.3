@@ -7,6 +7,8 @@
 
     font-family: "Inter", sans-serif;
     font-style: normal;
+
+    scroll-behavior: smooth;
 }
 
 #indisponivel {
@@ -197,13 +199,13 @@ header {
 
 /* Propósito */
 
-#propTitle {
+.title {
     color: rgba(0, 0, 0, 0.8);
     text-align: center;
     font-weight: 500;
 }
 
-#propDesc {
+.desc {
     color: rgba(0, 0, 0, 0.7);
     text-align: center;
     font-weight: 500;
@@ -266,4 +268,85 @@ header {
 
 .processoImg img {
     width: 100%;
+}
+
+/* Funcionamento */
+
+#funcionamento {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    background-color: #F5FAF5;
+}
+
+#funcOpts {
+    margin-top: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#funcOpts1, #funcOpts2 {
+    font-size: 12px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+#funcOptsResp {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+}
+
+.optionResp {
+    display: flex;
+    width: auto;
+    height: 50px;
+    padding: 0px 10px;
+    text-align: center;
+    align-items: center;
+    border: 1px #000000 solid;
+    font-weight: 500;
+    border-radius: 12px;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.option {
+    display: flex;
+    width: auto;
+    height: 50px;
+    padding: 0px 20px;
+    text-align: center;
+    align-items: center;
+    border: 1px #000000 solid;
+    font-weight: 500;
+    border-radius: 12px;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.option.selected, .optionResp.selected {
+    background-color: #4CAF4F;
+    border: 1px #F5FAF5 solid;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#funcInfo {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    border: 2px black solid;
+    border-radius: 12px;
+    margin-top: 20px;
+    color: rgba(0,0,0,0.9);
 }
