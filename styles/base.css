@@ -312,7 +312,7 @@ header {
     padding: 0px 10px;
     text-align: center;
     align-items: center;
-    border: 1px #000000 solid;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
     font-weight: 500;
     border-radius: 12px;
     color: black;
