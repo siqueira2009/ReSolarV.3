@@ -173,6 +173,7 @@ header {
     font-size: 17px;
     color: white;
     background-color: #4CAF4F;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
     border: none;
     border-radius: 5px;
 
@@ -326,7 +327,7 @@ header {
     padding: 0px 20px;
     text-align: center;
     align-items: center;
-    border: 1px #000000 solid;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
     font-weight: 500;
     border-radius: 12px;
     color: black;
@@ -336,17 +337,34 @@ header {
 
 .option.selected, .optionResp.selected {
     background-color: #4CAF4F;
-    border: 1px #F5FAF5 solid;
     color: #fff;
     transition: all 0.3s;
 }
 
 #funcInfo {
-    padding: 20px;
     display: flex;
     align-items: center;
-    border: 2px black solid;
-    border-radius: 12px;
-    margin-top: 20px;
-    color: rgba(0,0,0,0.9);
+    gap: 30px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+#funcText {
+    text-align: justify;
+    flex: 1;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+#funcImg {
+    flex: 0 0 auto;
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }

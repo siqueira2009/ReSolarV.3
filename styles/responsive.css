@@ -77,7 +77,7 @@
 
     /* Funcionamento */
 
-    #funcDesc, #funcImg {
+    #funcDesc {
         display: none;
     }
 
@@ -99,13 +99,23 @@
     }
 
     #funcInfo {
-        width: 80%;
-        height: auto;
-        font-size: 15px;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        max-width: 100%;
+    }
+    
+    #funcImg {
+        max-width: 100%;
+        order: 1
+    }
+    
+    #funcText {
+        font-size: 14px;
     }
 }
 
-@media only screen and (min-width: 800px) and (max-width: 1100px) {
+@media only screen and (min-width: 801px) and (max-width: 1100px) {
 
     /* Indisponibilidade */
     #indisponivel {
@@ -182,13 +192,21 @@
     }
 
     #funcInfo {
-        width: 80%;
-        height: auto;
+        gap: 25px;
+        padding: 25px;
+        max-width: 1000px;
+    }
+    
+    #funcImg {
+        max-width: 350px;
+    }
+    
+    #funcText {
         font-size: 15px;
     }
 }
 
-@media only screen and (min-width: 1100px) and (max-width: 1920px) {
+@media only screen and (min-width: 1101px) and (max-width: 1920px) {
 
     /* Menu e Indisponibilidade */
     #menu, #indisponivel {
@@ -246,22 +264,22 @@
         display: none;
     }
 
-    #funcText {
-        font-size: 18px;
-    }
-
     #funcInfo {
-        width: 100%;
-        height: auto;
-        font-size: 15px;
+        gap: 35px;
+        padding: 35px;
+        max-width: 1300px;
     }
-
+    
+    #funcImg {
+        max-width: 500px;
+    }
+    
     #funcText {
-        font-size: 18px;
+        font-size: 17px;
     }
 }
 
-@media only screen and (min-width: 1920px) {
+@media only screen and (min-width: 1921px) {
 
     /* Menu e Indiponibilidade */
     #menu, #indisponivel {
@@ -338,17 +356,18 @@
         display: none;
     }
 
-    #funcText {
-        font-size: 18px;
-    }
-
     #funcInfo {
-        width: 100%;
-        height: auto;
-        font-size: 15px;
+        gap: 50px;
+        padding: 50px;
+        max-width: 1600px;
     }
-
+    
+    #funcImg {
+        max-width: 600px;
+    }
+    
     #funcText {
-        font-size: 25px;
+        font-size: 22px;
+        line-height: 1.7;
     }
 }
