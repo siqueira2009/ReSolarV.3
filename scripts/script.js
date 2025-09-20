@@ -15,7 +15,6 @@ menuBtn.addEventListener('click', function () {
 });
 
 // Funcionamento
-
 let funcTextos = [
     "O processo começa com o registro completo das informações do painel solar que será destinado à reciclagem. O usuário acessa a plataforma e insere dados como o modelo do painel, fabricante, ano de aquisição, estado atual de funcionamento e histórico de manutenção, se houver. Além disso, são solicitadas algumas informações pessoais básicas, como nome, endereço e forma de contato, para que a equipe responsável possa dar continuidade ao processo de forma segura e eficiente. Esse cadastro detalhado é essencial para garantir e facilitar a coleta do painel, além de permitir a análise adequada das condições do equipamento. Com esses dados, é possível avaliar a viabilidade de reaproveitamento, garantindo mais segurança e eficácia no processo.",
     "Após o registro completo das informações do painel solar e dos dados do usuário, o usuário escolha uma data e horário disponível para a coleta do equipamento, com base na disponibilidade logística e localização do solicitante. Uma equipe especializada se dirige até o local indicado para realizar o transporte adequado, seguindo normas de segurança tanto para o equipamento quanto para o meio ambiente. Essa etapa garante que o painel chegue em boas condições ao centro de reciclagem, permitindo uma avaliação técnica mais precisa. O agendamento dá liberdade ao usuário, que não precisa se preocupar com o deslocamento do equipamento, e agiliza todo o processo de reutilização ou descarte correto dos materiais envolvidos.",
@@ -55,4 +54,21 @@ function opt(clicado, tipo) {
     funcTexto.innerHTML = funcTextos[clicado];
     funcImg.setAttribute("src", `imgs/SVGs/Funcionamento/${funcImgs[clicado]}`)
 
+}
+
+// Dúvidas
+function duvida(numDuv) {
+    let abertas = document.getElementsByClassName('respostaAberta');
+    let setas = document.getElementsByClassName('seta-abrir');
+    for (let i = abertas.length - 1; i >= 0; i--) {
+        if (abertas[i].id === `resposta${numDuv}`) continue;
+        abertas[i].classList.remove('respAtivo', 'respostaAberta');
+        setas[i].classList.remove('aberta')
+    }
+
+    let respostaAtual = document.getElementById(`resposta${numDuv}`);
+
+    respostaAtual.classList.toggle('respAtivo');
+    setas[numDuv].classList.toggle('aberta');
+    respostaAtual.classList.toggle('respostaAberta');
 }

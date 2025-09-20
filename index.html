@@ -19,31 +19,32 @@
     <!-- Cabeçalho -->
     <header>
         <div id="logo">
-            <img src="imgs/SVGS/Logo.svg" alt="Logo">
+            <img src="imgs/SVGs/Logo.svg" alt="Logo">
         </div>
 
         <nav id="navPC">
             <ul>
                 <li><a class="nav1" href="#proposito">Nosso propósito</a></li>
-                <li><a class="nav1" href="">Funcionamento</a></li>
-                <li><a class="nav1" href="">Dúvidas</a></li>
-                <li><a class="nav1" href="">Contato</a></li>
+                <li><a class="nav1" href="#funcionamento">Funcionamento</a></li>
+                <li><a class="nav1" href="#duvidas">Dúvidas</a></li>
+                <li><a class="nav1" href="mailto:lucas.s.siqueira.2009@gmail.com" target="_blank">Contato</a></li>
                 <li id="reciclarBtn" onmouseover="girarIcon()" onmouseout="desgirarIcon()">
                     <i class="fa-solid fa-recycle c-white"></i>
-                    <a id="reciclar">Reciclar</a>
+                    <a id="reciclarIcon">Reciclar</a>
                 </li>
-                <li>
-                    <a href="">
+                <li id="userBtn" style="cursor: pointer;">
+                    <a>
                         <i id="user" class="fa-solid fa-circle-user nav1"></i>
                     </a>
                 </li>
             </ul>
         </nav>
 
+        
         <div id="menu">
             <i id="menuIcon" class="fa-solid fa-bars"></i>
         </div>
-
+        
     </header>
     
     <div id="menuResp">
@@ -51,14 +52,14 @@
             <ul>
                 <li id="primeiroLink"><a class="nav1" href="#proposito"><i class="fa-solid fa-sun iconesResponsivo"></i>Nosso propósito</a></li>
                 <li><a class="nav1" href="#funcionamento"><i class="fa-solid fa-briefcase iconesResponsivo"></i>Funcionamento</a></li>
-                <li><a class="nav1" href=""><i class="fa-solid fa-question iconesResponsivo"></i>Dúvidas</a></li>
-                <li><a class="nav1" href=""><i class="fa-solid fa-mobile-screen iconesResponsivo"></i>Contato</a></li>
+                <li><a class="nav1" href="#duvidas"><i class="fa-solid fa-question iconesResponsivo"></i>Dúvidas</a></li>
+                <li><a class="nav1" href="mailto:lucas.s.siqueira.2009@gmail.com" target="_blank"><i class="fa-solid fa-mobile-screen iconesResponsivo"></i>Contato</a></li>
                 <li><a class="nav1" href=""><i class="fa-solid fa-recycle iconesResponsivo"></i>Reciclar</a></li>
                 <li><a class="nav1" href=""><i class="fa-solid fa-circle-user iconesResponsivo"></i>Registrar ou Entrar</a></li>
             </ul>
         </nav>
     </div>
-    
+
     <!-- Hero Section -->
     <div id="heroSection">
         <table width="100%" height="100%">
@@ -69,7 +70,7 @@
                     <button id="saberMais" onmouseenter="saberMaisAnim()"><i id="saberMaisIcon" class="fa-solid fa-arrow-down"></i>Saber mais</button>
                 </td>
                 <td id="heroImg">
-                    <img src="imgs/SVGS/Dinheiro.svg" alt="">
+                    <img src="imgs/SVGs/Dinheiro.svg" alt="">
                 </td>
             </tr>
         </table>
@@ -124,6 +125,58 @@
             <img id="funcImg" src="imgs/SVGs/Funcionamento/Cadastro.svg" alt="">
         </div>
     
+    </div>
+
+    <!-- Dúvidas -->
+    <div id="duvidas">
+        <p id="duvidasTitle" class="title">Dúvidas Frequentes</p>
+        <p id="duvidasDesc" class="desc">Dúvidas frequentemente perguntadas</p>  
+        
+        <div id="duvidasContent">
+            <div id="duvidasImg">
+                <img src="imgs/SVGs/Dúvida.svg" alt="">
+            </div>
+            <div id="duvidasPerguntas">
+                <h3 onclick="duvida(0)" style="margin-top: 0px"><i class="fa-solid fa-magnifying-glass lupinha"></i>Quem pode participar do processo de reciclagem?<i class="fa-solid fa-angle-down seta-abrir"></i></h3>
+                <div id="resposta0" class="respostas">
+                    <p>Qualquer pessoa ou empresa que possua painéis solares pode participar do nosso sistema de reciclagem, independentemente da quantidade ou do motivo para o descarte.</p>
+                </div>
+                <h3 onclick="duvida(1)"><i class="fa-solid fa-magnifying-glass lupinha"></i>Tenho um painel muito antigo, ainda posso descartá-lo aqui?<i class="fa-solid fa-angle-down seta-abrir"></i></h3>
+                <div id="resposta1" class="respostas">
+                    <p>Sim, painéis antigos também são aceitos e você receberá créditos proporcionais ao tempo de uso, incentivando o descarte no momento correto.</p>
+                </div>
+                <h3 onclick="duvida(2)"><i class="fa-solid fa-magnifying-glass lupinha"></i>Como recebo os créditos após o descarte?<i class="fa-solid fa-angle-down seta-abrir"></i></h3>
+                <div id="resposta2" class="respostas">
+                    <p>Após o fim do processo listado aqui, os créditos são automaticamente adicionados à sua conta para serem usados em descontos em compras futuras.</p>
+                </div>    
+                <h3 onclick="duvida(3)"><i class="fa-solid fa-magnifying-glass lupinha"></i>Há algum custo para o usuário participar do programa?<i class="fa-solid fa-angle-down seta-abrir"></i></h3>
+                <div id="resposta3" class="respostas">
+                    <p>Não, o serviço é totalmente gratuito para os usuários, incluindo registro, coleta e reciclagem.</p>
+                </div>
+                <h3 onclick="duvida(4)"><i class="fa-solid fa-magnifying-glass lupinha"></i>O que acontece com os materiais reciclados?<i class="fa-solid fa-angle-down seta-abrir"></i></h3>
+                <div id="resposta4" class="respostas">
+                    <p>Os materiais são separados e vendidos para empresas que reaproveitam vidro, silício, chumbo e outros componentes, contribuindo para a economia circular e redução de resíduos.</p>
+                </div>
+                <h3 onclick="duvida(5)"><i class="fa-solid fa-magnifying-glass lupinha"></i>Como a empresa se sustenta?<i class="fa-solid fa-angle-down seta-abrir"></i></h3>
+                <div id="resposta5" class="respostas">
+                    <p>Uma porcentagem dos lucros recebidos nas vendas dos painéis solares reparados e das matérias primas recicladas é voltada para a empresa e uma outra porcentagem é voltada para a bonificação dos usuários.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reciclar -->
+    <div id="reciclar">
+        <div id="reciclarText">
+            <p id="reciclarTitle" class="title">E aí, bora reciclar?</p>
+            <p id="reciclarDesc" class="desc">Clique no botão abaixo para começar seu registro para reciclagem</p>  
+            <p id="tempo">10 minutos</p>
+            <p id="tempoResto">é o tempo que você precisa para cadastrar o seu painel solar</p>
+            <button id="começarAgora" onmouseenter="saberMaisAnim()"><i id="começarIcon" class="fa-solid fa-arrow-up-right-from-square"></i>Começar agora</button>
+        </div>
+        <div id="reciclarImg">
+            <img src="imgs/SVGs/Reciclagem.svg" alt="">
+        </div>
     </div>
     <script src="scripts/script.js"></script>
 </body>

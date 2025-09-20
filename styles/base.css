@@ -131,15 +131,16 @@ header {
 
 #heroSection {
     height: auto;
-    background-color: #F5F7FA;
+    background-color: #f5faf5;
 }
 
 #heroText, #heroImg {
     height: 100%;
-    min-width: 50%;
+    width: 50%;
 }
 
 #heroText {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -195,7 +196,7 @@ header {
 }
 
 #heroImg img {
-    width: 55%;
+    width: 50%;
 }
 
 /* Propósito */
@@ -312,7 +313,7 @@ header {
     padding: 0px 10px;
     text-align: center;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     font-weight: 500;
     border-radius: 12px;
     color: black;
@@ -327,12 +328,16 @@ header {
     padding: 0px 20px;
     text-align: center;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     font-weight: 500;
     border-radius: 12px;
     color: black;
     cursor: pointer;
     transition: all 0.3s;
+}
+
+.option:hover {
+    background-color: #e7e7e7;
 }
 
 .option.selected, .optionResp.selected {
@@ -348,7 +353,7 @@ header {
     background-color: white;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -360,7 +365,7 @@ header {
     flex: 1;
     font-size: 16px;
     line-height: 1.6;
-    color: #333;
+    color: rgba(0,0,0,0.9);
 }
 
 #funcImg {
@@ -369,4 +374,154 @@ header {
     width: 100%;
     height: auto;
     border-radius: 8px;
+}
+
+/* Dúvidas */
+
+#duvidas {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+}
+
+#duvidasContent {
+    margin-top: 40px;  
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 30px;
+}
+
+#duvidasImg {
+    text-align: center;
+    display: flex;
+    width: 40%;
+
+    transition: all 0.4s;
+}
+
+#duvidasImg img{
+    width: 60%;
+}
+
+#duvidasPerguntas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    text-align: left;
+}
+
+#duvidasPerguntas h3 {
+    border-radius: 12px;
+    border: 2px black solid;
+    cursor: pointer;
+    z-index: 1;
+    color: rgba(0,0,0,0.9);
+    transition: background-color 0.3s;
+}
+
+#duvidasPerguntas h3:hover {
+    background-color: #e7e7e7;
+}
+
+#duvidasPerguntas h3 > .seta-abrir {
+    float: right;
+}
+
+.respostas {
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    margin-top: 0px;
+    height: 0;
+    opacity: 0;
+    border-radius: 12px;
+    border: 2px solid black;
+    z-index: 0;
+    color: rgba(0,0,0,0.9);
+}
+
+.respostas.respAtivo {
+    padding: 20px;
+    height: auto;
+    opacity: 1;
+    margin-top: 10px;
+}
+
+.seta-abrir {
+    transition: rotate 0.4s;
+}
+
+.seta-abrir.aberta {
+    rotate: 180deg;
+    transition: rotate 0.4s;
+}
+
+/* Reciclar */
+
+#reciclar {
+    display: flex;
+    height: auto;
+    background-color: #f5faf5;
+    width: auto;
+    gap: 30px;
+}
+
+#reciclarText, #reciclarImg {
+    font-weight: 500;
+    width: 50%;
+}
+
+#reciclarImg {
+    text-align: center;
+}
+
+#reciclarText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#tempo {
+    color: #4CAF4F;
+    margin-top: 40px;
+    font-size: 40px;
+}
+
+#tempoResto {
+    margin-top: 10px;
+    color: #2C2C2C;
+    text-align: center;
+}
+
+#começarAgora {
+    cursor: pointer;
+    display: flex;
+    margin-top: 35px;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    font-weight: 500;
+    font-size: 17px;
+    color: white;
+    background-color: #4CAF4F;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    border: none;
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+
+#começarAgora:hover {
+    scale: 103%;
+    transition: scale, 0.5s;
+}
+
+#começarAgora i {
+    font-size: 22px;
+    margin-right: 10px;
 }

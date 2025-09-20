@@ -20,6 +20,12 @@
 
 @media only screen and (min-width: 260px) and (max-width: 800px) {
 
+    /* Gerais */
+
+    .title {
+        font-size: 30px;
+    }
+
     /* Indisponibilidade */
     #indisponivel {
         display: none;
@@ -67,10 +73,6 @@
         gap: 0px;
     }
 
-    #propTitle {
-        font-size: 30px;
-    }
-
     #propDesc, #propText, #propImg, #processoInfo {
         display: none;
     }
@@ -79,10 +81,6 @@
 
     #funcDesc {
         display: none;
-    }
-
-    #funcTitle {
-        font-size: 30px;
     }
 
     #funcionamento {
@@ -106,16 +104,71 @@
     }
     
     #funcImg {
-        max-width: 100%;
+        max-width: 410px;
         order: 1
     }
     
     #funcText {
         font-size: 14px;
     }
+
+    /* Dúvidas */
+
+    #duvidas {
+        padding: 50px 40px;
+        text-align: center;
+    }
+
+    #duvidasDesc {
+        display: none;
+    }
+
+    #duvidasImg {
+        display: none;
+    }
+
+    #duvidasPerguntas {
+        width: 100%;
+    }
+
+    #duvidasPerguntas h3 {
+        padding: 15px;
+        margin-top: 15px;
+        font-weight: 500;
+    }
+
+    #duvidasPerguntas h3 > .lupinha {
+        margin-right: 15px;
+    }
+
+    #duvidasPerguntas h3 > .seta-abrir {
+        display: none;
+    }
+
+    /* Reciclar */
+
+    #reciclar {
+        flex-direction: column;
+        padding: 50px 40px;
+    }
+
+    #reciclarText, #reciclarImg {
+        width: 100%;
+    }
+
+    #reciclarImg img {
+        width: 100%;
+        max-width: 500px;
+    }
 }
 
 @media only screen and (min-width: 801px) and (max-width: 1100px) {
+
+    /* Gerais */
+
+    .title {
+        font-size: 30px;
+    }
 
     /* Indisponibilidade */
     #indisponivel {
@@ -164,10 +217,6 @@
         gap: 0px;
     }
 
-    #propTitle {
-        font-size: 30px;
-    }
-
     #propDesc, #propText, #propImg, #processoInfo {
         display: none;
     }
@@ -176,10 +225,6 @@
 
     #funcDesc, #funcOptsResp {
         display: none;
-    }
-
-    #funcTitle {
-        font-size: 30px;
     }
 
     #funcionamento {
@@ -204,9 +249,52 @@
     #funcText {
         font-size: 15px;
     }
+
+    /* Dúvidas */   
+    #duvidas {
+        padding: 50px 40px;
+    }
+
+    #duvidasImg img {
+        width: 90%;
+    }
+
+    #duvidasImg {
+        display: none;
+    }
+
+    #duvidasPerguntas {
+        width: 100%;
+    }
+    
+    #duvidasPerguntas h3 {
+        padding: 10px;
+        margin-top: 15px;
+        font-weight: 500;
+    }
+
+    #duvidasPerguntas h3 > .lupinha {
+        margin-right: 15px;
+    }
+
+    #duvidasPerguntas h3 > .seta-abrir {
+        font-size: 22px;
+    }
+
+    /* Reciclar */
+
+    #reciclar {
+        padding: 50px 80px;
+    }
 }
 
 @media only screen and (min-width: 1101px) and (max-width: 1920px) {
+
+    /* Geral */
+
+    .title {
+        font-size: 40px;
+    }
 
     /* Menu e Indisponibilidade */
     #menu, #indisponivel {
@@ -238,19 +326,11 @@
         padding: 50px 80px;
     }
 
-    #propTitle {
-        font-size: 40px;
-    }
-
     #propText {
         font-size: 18px;
     }
 
     /* Funcionamento */
-
-    #funcTitle {
-        font-size: 40px;
-    }
 
     #funcionamento {
         padding: 50px 80px;
@@ -275,11 +355,52 @@
     }
     
     #funcText {
-        font-size: 17px;
+        font-size: 20px;
+    }
+
+    /* Dúvidas */
+
+    #duvidas {
+        padding: 50px 80px;
+    }
+
+    #duvidasImg img {
+        width: 100%;
+        max-width: 490px;
+    }
+
+    #duvidasPerguntas h3 {
+        padding: 10px;
+        margin-top: 15px;
+        font-weight: 500;
+    }
+
+    #duvidasPerguntas h3 > .lupinha {
+        margin-right: 15px;
+    }
+
+    #duvidasPerguntas h3 > .seta-abrir {
+        font-size: 22px;
+    }
+    
+    /* Reciclar */
+
+    #reciclar {
+        padding: 50px 80px;
+    }
+
+    #reciclarImg img {
+        width: 70%;
+        max-width: 460px;
     }
 }
 
 @media only screen and (min-width: 1921px) {
+
+    /* Gerais */
+    .title {
+        font-size: 40px;
+    }
 
     /* Menu e Indiponibilidade */
     #menu, #indisponivel {
@@ -325,10 +446,6 @@
         padding: 50px 80px;
     }
 
-    #propTitle {
-        font-size: 40px;
-    }
-
     #propText {
         font-size: 24px;
         line-height: 30px;
@@ -339,10 +456,6 @@
     }
 
     /* Funcionamento */
-
-    #funcTitle {
-        font-size: 40px;
-    }
 
     #funcionamento {
         padding: 50px 80px;
@@ -369,5 +482,42 @@
     #funcText {
         font-size: 22px;
         line-height: 1.7;
+    }
+
+    /* Dúvidas */
+
+    #duvidas {
+        padding: 50px 40px;
+    }
+
+    #duvidasImg img {
+        width: 80%;
+        max-width: 580px;
+    }
+
+    #duvidasPerguntas h3 {
+        font-size: 25px;
+        padding: 10px;
+        margin-top: 15px;
+        font-weight: 500;
+    }
+
+    #duvidasPerguntas h3 > .lupinha {
+        margin-right: 15px;
+    }
+
+    #duvidasPerguntas h3 > .seta-abrir {
+        font-size: 22px;
+    }
+
+    /* Reciclar */
+
+    #reciclar {
+        padding: 50px 80px;
+    }
+
+    #reciclarImg img {
+        width: 60%;
+        max-width: 520px;
     }
 }
