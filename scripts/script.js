@@ -4,6 +4,26 @@ let opcoesResp = document.getElementsByClassName("optionResp");
 opcoes[0].classList.toggle('selected');
 opcoesResp[0].classList.toggle('selected');
 
+// Reciclar levar até seção
+let buttonReciclar = document.getElementById('reciclarBtn');
+let destinoReciclar = document.getElementById('reciclar');
+
+buttonReciclar.addEventListener('click', function(){
+    if (destinoReciclar) {
+        destinoReciclar.scrollIntoView({behavior: 'smooth'});
+    }
+});
+
+// Saber mais levar até propósito
+let buttonSaber = document.getElementById('saberMais');
+let saberDestino = document.getElementById('proposito');
+
+buttonSaber.addEventListener('click', function(){
+    if (saberDestino) {
+        saberDestino.scrollIntoView({behavior: 'smooth'});
+    }
+});
+
 // Menu responsivo
 let menuBtn = document.getElementById('menu');
 let menu = document.getElementById('menuResp');
@@ -72,3 +92,39 @@ function duvida(numDuv) {
     setas[numDuv].classList.toggle('aberta');
     respostaAtual.classList.toggle('respostaAberta');
 }
+
+// Animação do ícone reciclar 
+
+let reciclarIcon = document.getElementById('reciclarIcon');
+let reciclarButton = document.getElementById('reciclarBtn');
+
+reciclarButton.addEventListener('mouseover', function(){
+        reciclarIcon.style.rotate = '360deg';
+        reciclarIcon.style.transition = 'rotate 0.6s';
+});
+
+reciclarButton.addEventListener('mouseout', function(){
+        reciclarIcon.style.rotate = '0deg';
+});
+
+// Animação do ícone saber mais 
+
+let saberIcon = document.getElementById('saberMaisIcon');
+let saberButton = document.getElementById('saberMais');
+
+saberButton.addEventListener('mouseover', function(){
+    saberIcon.style.marginBottom = '10px';
+    saberIcon.style.transition = 'margin-bottom 0.35s';
+
+    setTimeout(() => {
+        saberIcon.style.marginBottom = '-10px';
+    }, 350);
+
+    setTimeout(() => {
+        saberIcon.style.marginBottom = '0px';
+    }, 700);
+});
+
+saberButton.addEventListener('mouseout', function(){
+        saberIcon.style.marginTop = '0px';
+});
