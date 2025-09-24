@@ -44,6 +44,15 @@ let funcTextos = [
     "Depois de concluídas as etapas de coleta, avaliação e reaproveitamento ou reciclagem dos materiais, o usuário que realizou o descarte correto do painel solar recebe créditos como forma de recompensa. Esses créditos são calculados com base em fatores como o estado do painel, o valor dos materiais recuperados e a possibilidade de revenda do equipamento. Os créditos podem ser utilizados como descontos na compra de novos painéis solares em empresas parceiras da plataforma, incentivando a troca por tecnologias mais eficientes e sustentáveis. Além disso, esse sistema de bonificação reforça a responsabilidade ambiental, ao transformar o descarte consciente em benefício direto para o usuário, promovendo engajamento e adesão à causa.",
 ]
 
+let funcTextosResp = [
+    "O processo começa com o registro completo das informações do painel solar que será destinado à reciclagem. O usuário acessa a plataforma e insere dados como o modelo do painel, fabricante, ano de aquisição, estado atual de funcionamento e histórico de manutenção, se houver.",
+    "Após o registro completo das informações do painel solar e dos dados do usuário, o usuário escolha uma data e horário disponível para a coleta do equipamento, com base na disponibilidade logística e localização do solicitante.",
+    "Quando o painel solar chega ao centro de reciclagem, ele passa por uma análise técnica feita por profissionais especializados. Nessa avaliação, são verificados o estado físico do painel, sua capacidade de geração de energia, possíveis falhas estruturais ou elétricas, desgaste dos materiais e a presença de componentes danificados.",
+    "Se após a análise técnica for constatado que o painel solar ainda apresenta boas condições de funcionamento, ele passa por uma etapa de manutenção básica, onde recebe pequenos reparos para restaurar sua eficiência e segurança.",
+    "Os materiais obtidos a partir da desmontagem dos painéis solares, como vidro, silício, alumínio e metais pesados como chumbo, passam por processos de separação e purificação, sendo preparados para reaproveitamento industrial.",
+    "Depois de concluídas as etapas de coleta, avaliação e reaproveitamento ou reciclagem dos materiais, o usuário que realizou o descarte correto do painel solar recebe créditos como forma de recompensa."
+]
+
 let funcImgs = [
     "Cadastro.svg",
     "Agendamento.svg",
@@ -55,6 +64,7 @@ let funcImgs = [
 
 function opt(clicado, tipo) {
     let funcTexto = document.getElementById("funcText");
+    let funcTextResp = document.getElementById("funcTextResp");
     let funcImg = document.getElementById("funcImg");
 
     if (tipo == 'normal') {
@@ -63,35 +73,52 @@ function opt(clicado, tipo) {
         }
     
         opcoes[clicado].classList.toggle('selected');
-    } else if (tipo =='mobile') {
+        funcTexto.innerHTML = funcTextos[clicado];
+    } else if (tipo == 'mobile') {
         for(var x = 0; x < opcoesResp.length; x++) {
             opcoesResp[x].classList.remove('selected');
         }
     
         opcoesResp[clicado].classList.toggle('selected');
+        funcTextResp.innerHTML = funcTextosResp[clicado];
     }
 
-    funcTexto.innerHTML = funcTextos[clicado];
-    funcImg.setAttribute("src", `imgs/SVGs/Funcionamento/${funcImgs[clicado]}`)
-
+    funcImg.setAttribute("src", `../imgs/SVGs/Funcionamento/${funcImgs[clicado]}`)
 }
 
 // Dúvidas
 function duvida(numDuv) {
-    let abertas = document.getElementsByClassName('respostaAberta');
-    let setas = document.getElementsByClassName('seta-abrir');
-    for (let i = abertas.length - 1; i >= 0; i--) {
-        if (abertas[i].id === `resposta${numDuv}`) continue;
-        abertas[i].classList.remove('respAtivo', 'respostaAberta');
-        setas[i].classList.remove('aberta')
+  const respostaAtual = document.getElementById(`resposta${numDuv}`);
+  const abertas = document.querySelectorAll('.respostaAberta'); // NodeList estática
+
+  if (!respostaAtual) {
+    console.warn(`resposta${numDuv} não encontrada`);
+    return;
+  }
+
+  abertas.forEach(el => {
+    if (el.id === respostaAtual.id) return;
+    el.classList.remove('respAtivo', 'respostaAberta');
+
+    const h3 = el.previousElementSibling;
+    if (h3 && h3.classList.contains('duvida')) {
+      h3.classList.remove('duvAberta');
+      const seta = h3.querySelector('.seta-abrir');
+      if (seta) seta.classList.remove('aberta');
     }
+  });
 
-    let respostaAtual = document.getElementById(`resposta${numDuv}`);
+  respostaAtual.classList.toggle('respAtivo');
+  respostaAtual.classList.toggle('respostaAberta');
 
-    respostaAtual.classList.toggle('respAtivo');
-    setas[numDuv].classList.toggle('aberta');
-    respostaAtual.classList.toggle('respostaAberta');
+  const h3Atual = respostaAtual.previousElementSibling;
+  if (h3Atual && h3Atual.classList.contains('duvida')) {
+    h3Atual.classList.toggle('duvAberta');
+    const setaAtual = h3Atual.querySelector('.seta-abrir');
+    if (setaAtual) setaAtual.classList.toggle('aberta');
+  }
 }
+
 
 // Animação do ícone reciclar 
 
@@ -127,4 +154,18 @@ saberButton.addEventListener('mouseover', function(){
 
 saberButton.addEventListener('mouseout', function(){
         saberIcon.style.marginTop = '0px';
+});
+
+// Opções Usuário
+let userIcon = document.getElementById('user');
+let userOpt = document.getElementById('userOpt');
+
+userIcon.addEventListener('click', function(){
+    userOpt.classList.toggle('ativo');
+
+    if (userOpt.classList == 'ativo') {
+        document.querySelector('body').style.overflow = 'hidden';
+    } else {
+        document.querySelector('body').style.overflow = 'visible'
+    }
 });

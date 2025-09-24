@@ -92,8 +92,16 @@
         display: none;
     }
 
+    #funcText {
+        display: none;
+    }
+
     #funcOptsResp {
         display: flex;
+    }
+
+    #funcTextResp {
+        font-size: 16px;
     }
 
     #funcInfo {
@@ -106,10 +114,6 @@
     #funcImg {
         max-width: 410px;
         order: 1
-    }
-    
-    #funcText {
-        font-size: 14px;
     }
 
     /* Dúvidas */
@@ -135,6 +139,7 @@
         padding: 15px;
         margin-top: 15px;
         font-weight: 500;
+        font-size: 14px;
     }
 
     #duvidasPerguntas h3 > .lupinha {
@@ -164,20 +169,30 @@
     /* Footer */
 
     footer {
-        padding: 50px 40px;
+        padding: 25px 40px;
         flex-direction: column;
         gap: 25px;
     }
 
-    #footerLeft, #footerRight {
+    #footerLeft, #footerMid {
         width: 100%;
     }
 
-    #footerRight {
+    #footerMid {
         display: block;
     }
 
+    .footerContent {
+        flex-direction: column;
+        gap: 15px;
+    }
+
     #footerLeft img {
+        width: 100%;
+        max-width: 292px;
+    }
+
+    #footerRight img {
         width: 100%;
         max-width: 292px;
     }
@@ -252,7 +267,7 @@
 
     /* Funcionamento */
 
-    #funcDesc, #funcOptsResp {
+    #funcDesc, #funcOptsResp, #funcTextResp {
         display: none;
     }
 
@@ -326,7 +341,11 @@
         width: 70%;;
     }
 
-    #footerRight {
+    #footerRight img {
+        width: 70%;;
+    }
+
+    #footerMid {
         gap: 30px;
     }
 }
@@ -383,7 +402,7 @@
         font-size: 17px;
     }
 
-    #funcOptsResp {
+    #funcOptsResp, #funcTextResp {
         display: none;
     }
 
@@ -448,7 +467,12 @@
         max-width: 240px;
     }
 
-    #footerRight {
+    #footerRight img {
+        width: 70%;
+        max-width: 240px;
+    }
+
+    #footerMid {
         gap: 30px;
     }
 }
@@ -523,7 +547,7 @@
         font-size: 17px;
     }
 
-    #funcOptsResp {
+    #funcOptsResp, #funcTextResp {
         display: none;
     }
 
@@ -590,7 +614,12 @@
         max-width: 240px;
     }
 
-    #footerRight {
+    #footerRight img {
+        width: 70%;
+        max-width: 240px;
+    }
+
+    #footerMid {
         gap: 30px;
         font-size: 20px;
     }

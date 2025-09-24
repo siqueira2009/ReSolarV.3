@@ -1,0 +1,88 @@
+@media only screen and (min-width: 0px) and (max-width: 260px) {
+    
+    /* Indisponibilidade */
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    body > *:not(#indisponivel) {
+        display: none;
+    }
+    
+    
+    #indisponivel {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 261px) and (max-width: 900px) {
+    /* Form Content */
+
+    .container {
+        width: 50vw;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* Form Esquerda */
+
+    .esquerda, .direita {
+        width: 100%;
+    }
+
+    .esquerda p {
+        font-size: 30px;
+    }
+
+    .esquerda h3 {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    .esquerda img {
+        max-width: 100px;
+    }
+
+    /* Form Direita */
+
+    .buttons h3, .buttons a {
+        font-size: 17px;
+    }
+}
+
+@media only screen and (min-width: 901px) {
+    /* Form Content */
+
+    .container {
+        width: 75vw;
+        flex-direction: line;
+    }
+
+    /* Form Esquerda */
+
+    .esquerda, .direita {
+        width: 50%;
+    }
+
+    .esquerda p {
+        font-size: 35px;
+    }
+
+    .esquerda h3 {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    .esquerda img {
+        max-width: 100px;
+    }
+
+    /* Form Direita */
+
+    .buttons h3, .buttons a {
+        font-size: 17px;
+    }
+}
