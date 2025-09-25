@@ -14,7 +14,6 @@
 #indisponivel {
     padding: 0 15px;
     text-align: center;
-    display: none;
 }
 
 body {
@@ -91,7 +90,7 @@ body {
 .eye {
     position: absolute;
     font-size: 18px;
-    left: 475px;
+    right: 20px;
     color: #666;
     transform: translateY(-33px);
     cursor: pointer;

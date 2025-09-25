@@ -1,37 +1,51 @@
 @media only screen and (min-width: 0px) and (max-width: 260px) {
-    
-    /* Indisponibilidade */
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+    body .container {
+        display: none !important;
     }
-
-    body > *:not(#indisponivel) {
-        display: none;
-    }
-    
     
     #indisponivel {
         display: block;
     }
 }
 
-@media only screen and (min-width: 261px) and (max-width: 900px) {
+@media only screen and (min-width: 260px) and (max-width: 300px) {
+  /* Gerais */
+
+    #indisponivel {
+        display: none;
+    }
+
     /* Form Content */
 
     .container {
-        width: 50vw;
+        width: 70vw;
         flex-direction: column;
         gap: 30px;
     }
 
-    /* Form Esquerda */
-
     .esquerda, .direita {
         width: 100%;
     }
+
+    .input ~ .label {
+        font-size: 14px;
+        transform: translateY(17px);
+    }
+
+    .input:focus ~ .label, .input:valid ~ .label {
+        transform: translateY(-50%) scale(0.8);
+        background-color: #fff;
+        padding: 0 .2em;
+        color: #4caf4f;
+        font-size: 16px;
+    }
+
+    .esquerda {
+        padding-bottom: 0px;
+    }
+
+    /* Form Esquerda */
+
 
     .esquerda p {
         font-size: 30px;
@@ -48,12 +62,92 @@
 
     /* Form Direita */
 
+    .buttons {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .buttons h3, .buttons a {
+        font-size: 17px;
+    }
+
+    .eye {
+        right: 10px;
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 900px) {
+    /* Gerais */
+
+    #indisponivel {
+        display: none;
+    }
+
+    /* Form Content */
+
+    .container {
+        width: 70vw;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .esquerda, .direita {
+        width: 100%;
+    }
+
+    .input ~ .label {
+        font-size: 14px;
+        transform: translateY(17px);
+    }
+
+    .input:focus ~ .label, .input:valid ~ .label {
+        transform: translateY(-50%) scale(0.8);
+        background-color: #fff;
+        padding: 0 .2em;
+        color: #4caf4f;
+        font-size: 16px;
+    }
+
+    .esquerda {
+        padding-bottom: 0px;
+    }
+
+    /* Form Esquerda */
+
+
+    .esquerda p {
+        font-size: 30px;
+    }
+
+    .esquerda h3 {
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    .esquerda img {
+        max-width: 100px;
+    }
+
+    /* Form Direita */
+
+    .buttons {
+        flex-direction: column;
+        gap: 20px;
+    }
+
     .buttons h3, .buttons a {
         font-size: 17px;
     }
 }
 
 @media only screen and (min-width: 901px) {
+    
+    /* Gerais */
+
+    #indisponivel {
+        display: none;
+    }
+
     /* Form Content */
 
     .container {
