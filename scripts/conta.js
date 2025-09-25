@@ -10,8 +10,14 @@ let senhaChanges = 0;
 let btnVoltar = document.getElementById('voltar2');
 let verSenha1 = document.getElementById('verSenha1');
 let verSenha2 = document.getElementById('verSenha2');
+let verSenha3 = document.getElementById('verSenha3')
 let ver1type = 'invisivel';
 let ver2type = 'invisivel';
+let ver3type = 'invisivel';
+
+let nomeRev = document.getElementById('nomeRev');
+let emailRev = document.getElementById('emailRev');
+let senhaRev = document.getElementById('senhaRev');
 
 // Confirmar senha
 
@@ -23,6 +29,41 @@ inputSenha.addEventListener('change', function(){
         inputConfirmarSenha.setAttribute('disabled', '');
         inputConfirmarSenha.setAttribute('title', 'Digite a senha primeiro');
     }
+});
+
+// Visualizar senha (SEGURAR)
+
+// Primeiro botão
+verSenha1.addEventListener('mousedown', function(){
+    inputs[2].type = 'text';
+    verSenha1.classList.replace('fa-eye', 'fa-eye-slash');
+});
+
+verSenha1.addEventListener('mouseup', function(){
+    inputs[2].type = 'password';
+    verSenha1.classList.replace('fa-eye-slash', 'fa-eye');
+});
+
+// Segundo botão
+verSenha2.addEventListener('mousedown', function(){
+    inputs[3].type = 'text';
+    verSenha2.classList.replace('fa-eye', 'fa-eye-slash');
+});
+
+verSenha2.addEventListener('mouseup', function(){
+    inputs[3].type = 'password';
+    verSenha2.classList.replace('fa-eye-slash', 'fa-eye');
+});
+
+// Terceiro botão
+verSenha3.addEventListener('mousedown', function(){
+    document.getElementById('senhaRev').type = 'text';
+    verSenha3.classList.replace('fa-eye', 'fa-eye-slash');
+});
+
+verSenha3.addEventListener('mouseup', function(){
+    document.getElementById('senhaRev').type = 'password';
+    verSenha3.classList.replace('fa-eye-slash', 'fa-eye');
 });
 
 // Avançar
@@ -77,6 +118,11 @@ btnAvancar.addEventListener('click', function(){
     if (liberado == true) {
         forms.style.display = 'none'
         confirmacao.style.display = 'flex'
+        // Confirmação
+
+        nomeRev.value = inputs[0].value;
+        emailRev.value = inputs[1].value;
+        senhaRev.value = inputs[2].value;
     }
 });
 
@@ -86,28 +132,3 @@ btnVoltar.addEventListener('click', function(){
     forms.style.display = 'flex'
     confirmacao.style.display = 'none'
 });
-
-// Visualizar senha (SEGURAR)
-
-// Primeiro botão
-verSenha1.addEventListener('mousedown', function(){
-    inputs[2].type = 'text';
-    verSenha1.classList.replace('fa-eye', 'fa-eye-slash');
-});
-
-verSenha1.addEventListener('mouseup', function(){
-    inputs[2].type = 'password';
-    verSenha1.classList.replace('fa-eye-slash', 'fa-eye');
-});
-
-// Segundo botão
-verSenha2.addEventListener('mousedown', function(){
-    inputs[3].type = 'text';
-    verSenha2.classList.replace('fa-eye', 'fa-eye-slash');
-});
-
-verSenha2.addEventListener('mouseup', function(){
-    inputs[3].type = 'password';
-    verSenha2.classList.replace('fa-eye-slash', 'fa-eye');
-});
-

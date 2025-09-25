@@ -598,7 +598,7 @@ footer {
 
 #footerLeft {
     font-size: 12px;
-    width: 30%;
+    width: 25%;
     color: #F5F7FA;
     text-align: center;
 }
@@ -674,7 +674,7 @@ footer ul li a, footer ul li {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 20%;
+    width: 25%;
 }
 
 #footerRight p {
