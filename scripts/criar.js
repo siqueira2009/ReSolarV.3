@@ -27,7 +27,7 @@ inputSenha.addEventListener('change', function(){
         inputConfirmarSenha.removeAttribute('title')
     } else {
         inputConfirmarSenha.setAttribute('disabled', '');
-        inputConfirmarSenha.setAttribute('title', 'Digite a senha primeiro');
+        inputConfirmarSenha.setAttribute('title', 'Digite a senha primeiro.');
     }
 });
 

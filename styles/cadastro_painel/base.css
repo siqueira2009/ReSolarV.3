@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Configurações globais */
+* {
+    margin: 0px;
+    padding: 0px;
+
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+#indisponivel {
+    padding: 0 15px;
+    text-align: center;
+}
+
+/* Geral */
+
+header {
+    width: 80%;
+    height: 75px;
+    margin: 15px auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 12px;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+nav span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+    cursor: pointer;
+}
+
+nav span i {
+    margin-right: 20px;
+}
+
+header .barras {
+    width: 100%;
+    height: 7px;
+    background-color: rgba(0, 0, 0, 0.493);
+    border-radius: 12px;
+}
+
+header .barra {
+    height: 7px;
+    margin-top: 5px;
+    border-radius: 12px;
+}
+
+header #barraVerde {
+    width: 25%;
+    background-color: #4CAF4F;
+}
+
+header nav span:hover {
+    background-color: rgb(216, 215, 215);
+}
+
+#quarto {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+#primeiro {
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
