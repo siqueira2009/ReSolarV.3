@@ -142,12 +142,12 @@ body {
     transition: scale 0.4s;
 }
 
-.buttons h3:hover {
+.buttons button:hover {
     scale: 103%;
     transition: scale 0.4s;
 }
 
-.voltar, .entrar {
+.voltar, .criar {
     color: #2c2c2c;
     text-decoration: none;
 }
@@ -169,14 +169,6 @@ body {
 
 .buttons a:hover {
     text-decoration: underline;
-}
-
-/* Confirmação */
-
-#confirmação .input ~ .label, #confirmação .input ~ .label {
-    transform: translateY(-50%) scale(0.8);
-    background-color: #fff;
-    padding: 0 .2em;
 }
 
 .terminar {

@@ -163,6 +163,7 @@ header {
     text-decoration: none;
     color: black;
     transition: all 0.4s;
+    font-weight: 400;
 }
 
 #userOpt a:hover {

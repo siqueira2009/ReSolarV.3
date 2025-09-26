@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar na Conta - ReSolar</title>
+    <link rel="icon" type="image/x-icon" href="../../imgs/LogoSemNome.png">
+    <link rel="stylesheet" href="../../styles/conta/entrar.css">
+    <link rel="stylesheet" href="../../styles/conta/responsive_entrar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Tela de indisponibilidade para telas muito pequenas -->
+    <div id="indisponivel">
+        <h2>Site indisponível para sua resolução de tela</h2>
+        <p>Lamentamos por isto! &#128546;</p>
+    </div>
+
+    <!-- Cadastro -->
+
+    <div id="formsEntrada" class="container" style="display: flex;">
+        <div id="formEsquerda" class="esquerda">
+            <img src="../../imgs/LogoSemNome.png" alt="Logo Resolar">
+            <p>Conta</p>
+            <h3>Entre na sua conta usando um e-mail</h3>
+        </div>
+
+
+        <form id="formDireita" class="direita">
+            <div class="inputGroup">
+                <input required="" type="text" name="nome" autocomplete="off" class="input">
+                <label for="nome" class="label">Nome (opcional)</label>
+            </div>
+
+            <div class="inputGroup">
+                <input required="" type="text" name="email" autocomplete="off" class="input">
+                <label for="email" class="label">Email</label>
+            </div>
+            
+            <div class="inputGroup">
+                <input id="senha" required="" type="password" name="senha" autocomplete="off" class="input">
+                <label for="senha" class="label">Senha</label>
+                <i id="verSenha1" class="fa-solid fa-eye eye"></i>
+            </div>
+
+            <div class="buttons">
+                <a class="btn criar" href="criar.html">Não tem conta? Crie agora</a>
+                <a class="btn voltar" id="voltar" href="../../index.html">Retornar</a>
+                <button class="btn terminar" id="proximo" type="submit">Avançar<i class="fa-solid fa-angle-right"></i></button>
+            </div>
+        </form>
+    </div>
+
+
+    <script src="../../scripts/criar.js"></script>
+</body>
+</html>
