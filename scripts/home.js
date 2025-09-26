@@ -169,3 +169,9 @@ userIcon.addEventListener('click', function(){
         document.querySelector('body').style.overflow = 'visible'
     }
 });
+
+// Formulário
+
+function cadastro() {
+  window.location.href = "html/cadastro_painel/cadastro.html";
+}
