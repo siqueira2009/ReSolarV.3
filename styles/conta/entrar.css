@@ -152,6 +152,10 @@ body {
     text-decoration: none;
 }
 
+.criar {
+    margin-top: 12px;
+}
+
 .avançar {
     padding: 10px;
     padding-left: 15px;

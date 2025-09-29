@@ -1,0 +1,93 @@
+@media screen and (min-width: 0px) and (max-width: 260px) {
+    #formulario, header {
+        display: none;
+    }
+
+    #indisponivel {
+        display: flex !important;
+    }
+}
+
+@media screen and (min-width: 260px) and (max-width: 360px) {
+    #formulario {
+        padding: 25px 10px;
+    }
+
+    #mesAtual {
+        font-size: 20px;
+    }
+
+    #anoAtual {
+        font-size: 14px;
+    }
+
+    #prev, #next {
+        font-size: 20px;
+    }
+
+    .dias div {
+        width: 27px;
+        height: 27px;
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (min-width: 360px) and (max-width: 500px) {
+    #mesAtual {
+        font-size: 20px;
+    }
+
+    #anoAtual {
+        font-size: 14px;
+    }
+
+    #prev, #next {
+        font-size: 20px;
+    }
+
+    .dias div {
+        width: 30px;
+        height: 30px;
+    }
+
+}
+
+@media screen and (min-width: 500px) and (max-width: 1100px) {
+    #mesAtual {
+        font-size: 30px;
+    }
+
+    #prev, #next {
+        font-size: 20px;
+    }
+
+    .dias div {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    #mesAtual {
+        font-size: 30px;
+    }
+
+    #anoAtual {
+        font-size: 16px;
+    }
+
+    #prev, #next {
+        font-size: 25px;
+    }
+
+    .semana {
+        font-size: 20px;
+    }
+
+    .dias div {
+        font-size: 20px;
+        width: 40px;
+        height: 40px;
+    }
+}

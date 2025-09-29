@@ -11,30 +11,25 @@
 </head>
 <body>
     <!-- Tela de indisponibilidade para telas muito pequenas -->
-    <!-- <div id="indisponivel" style="display: none;">
+    <div id="indisponivel" style="display: none;">
         <h2>Site indisponível para sua resolução de tela</h2>
         <p>Lamentamos por isto! &#128546;</p>
-    </div> -->
+    </div>
 
     <!-- Navegação -->
     <header>
         <nav>
-            <span id="primeiro">
-                <i class="fa-solid fa-circle-user"></i>
-                <p>Informações Pessoais</p>
-            </span>
-
-            <span>
+            <span class="opt atual" id="primeiro" onclick="mudarEtapa(0)">
                 <i class="fa-solid fa-solar-panel"></i>
                 <p>Informações Técnicas #1</p>
             </span>
 
-            <span>
+            <span class="opt" onclick="mudarEtapa(1)">
                 <i class="fa-solid fa-solar-panel"></i>
                 <p>Informações Técnicas #2</p>
             </span>
 
-            <span id="quarto">
+            <span class="opt" id="terceiro" onclick="mudarEtapa(2)">
                 <i class="fa-solid fa-calendar-days"></i>
                 <p>Agendamento</p>
             </span>
@@ -44,6 +39,145 @@
             <div class="barra" id="barraVerde"></div>
         </div>
     </header>
+
+    <!-- Formulário -->
+
+    <form action="" id="formulario">
+        <div id="info1" class="etapa" style="display: flex;">
+            <h1>Informações <span>Técnicas 1</span></h1>
+
+            <div class="inputGroup">
+                <input id="marca" required="" type="text" name="marca" class="input">
+                <label for="marca" class="label">Fabricante</label>
+            </div>
+
+            <div class="inputGroup">
+                <input id="modelo" required="" type="text" name="modelo" class="input">
+                <label for="modelo" class="label">Modelo</label>
+            </div>
+
+            <div class="inputGroup">
+                <input id="potencia" required="" type="number" name="potencia" class="input">
+                <label for="potencia" class="label">Potência (em W)</label>
+            </div>
+
+            <div class="inputGroup">
+                <input id="dataFabr" required="" type="date" name="dataFabr" class="input inputUp">
+                <label for="dataFabr" class="label">Data de Fabricação</label>
+            </div>
+
+            <div class="inputGroup">
+                <input id="dataInst" required="" type="date" name="dataInst" class="input inputUp">
+                <label for="dataInst" class="label">Data de Instalação</label>
+            </div>
+
+            <div class="inputGroup">
+                <select id="inversor" required="" type="date" name="inversor" class="input">
+                    <option value="" selected hidden></option>
+                    <option value="ongrid">On-Grid</option>
+                    <option value="offgrid">Off-Grid</option>
+                    <option value="string">String</option>
+                    <option value="hibrido">Híbrido</option>
+                    <option value="micro">Microinversor</option>
+                    <option value="central">Central</option>
+                </select>
+                <label for="inversor" class="label">Tipo de Inversor</label>
+            </div>
+        </div>
+
+        <div id="info2" class="etapa" style="display: none;">
+            <h1>Informações <span>Técnicas 2</span></h1>
+
+            <div class="inputGroup">
+                <select id="tipo" required="" name="tipo" class="input">
+                    <option value="" selected hidden></option>
+                    <option value="mono">Monocristalino</option>
+                    <option value="poli">Policristalino</option>
+                    <option value="hibrido">Híbrido</option>
+                    <option value="filme">Filme Fino (a-Si, CdTe, CIGS)</option>
+                </select>
+                <label for="tipo" class="label">Tipo de Inversor</label>
+            </div>
+
+            <div class="inputGroup">
+                <select id="funcionamento" required="" name="funcionamento" class="input">
+                    <option value="" selected hidden></option>
+                    <option value="sim">Funciona</option>
+                    <option value="parcial">Funciona parcialmente</option>
+                    <option value="nao">Não funciona</option>
+                </select>
+                <label for="funcionamento" class="label">Funcionamento do painel</label>
+            </div>
+
+            <div class="inputGroup">
+                <select id="estado" required="" name="estado" class="input">
+                    <option value="" selected hidden></option>
+                    <option value="inteiro">Inteiro</option>
+                    <option value="trincado">Trincado</option>
+                    <option value="quebrado">Quebrado</option>
+                </select>
+                <label for="estado" class="label">Estado do painel</label>
+            </div>
+
+            <div class="inputGroup">
+                <select id="motivo" required="" name="motivo" class="input">
+                    <option value="" selected hidden></option>
+                    <option value="quebra">Quebra</option>
+                    <option value="vida">Fim da vida útil</option>
+                    <option value="troca">Troca</option>
+                    <option value="desinstalação">Desinstalação</option>
+                </select>
+                <label for="motivo" class="label">Motivo para descarte</label>
+            </div>
+
+            <div class="inputGroup">
+                <input id="qtdPainel" required="" type="number" name="qtdPainel" class="input">
+                <label for="qtdPainel" class="label">Quantidade de painéis</label>
+            </div>
+
+            <div class="inputGroup">
+                <input id="comentarios" required="" type="text" name="comentarios" class="input">
+                <label for="comentarios" class="label">Comentários (opcional)</label>
+            </div>
+        </div>
+
+        <div id="agenda" class="etapa" style="display: none;">
+            <h1><span>Agendar</span> coleta</h1>
+            <div id="calendario">
+                <div id="mes">
+                    <ul>
+                        <li id="prev"><i class="fa-solid fa-angle-left"></i></li>
+                        <li id="mesInfo">
+                            <span id="mesAtual">Setembro</span>
+                            <br>
+                            <span id="anoAtual">2025</span>
+                        </li>
+                        <li id="next"><i class="fa-solid fa-angle-right"></i></li>
+                    </ul>
+                </div>
+
+                <div class="semana">
+                    <ul>
+                        <li>D</li>
+                        <li>S</li>
+                        <li>T</li>
+                        <li>Q</li>
+                        <li>Q</li>
+                        <li>S</li>
+                        <li>S</li>
+                    </ul>
+                </div>
+
+                <div class="dias"></div>
+
+                <input value="--/--/----" name="dataColeta" id="dataColeta" type="text" class="input" disabled>
+                <br/>
+                <br/>
+                <h3 id="resumoColeta">A sua coleta está agendada para dia <span id="data"></span> no endereço <span id="endereço"></span></h3>
+            </div>
+
+        </div>
+    </form>
 
     <script src="../../scripts/cadastro.js"></script>
 </body>

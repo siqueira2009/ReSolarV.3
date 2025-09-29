@@ -72,7 +72,7 @@
         gap: 0px;
     }
 
-    #propDesc, #propText, #propImg, #processoInfo {
+    #propDesc, #propText, #propImg, #processoInfo, #prop1400 {
         display: none;
     }
 
@@ -260,7 +260,7 @@
         gap: 0px;
     }
 
-    #propDesc, #propText, #propImg, #processoInfo {
+    #propDesc, #propText, #propImg, #processoInfo, #prop1400 {
         display: none;
     }
 
@@ -370,7 +370,7 @@
     }
 }
 
-@media only screen and (min-width: 1101px) and (max-width: 1920px) {
+@media only screen and (min-width: 1101px) and (max-width: 1400px) {
 
     /* Geral */
 
@@ -400,7 +400,145 @@
 
     /* Propósito */
 
-    #propTextResp, #propLerMais {
+    #propTextResp, #propLerMais, #propImg, #processoInfo {
+        display: none;
+    }
+
+    #propText, #propImg {
+        width: 100%;
+    }
+
+    #propContent {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #proposito {
+        padding: 50px 80px;
+    }
+
+    #propText {
+        font-size: 18px;
+    }
+
+    /* Funcionamento */
+
+    #funcionamento {
+        padding: 50px 80px;
+    }
+
+    .option {
+        font-size: 17px;
+    }
+
+    #funcOptsResp, #funcTextResp {
+        display: none;
+    }
+
+    #funcInfo {
+        gap: 35px;
+        padding: 35px;
+        max-width: 1300px;
+    }
+    
+    #funcImg {
+        max-width: 400px;
+    }
+    
+    #funcText {
+        font-size: 20px;
+    }
+
+    /* Dúvidas */
+
+    #duvidas {
+        padding: 50px 80px;
+    }
+
+    #duvidasImg img {
+        width: 100%;
+        max-width: 490px;
+    }
+
+    #duvidasPerguntas h3 {
+        padding: 10px;
+        margin-top: 15px;
+        font-weight: 500;
+    }
+
+    #duvidasPerguntas h3 > .lupinha {
+        margin-right: 15px;
+    }
+
+    #duvidasPerguntas h3 > .seta-abrir {
+        font-size: 22px;
+    }
+    
+    /* Reciclar */
+
+    #reciclar {
+        padding: 50px 80px;
+    }
+
+    #reciclarImg img {
+        width: 70%;
+        max-width: 460px;
+    }
+
+    /* Footer */
+
+    footer {
+        padding: 30px 30px;
+    }
+
+    #footerLeft img {
+        width: 70%;
+        max-width: 240px;
+    }
+
+    #footerRight img {
+        width: 70%;
+        max-width: 240px;
+    }
+
+    #footerMid {
+        gap: 30px;
+    }
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1920px) {
+
+    /* Geral */
+
+    .title {
+        font-size: 40px;
+    }
+
+    /* Menu e Indisponibilidade */
+    #menu, #indisponivel {
+        display: none;
+    }
+
+    /* Header */
+    header {
+        padding: 10px 75px;
+    }
+
+    /* Hero Section */
+    #heroSection {
+        padding: 50px 0px 50px 80px;
+    }
+
+    #heroText h1 {
+        font-size: 60px;
+        line-height: 60px;
+    }
+
+    /* Propósito */
+
+    #propTextResp, #propLerMais, #prop1400 {
         display: none;
     }
 

@@ -10,7 +10,7 @@ let senhaChanges = 0;
 let btnVoltar = document.getElementById('voltar2');
 let verSenha1 = document.getElementById('verSenha1');
 let verSenha2 = document.getElementById('verSenha2');
-let verSenha3 = document.getElementById('verSenha3')
+let verSenha3 = document.getElementById('verSenha3');
 let ver1type = 'invisivel';
 let ver2type = 'invisivel';
 let ver3type = 'invisivel';
@@ -18,6 +18,7 @@ let ver3type = 'invisivel';
 let nomeRev = document.getElementById('nomeRev');
 let emailRev = document.getElementById('emailRev');
 let senhaRev = document.getElementById('senhaRev');
+let cpfRev = document.getElementById('cpfRev');
 
 // Confirmar senha
 
@@ -35,23 +36,23 @@ inputSenha.addEventListener('change', function(){
 
 // Primeiro botão
 verSenha1.addEventListener('mousedown', function(){
-    inputs[2].type = 'text';
+    inputs[3].type = 'text';
     verSenha1.classList.replace('fa-eye', 'fa-eye-slash');
 });
 
 verSenha1.addEventListener('mouseup', function(){
-    inputs[2].type = 'password';
+    inputs[3].type = 'password';
     verSenha1.classList.replace('fa-eye-slash', 'fa-eye');
 });
 
 // Segundo botão
 verSenha2.addEventListener('mousedown', function(){
-    inputs[3].type = 'text';
+    inputs[4].type = 'text';
     verSenha2.classList.replace('fa-eye', 'fa-eye-slash');
 });
 
 verSenha2.addEventListener('mouseup', function(){
-    inputs[3].type = 'password';
+    inputs[4].type = 'password';
     verSenha2.classList.replace('fa-eye-slash', 'fa-eye');
 });
 
@@ -68,9 +69,9 @@ verSenha3.addEventListener('mouseup', function(){
 
 // Avançar
 
-inputs[2].addEventListener('change', function(){
-    if (inputs[2].value == "") {
-        inputs[3].value = "";
+inputs[3].addEventListener('change', function(){
+    if (inputs[3].value == "") {
+        inputs[4].value = "";
     }
 });
 
@@ -81,15 +82,15 @@ inputs.forEach(input => {
     });
 })
 
-inputs[3].addEventListener('focusout', function(){
-    if (inputs[3].value != inputs[2].value) {
+inputs[4].addEventListener('focusout', function(){
+    if (inputs[4].value != inputs[3].value) {
         erroSenha.style.display = 'block';
     }
 })
 
-inputs[2].addEventListener('change', function(){
+inputs[3].addEventListener('change', function(){
     if (senhaChanges > 0) {
-        if (inputs[3].value != inputs[2].value) {
+        if (inputs[4].value != inputs[3].value) {
             erroSenha.style.display = 'block';
         }
     }
@@ -110,7 +111,7 @@ btnAvancar.addEventListener('click', function(){
         }
     }
 
-    if (inputs[2].value != inputs[3].value) {
+    if (inputs[3].value != inputs[4].value) {
         liberado = false;
         erroSenha.style.display = 'block';
     }
@@ -122,7 +123,8 @@ btnAvancar.addEventListener('click', function(){
         // Confirmação
         nomeRev.value = inputs[0].value;
         emailRev.value = inputs[1].value;
-        senhaRev.value = inputs[2].value;
+        cpfRev.value = inputs[2].value;
+        senhaRev.value = inputs[3].value;
     }
 });
 

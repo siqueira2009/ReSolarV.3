@@ -24,6 +24,16 @@ body {
     background-color: #f0f4f9;
 }
 
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
 /* Geral */
 
 .container {
@@ -150,6 +160,10 @@ body {
 .voltar, .entrar {
     color: #2c2c2c;
     text-decoration: none;
+}
+
+.entrar {
+    margin-top: 12px;
 }
 
 .avançar {

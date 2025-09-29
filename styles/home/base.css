@@ -321,6 +321,24 @@ header {
     width: 100%;
 }
 
+#prop1400 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    width: 100%;
+}
+
+#prop1400 #propImg1400 {
+    width: 50%;
+    max-width: 500px;
+}
+
+#prop1400 #propProc1400 {
+    width: 30%;
+    max-width: 500px;
+}
+
 /* Funcionamento */
 
 #funcionamento {
