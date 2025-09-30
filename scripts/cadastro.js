@@ -1,3 +1,5 @@
+// Barra
+
 let etapas = document.getElementsByClassName('etapa');
 let btns = document.getElementsByClassName('opt');
 let barra =  document.getElementById('barraVerde');
@@ -12,22 +14,65 @@ function mudarEtapa(click) {
     etapas[click].style.display = 'flex';
     btns[click].classList.add('atual');
     
-    switch (click){
-        case 0:
-            barra.style.width = '33%';
-            break;
+    if (window.screen.width > 259 && window.screen.width < 1100) {
+        switch (click){
+            case 0:
+                barra.style.height = '33vh';
+                break;
+            case 1:
+                barra.style.height = '66vh';
+                break;  
+            case 2:
+                barra.style.height = '100vh';
+                break;
+        }
+    } else if (window.screen.width >= 1100) {
+        switch (click){
+            case 0:
+                barra.style.width = '33%';
+                break;
             case 1:
                 barra.style.width = '66%';
                 break;  
-        case 2:
-            barra.style.width = '100%';
-            break;
+            case 2:
+                barra.style.width = '100%';
+                break;
         }
-}
+    }
+    }
+
+
+// Select
+
+let select = document.querySelectorAll('select');
+
+Array.from(select).forEach(el => el.addEventListener('change', () => {
+    if (el.value != "") {
+        el.style.color = '#333333';
+        el.style.fontStyle = 'normal';
+    } else {
+        el.style.color = '#696969';
+        el.style.fontStyle = 'italic';
+    }
+}));
+
+// Data
+
+let inputsData = document.querySelectorAll('.typeDate');
+
+Array.from(inputsData).forEach(el => el.addEventListener('change', () => {
+    if (el.value != "") {
+        el.style.color = '#333333';
+        el.style.fontStyle = 'normal';
+    } else {
+        el.style.color = '#696969';
+        el.style.fontStyle = 'italic';
+    }
+}));
 
 // Calendário
 
-let calendario = document.querySelector('.dias')
+let calendario = document.querySelector('#dias')
 
 let hoje = new Date();
 let mesA = hoje.getMonth();
@@ -41,16 +86,13 @@ let anoControle = anoA;
 let diaSelecao = null;
 let mesSelecao = null;
 let inputData = document.getElementById('dataColeta');
+let inputEndereco = document.getElementById('endereco');
 let resumoColeta = document.getElementById('resumoColeta');
 let resumoSpan = resumoColeta.querySelectorAll('span');
 
 const monthNames = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
 
 function gerarCalendario(mes, ano) {
-    console.log("MÊS > " + mesSelecao);
-    console.log("MÊS (parâmetro) > " + mes);
-    console.log("DIA > " + diaSelecao);
-
     calendario.innerHTML = "";
     
     let primeiroDia = new Date(ano, mes, 1).getDay();
@@ -84,6 +126,7 @@ function gerarCalendario(mes, ano) {
                 const mm = String(mes + 1).padStart(2, '0');
                 inputData.value = `${dd}/${mm}/${ano}`;
                 inputData.dispatchEvent(new Event("change"));
+                resumoColeta.scrollIntoView({behavior: "smooth"})
             });
         }
         calendario.appendChild(dia);
@@ -114,6 +157,30 @@ prev.addEventListener("click", function(){
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+    Array.from(select).forEach(el => {
+        if (el.value != "") {
+            el.style.color = '#333333';
+            el.style.fontStyle = 'normal';
+        } else {
+            el.style.color = '#696969';
+            el.style.fontStyle = 'italic';
+        }
+    })
+
+    Array.from(inputsData).forEach(el => {
+        if (el.value != "") {
+            el.style.color = '#333333';
+            el.style.fontStyle = 'normal';
+        } else {
+            el.style.color = '#696969';
+            el.style.fontStyle = 'italic';
+        }
+    })
+
+    if (inputEndereco.value != "") {
+        resumoSpan[1].innerHTML = inputEndereco.value;
+    }
+
     const monthNames = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
     const mesElemLocal = document.getElementById('mesAtual');
     const anoElemLocal = document.getElementById('anoAtual');
@@ -149,6 +216,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    if (inputData.value == "--/--/----") {
+        resumoColeta.style.display = 'none'
+    }
+
     gerarCalendario(mesControle, anoControle);
     mesElemLocal.innerHTML = monthNames[mesControle];
     anoElemLocal.innerHTML = String(anoControle);
@@ -156,4 +227,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 inputData.addEventListener('change', () => {
     resumoSpan[0].innerHTML = inputData.value;
+    resumoColeta.style.display = 'block';
+})
+
+inputEndereco.addEventListener('keyup', () => {
+    resumoSpan[1].innerHTML = inputEndereco.value
+    resumoColeta.style.display = 'block';
 })

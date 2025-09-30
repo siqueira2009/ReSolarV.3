@@ -19,6 +19,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    display: none;
 }
 
 input[type=number]::-webkit-outer-spin-button,
@@ -30,66 +32,77 @@ input[type=number]::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance:textfield;
 }
-/* Geral */
+
+/* Opções (header) */
 
 header {
     width: 80%;
-    height: 75px;
+    height: auto;
     margin: 15px auto;
+    margin-bottom: 7px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 12px;
 }
 
-nav {
+header nav {
     display: flex;
     width: 100%;
     height: 100%;
 }
 
-nav span {
+header nav span {
+    padding: 30px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 1;
     height: 100%;
     cursor: pointer;
-}
 
-nav span i {
-    margin-right: 20px;
-}
-
-header .barras {
-    width: 100%;
-    height: 7px;
-    background-color: rgba(0, 0, 0, 0.493);
-    border-radius: 12px;
-}
-
-header .barra {
-    height: 7px;
-    margin-top: 5px;
-    border-radius: 12px;
-}
-
-header #barraVerde {
-    width: 33%;
-    background-color: #4CAF4F;
-    transition: all 0.4s;
+    transition: all 0.2s;
 }
 
 header nav span:hover {
     background-color: rgb(216, 215, 215);
 }
 
-#terceiro {
+header nav span i {
+    margin-right: 20px;
+}
+
+header nav #terceiro {
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
 }
 
-#primeiro {
+header nav #primeiro {
     border-top-left-radius: 12px;
     border-bottom-left-radius: 12px;
+}
+
+header nav .atual {
+    background-color: #e2ebe2;
+}
+
+header nav .atual:hover {
+    background-color: #e2ebe2;
+}
+
+.barras {
+    margin: 0 auto;
+    width: 80%;
+    height: 7px;
+    background-color: rgba(0, 0, 0, 0.493);
+    border-radius: 12px;
+}
+
+.barra {
+    height: 7px;
+    margin-top: 5px;
+    border-radius: 12px;
+    width: 33%;
+    background-color: #4CAF4F;
+    transition: all 0.4s;
 }
 
 /* Formulário */
@@ -101,7 +114,6 @@ header nav span:hover {
     width: 80%;
     height: auto;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -120,13 +132,12 @@ header nav span:hover {
 
 .inputGroup {
     position: relative;
+    width: 50%;
+    margin: 0 auto;
     margin-bottom: 20px;
-    width: 50%; /* igual ao input */
-    margin-left: auto;
-    margin-right: auto;
 }
 
-.input {
+.inputGroup .input {
     border: solid 1.5px #9e9e9e;
     border-radius: 12px;
     background: none;
@@ -141,6 +152,13 @@ header nav span:hover {
 .inputUp ~ .label {
     transform: translateY(-50%) scale(0.8);
     background-color: #fff;
+    padding: 0 .2em;
+}
+
+.inputUp:hover ~ .label {
+    transform: translateY(-50%) scale(0.8);
+    background-color: #fff;
+    color: #4CAF4F;
     padding: 0 .2em;
 }
 
@@ -187,21 +205,23 @@ header nav span:hover {
     box-shadow: 0 0 0 5px rgb(76 175 79 / 30%);
 }
 
-.etapa {
+#formulario select {
+    color: #696969;
+    font-style: italic;
+}
+
+#formulario input[type='date'] {
+    color: #696969;
+    font-style: italic;
+}
+
+#formulario .etapa {
     width: 100%;
     text-align: center;
     flex-direction: column;
 }
 
-.atual {
-    background-color: #e2ebe2;
-}
-
-.atual:hover {
-    background-color: #e2ebe2;
-}
-
-/* Agendamento */
+/* Formulário - Agendamento */
 
 #agenda {
     display: flex;
@@ -209,7 +229,7 @@ header nav span:hover {
 }
 
 #calendario {
-    width: 100%;
+    width: 90%;
 }
 
 #calendario ul {
@@ -219,26 +239,26 @@ header nav span:hover {
     justify-content: space-around;
 }
 
-#mes ul li {
+#calendario #mes ul li {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.semana ul li, .semanaResp ul li {
+#calendario #semana ul li {
     margin-top: 30px;
     font-weight: 700;   
 }
 
-.dias {
+#calendario #dias {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     align-items: center;
     justify-items: center;
 }
 
-.dias div:not(.nada) {
+#calendario #dias div:not(.nada) {
     margin-top: 10px;
     border-radius: 50%;
     border: 1px black solid;
@@ -268,15 +288,14 @@ header nav span:hover {
     border-radius: 8px;
 }
 
-#foraDeIntervalo {
-    display: none;
-    margin-top: 20px;
-}
-
 .dia.desabilitado {
     color: #000000cf;
     pointer-events: none;
     background-color: #eae7e7;
+}
+
+#calendario .inputGroup {
+    margin-top: 50px;
 }
 
 #dataColeta {
@@ -288,5 +307,19 @@ header nav span:hover {
 }
 
 #endereço, #data {
-    font-weight: 800;
+    font-weight: 700;
+}
+
+#concluir {
+    margin-top: 15px;
+    padding: 15px 30px;
+    border-radius: 12px;
+    border: 0;
+    background-color: #4CAF4F;
+    color: #fff;
+    font-weight: 600;
+}
+
+#concluir i {
+    margin-left: 10px;
 }
