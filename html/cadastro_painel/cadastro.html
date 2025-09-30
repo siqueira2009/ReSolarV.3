@@ -84,6 +84,11 @@
                 </select>
                 <label for="inversor" class="label">Tipo de Inversor</label>
             </div>
+
+            <div class="btns">
+                <button class="button" type="button"><i class="fa-solid fa-house"></i>Homepage</button>
+                <button class="button avancar" type="button" onclick="mudarEtapa(1)">Avançar<i class="fa-solid fa-angle-right"></i></button>
+            </div>
         </div>
 
         <div id="info2" class="etapa" style="display: none;">
@@ -140,6 +145,11 @@
                 <input id="comentarios" required="" type="text" name="comentarios" class="input">
                 <label for="comentarios" class="label">Comentários</label>
             </div>
+
+            <div class="btns">
+                <button class="button" type="button" onclick="mudarEtapa(0)"><i class="fa-solid fa-angle-left"></i>Retornar</button>
+                <button class="button" type="button" onclick="mudarEtapa(2)">Avançar<i class="fa-solid fa-angle-right"></i></button>
+            </div>
         </div>
 
         <div id="agenda" class="etapa" style="display: none;">
@@ -176,7 +186,12 @@
                     <label for="endereco" class="label">Endereço de Coleta</label>
                 </div>
                 <h3 id="resumoColeta">A sua coleta será agendada para dia <span id="data"></span> no endereço <span id="endereço"></span></h3>
-                <button id="concluir" type="submit">Concluir<i class="fa-solid fa-check"></i></button>
+                
+                <div class="btns">
+                    <button class="button" type="button" onclick="mudarEtapa(1)"><i class="fa-solid fa-angle-left"></i>Retornar</button>
+                    <button id="concluir" type="submit">Concluir<i class="fa-solid fa-check"></i></button>
+                </div>
+                
             </div>
 
         </div>

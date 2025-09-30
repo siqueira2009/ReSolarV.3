@@ -13,21 +13,8 @@ function mudarEtapa(click) {
     });
     etapas[click].style.display = 'flex';
     btns[click].classList.add('atual');
-    
-    if (window.screen.width > 259 && window.screen.width < 1100) {
-        switch (click){
-            case 0:
-                barra.style.height = '33vh';
-                break;
-            case 1:
-                barra.style.height = '66vh';
-                break;  
-            case 2:
-                barra.style.height = '100vh';
-                break;
-        }
-    } else if (window.screen.width >= 1100) {
-        switch (click){
+
+    switch (click) {
             case 0:
                 barra.style.width = '33%';
                 break;
@@ -37,10 +24,8 @@ function mudarEtapa(click) {
             case 2:
                 barra.style.width = '100%';
                 break;
-        }
     }
-    }
-
+}
 
 // Select
 
@@ -234,3 +219,11 @@ inputEndereco.addEventListener('keyup', () => {
     resumoSpan[1].innerHTML = inputEndereco.value
     resumoColeta.style.display = 'block';
 })
+
+// Avançar/Retornar
+
+let buttons = document.getElementsByClassName('button');
+
+buttons[0].addEventListener('click', () => {
+    window.location.href = "../../../index.html";
+});

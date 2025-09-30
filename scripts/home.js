@@ -83,7 +83,7 @@ function opt(clicado, tipo) {
         funcTextResp.innerHTML = funcTextosResp[clicado];
     }
 
-    funcImg.setAttribute("src", `../imgs/SVGs/Funcionamento/${funcImgs[clicado]}`)
+    funcImg.setAttribute("src", `imgs/SVGs/Funcionamento/${funcImgs[clicado]}`)
 }
 
 // Dúvidas
@@ -159,14 +159,17 @@ saberButton.addEventListener('mouseout', function(){
 // Opções Usuário
 let userIcon = document.getElementById('user');
 let userOpt = document.getElementById('userOpt');
+let body = document.querySelector('body');
 
-userIcon.addEventListener('click', function(){
+userIcon.addEventListener('click', function(event){
+    event.stopPropagation(); // impede que o clique no ícone feche o menu
     userOpt.classList.toggle('ativo');
+});
 
-    if (userOpt.classList == 'ativo') {
-        document.querySelector('body').style.overflow = 'hidden';
-    } else {
-        document.querySelector('body').style.overflow = 'visible'
+// Fecha o menu se clicar fora
+body.addEventListener('click', function(event){
+    if (userOpt.classList.contains('ativo') && !userOpt.contains(event.target) && event.target !== userIcon) {
+        userOpt.classList.remove('ativo');
     }
 });
 
