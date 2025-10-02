@@ -176,5 +176,5 @@ body.addEventListener('click', function(event){
 // Formulário
 
 function cadastro() {
-  window.location.href = "html/cadastro_painel/cadastro.html";
+  window.location.href = "html/painel/cadastro.html";
 }

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReSolar</title>
     <link rel="icon" type="image/x-icon" href="../../imgs/LogoSemNome.png">
-    <link rel="stylesheet" href="../../styles/cadastro_painel/base.css">
-    <link rel="stylesheet" href="../../styles/cadastro_painel/responsive.css">
+    <link rel="stylesheet" href="../../styles/painel/base.css">
+    <link rel="stylesheet" href="../../styles/painel/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -31,9 +31,16 @@
                 <p class="indResp">2</p>
             </span>
 
-            <span class="opt" id="terceiro" onclick="mudarEtapa(2)">
+            <span class="opt" onclick="mudarEtapa(2)">
+                <i class="fa-solid fa-solar-panel"></i>
+                <p>Informações Técnicas #3</p>
+                <p class="indResp">3</p>
+            </span>
+            
+            <span class="opt" id="terceiro" onclick="mudarEtapa(3)">
                 <i class="fa-solid fa-calendar-days"></i>
                 <p>Agendamento</p>
+                <p class="indResp">1</p>
             </span>
         </nav>
     </header>
@@ -58,7 +65,7 @@
             </div>
 
             <div class="inputGroup">
-                <input id="potencia" required="" type="number" name="potencia" class="input">
+                <input id="potencia" required="" type="text" name="potencia" class="input">
                 <label for="potencia" class="label">Potência (W)</label>
             </div>
 
@@ -73,16 +80,8 @@
             </div>
 
             <div class="inputGroup">
-                <select id="inversor" required="" type="date" name="inversor" class="input inputUp typeDate">
-                    <option class="optDesa" value="" selected hidden>Selecione uma opção</option>
-                    <option value="ongrid">On-Grid</option>
-                    <option value="offgrid">Off-Grid</option>
-                    <option value="string">String</option>
-                    <option value="hibrido">Híbrido</option>
-                    <option value="micro">Microinversor</option>
-                    <option value="central">Central</option>
-                </select>
-                <label for="inversor" class="label">Tipo de Inversor</label>
+                <input id="qtdCel" required="" type="number" name="qtdCel" class="input">
+                <label for="qtdCel" class="label">Quantidade de Células</label>
             </div>
 
             <div class="btns">
@@ -97,20 +96,20 @@
             <div class="inputGroup">
                 <select id="tipo" required="" name="tipo" class="input inputUp">
                     <option class="optDesa" value="" selected hidden>Selecione uma opção</option>
-                    <option value="mono">Monocristalino</option>
-                    <option value="poli">Policristalino</option>
-                    <option value="hibrido">Híbrido</option>
-                    <option value="filme">Filme Fino (a-Si, CdTe, CIGS)</option>
+                    <option value="Monocristalino">Monocristalino</option>
+                    <option value="Policristalino">Policristalino</option>
+                    <option value="Híbrido">Híbrido</option>
+                    <option value="Filme Fino">Filme Fino (a-Si, CdTe, CIGS)</option>
                 </select>
-                <label for="tipo" class="label">Tipo de Inversor</label>
+                <label for="tipo" class="label">Tipo da Placa</label>
             </div>
 
             <div class="inputGroup">
                 <select id="funcionamento" required="" name="funcionamento" class="input inputUp">
                     <option class="optDesa" value="" selected hidden>Selecione uma opção</option>
-                    <option value="sim">Funciona</option>
-                    <option value="parcial">Funciona parcialmente</option>
-                    <option value="nao">Não funciona</option>
+                    <option value="Funciona">Funciona</option>
+                    <option value="Parcialmente">Funciona parcialmente</option>
+                    <option value="Não funciona">Não funciona</option>
                 </select>
                 <label for="funcionamento" class="label">Funcionamento</label>
             </div>
@@ -118,9 +117,9 @@
             <div class="inputGroup">
                 <select id="estado" required="" name="estado" class="input inputUp">
                     <option class="optDesa" value="" selected hidden>Selecione uma opção</option>
-                    <option value="inteiro">Inteiro</option>
-                    <option value="trincado">Trincado</option>
-                    <option value="quebrado">Quebrado</option>
+                    <option value="Inteiro">Inteiro</option>
+                    <option value="Trincado">Trincado</option>
+                    <option value="Quebrado">Quebrado</option>
                 </select>
                 <label for="estado" class="label">Estado do painel</label>
             </div>
@@ -128,17 +127,24 @@
             <div class="inputGroup">
                 <select id="motivo" required="" name="motivo" class="input inputUp">
                     <option class="optDesa" value="" selected hidden>Selecione uma opção</option>
-                    <option value="quebra">Quebra</option>
-                    <option value="vida">Fim da vida útil</option>
-                    <option value="troca">Troca</option>
-                    <option value="desinstalação">Desinstalação</option>
+                    <option value="Quebra">Quebra</option>
+                    <option value="Fim da Vida Útil">Fim da vida útil</option>
+                    <option value="Troca">Troca</option>
+                    <option value="Desinstalação">Desinstalação</option>
                 </select>
                 <label for="motivo" class="label">Motivo para descarte</label>
             </div>
-
             <div class="inputGroup">
-                <input id="qtdPainel" required="" type="number" name="qtdPainel" class="input">
-                <label for="qtdPainel" class="label">Quantidade</label>
+                <select id="inversor" required="" name="inversor" class="input inputUp">
+                    <option class="optDesa" value="" selected hidden>Selecione uma opção</option>
+                    <option value="On-Grid">On-Grid</option>
+                    <option value="Off-Grid">Off-Grid</option>
+                    <option value="String">String</option>
+                    <option value="Híbrido">Híbrido</option>
+                    <option value="Microinversor">Microinversor</option>
+                    <option value="Central">Central</option>
+                </select>
+                <label for="inversor" class="label">Inversor do Sistema</label>
             </div>
 
             <div class="inputGroup">
@@ -149,6 +155,40 @@
             <div class="btns">
                 <button class="button" type="button" onclick="mudarEtapa(0)"><i class="fa-solid fa-angle-left"></i>Retornar</button>
                 <button class="button" type="button" onclick="mudarEtapa(2)">Avançar<i class="fa-solid fa-angle-right"></i></button>
+            </div>
+        </div>
+
+        <div id="info3" class="etapa" style="display: none;">
+            <h1>Informações <span>Técnicas P.3</span></h1>
+
+            <div class="inputGroup">
+                <input id="tensao" required="" type="text" name="tensao" class="input">
+                <label for="tensao" class="label">Tensão Máxima (Vmp)</label>
+            </div>
+
+            <div class="inputGroup">
+                <input id="corrente" required="" type="text" name="corrente" class="input">
+                <label for="corrente" class="label">Corrente Máxima (Imp)</label>
+            </div>
+
+            <div class="inputGroup">
+                <input id="eficiencia" required="" type="text" name="eficiencia" class="input">
+                <label for="eficiencia" class="label">Eficiência (%)</label>
+            </div>
+
+            <div class="inputGroup">
+                <input id="dimensao" required="" type="text" name="dimensao" class="input">
+                <label for="dimensao" class="label">Dimensão (m²)</label>
+            </div>
+
+            <div class="inputGroup">
+                <input id="peso" required="" type="text" name="peso" class="input">
+                <label for="peso" class="label">Peso Estimado (kg)</label>
+            </div>
+
+            <div class="btns">
+                <button class="button" type="button" onclick="mudarEtapa(1)"><i class="fa-solid fa-angle-left"></i>Retornar</button>
+                <button class="button avancar" type="button" onclick="mudarEtapa(3)">Avançar<i class="fa-solid fa-angle-right"></i></button>
             </div>
         </div>
 

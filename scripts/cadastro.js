@@ -16,14 +16,16 @@ function mudarEtapa(click) {
 
     switch (click) {
             case 0:
-                barra.style.width = '33%';
+                barra.style.width = '25%';
                 break;
             case 1:
-                barra.style.width = '66%';
+                barra.style.width = '50%';
                 break;  
             case 2:
-                barra.style.width = '100%';
+                barra.style.width = '75%';
                 break;
+            case 3:
+                barra.style.width = '100%'
     }
 }
 
@@ -96,7 +98,7 @@ function gerarCalendario(mes, ano) {
         
         let dataAtual = new Date(ano, mes, i);
         let hoje = new Date();
-        hoje.setDate(hoje.getDate() + 7);
+        hoje.setDate(hoje.getDate() + 4);
         hoje.setHours(0,0,0,0);
         
         if (dataAtual < hoje) {
@@ -225,5 +227,58 @@ inputEndereco.addEventListener('keyup', () => {
 let buttons = document.getElementsByClassName('button');
 
 buttons[0].addEventListener('click', () => {
-    window.location.href = "../../../index.html";
+    window.location.href = "../../index.html";
+});
+
+// Enviar sem value
+
+let concluir = document.getElementById('concluir');
+let inputs = document.querySelectorAll('input');
+let selects = document.querySelectorAll('select');
+let dias = document.getElementsByClassName('dia');
+let valoresPadroes = [
+    'ReSolar BQ',
+    'GL091025-1015',
+    550,
+    '2023-04-08',
+    '2024-03-18',
+    '60',
+    'Apresenta baixa eficiência',
+    43.76,
+    13.71,
+    22.22,
+    43.76,
+    13.71,
+    '30/10/2025',
+    'Av. Orosimbo Maia, 2600 - Cambuí, Campinas - SP, 13024-045'
+];
+let optionsPadroes = [
+    'Monocristalino',
+    'Funciona',
+    'Inteiro',
+    'Troca',
+    'On-Grid'
+]
+
+concluir.addEventListener('click', () => {
+    inputs[3].style.color = '#333333';
+    inputs[4].style.color = '#333333';
+    inputs[3].style.fontStyle = 'normal';
+    inputs[4].style.fontStyle = 'normal';
+
+    Array.from(inputs).forEach((el, i) => {
+        if (el.value == "" && el.id != 'dataColeta') {
+            el.value = valoresPadroes[i];
+        } else if (el.id == 'dataColeta' && el.value == "--/--/----") {
+            document.getElementsByClassName('dia')[30].click();
+        }
+    });
+
+    Array.from(selects).forEach((el, i) => {
+        if (el.value == "" ) {
+            el.value = optionsPadroes[i];
+            el.style.color = '#333333';
+            el.style.fontStyle = 'normal';
+        }
+    });
 });

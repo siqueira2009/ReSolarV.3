@@ -100,7 +100,7 @@ header nav .atual:hover {
     height: 7px;
     margin-top: 5px;
     border-radius: 12px;
-    width: 33%;
+    width: 25%;
     background-color: #4CAF4F;
     transition: all 0.4s;
 }
@@ -277,7 +277,18 @@ header nav .atual:hover {
 }
 
 .dia {
-    user-select: none;
+    transition: background-color 0.4s;
+}
+
+.dia:hover {
+    background-color: #b8e9ba;
+    transition: background-color 0.4s;
+}
+
+.dia.desabilitado {
+    color: #000000cf;
+    pointer-events: none;
+    background-color: #eae7e7;
 }
 
 #prev, #next {
@@ -286,12 +297,6 @@ header nav .atual:hover {
     color: white;
     padding: 0px 5px;
     border-radius: 8px;
-}
-
-.dia.desabilitado {
-    color: #000000cf;
-    pointer-events: none;
-    background-color: #eae7e7;
 }
 
 #calendario .inputGroup {
