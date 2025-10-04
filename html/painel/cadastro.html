@@ -44,6 +44,8 @@
             </span>
         </nav>
     </header>
+
+    <!-- Barra de progressão -->
     <div class="barras">
         <div class="barra" id="barraVerde"></div>
     </div>
@@ -70,12 +72,12 @@
             </div>
 
             <div class="inputGroup">
-                <input id="dataFabr" required="" type="date" name="dataFabr" class="input inputUp typeDate">
+                <input value="" id="dataFabr" required type="date" name="dataFabr" max="2025-10-20" class="input inputUp typeDate">
                 <label for="dataFabr" class="label">Data de Fabricação</label>
             </div>
 
             <div class="inputGroup">
-                <input id="dataInst" required="" type="date" name="dataInst" class="input inputUp typeDate">
+                <input value="" id="dataInst" required type="date" name="dataInst" max="2025-10-20" class="input inputUp typeDate">
                 <label for="dataInst" class="label">Data de Instalação</label>
             </div>
 
@@ -85,7 +87,8 @@
             </div>
 
             <div class="btns">
-                <button class="button" type="button"><i class="fa-solid fa-house"></i>Homepage</button>
+                <button class="button homepage" type="button"><i class="fa-solid fa-house"></i>Homepage</button>
+                <p class="index">1/4</p>
                 <button class="button avancar" type="button" onclick="mudarEtapa(1)">Avançar<i class="fa-solid fa-angle-right"></i></button>
             </div>
         </div>
@@ -105,23 +108,23 @@
             </div>
 
             <div class="inputGroup">
-                <select id="funcionamento" required="" name="funcionamento" class="input inputUp">
+                <select id="estado" required="" name="estado" class="input inputUp">
                     <option class="optDesa" value="" selected hidden>Selecione uma opção</option>
                     <option value="Funciona">Funciona</option>
                     <option value="Parcialmente">Funciona parcialmente</option>
                     <option value="Não funciona">Não funciona</option>
                 </select>
-                <label for="funcionamento" class="label">Funcionamento</label>
+                <label for="estado" class="label">Estado</label>
             </div>
 
             <div class="inputGroup">
-                <select id="estado" required="" name="estado" class="input inputUp">
+                <select id="condicao" required="" name="condicao" class="input inputUp">
                     <option class="optDesa" value="" selected hidden>Selecione uma opção</option>
                     <option value="Inteiro">Inteiro</option>
                     <option value="Trincado">Trincado</option>
                     <option value="Quebrado">Quebrado</option>
                 </select>
-                <label for="estado" class="label">Estado do painel</label>
+                <label for="condicao" class="label">Condições</label>
             </div>
 
             <div class="inputGroup">
@@ -154,6 +157,7 @@
 
             <div class="btns">
                 <button class="button" type="button" onclick="mudarEtapa(0)"><i class="fa-solid fa-angle-left"></i>Retornar</button>
+                <p class="index">2/4</p>
                 <button class="button" type="button" onclick="mudarEtapa(2)">Avançar<i class="fa-solid fa-angle-right"></i></button>
             </div>
         </div>
@@ -163,12 +167,12 @@
 
             <div class="inputGroup">
                 <input id="tensao" required="" type="text" name="tensao" class="input">
-                <label for="tensao" class="label">Tensão Máxima (Vmp)</label>
+                <label for="tensao" class="label">Tensão (V)</label>
             </div>
 
             <div class="inputGroup">
                 <input id="corrente" required="" type="text" name="corrente" class="input">
-                <label for="corrente" class="label">Corrente Máxima (Imp)</label>
+                <label for="corrente" class="label">Corrente (I)</label>
             </div>
 
             <div class="inputGroup">
@@ -178,7 +182,7 @@
 
             <div class="inputGroup">
                 <input id="dimensao" required="" type="text" name="dimensao" class="input">
-                <label for="dimensao" class="label">Dimensão (m²)</label>
+                <label for="dimensao" class="label">Dimensão (CxLxA)</label>
             </div>
 
             <div class="inputGroup">
@@ -188,6 +192,7 @@
 
             <div class="btns">
                 <button class="button" type="button" onclick="mudarEtapa(1)"><i class="fa-solid fa-angle-left"></i>Retornar</button>
+                <p class="index">3/4</p>
                 <button class="button avancar" type="button" onclick="mudarEtapa(3)">Avançar<i class="fa-solid fa-angle-right"></i></button>
             </div>
         </div>
@@ -220,8 +225,8 @@
 
                 <div id="dias"></div>
 
-                <input value="--/--/----" name="dataColeta" id="dataColeta" type="text" class="input" disabled>
-                <div class="inputGroup">
+                <input name="dataColeta" id="dataColeta" type="text" class="input">
+                <div class="inputGroup" style="width: 100%;">
                     <input id="endereco" required="" type="text" name="endereco" class="input">
                     <label for="endereco" class="label">Endereço de Coleta</label>
                 </div>
@@ -229,6 +234,7 @@
                 
                 <div class="btns">
                     <button class="button" type="button" onclick="mudarEtapa(1)"><i class="fa-solid fa-angle-left"></i>Retornar</button>
+                    <p class="index">4/4</p>
                     <button id="concluir" type="submit">Concluir<i class="fa-solid fa-check"></i></button>
                 </div>
                 
@@ -236,6 +242,18 @@
 
         </div>
     </form>
+
+    <!-- Confirmação -->
+
+    <div id="confirmacao">
+        <h1>Cadastro <span>concluído!</span> &#128513;</h1>
+        <img src="../../imgs/SVGs/Concluído.svg" alt="">
+        <p>Código do cadastro: <span id="codigo">213312312132</span><i id="copiar" class="fa-solid fa-copy"></i></p>
+        <div id="confButtons">
+            <button class="button homepage" type="button"><i class="fa-solid fa-house"></i>Homepage</button>
+            <button id="dashboard" class="button" type="button"><i class="fa-solid fa-table-columns"></i>Dashboard</button>
+        </div>
+    </div>
 
     <script src="../../scripts/cadastro.js"></script>
 </body>

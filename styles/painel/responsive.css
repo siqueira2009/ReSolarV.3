@@ -1,5 +1,5 @@
 @media only screen and (max-width: 260px) {
-    header, .barras, #formulario {
+    header, .barras, #formulario, #confirmacao {
         display: none;
     }
 
@@ -19,7 +19,8 @@
     /* Header */
 
     header {
-        margin-top: 20px
+        width: 90%;
+        margin-top: 10px;
     }
 
     header nav span p {
@@ -30,13 +31,26 @@
         font-size: 25px;
         margin: 0;
     }
+
+    .barras {
+        width: 90%;
+        margin-bottom: 10px;
+    }
     
     /* Formulário */
 
     #formulario {
-        width: 80%;
+        width: 90%;
         padding: 20px 10px;
-        margin-top: 2%
+        margin-top: 1%
+    }
+
+    #formulario h1 {
+        margin-top: 0px;
+    }
+
+    #formulario #index {
+        text-align: center;
     }
 
     .inputGroup {
@@ -75,6 +89,25 @@
     #resumoColeta {
         font-size: 16px;
     }
+
+    /* Confirmação */
+
+    #confirmacao {
+        width: 90%;
+    }
+
+    #confirmacao h1 {
+        font-size: 27px;
+    }
+
+    #confirmacao img {
+        width: 100%;
+        min-width: 220px;
+    }
+
+    #confirmacao #confButtons {
+        flex-direction: column;
+    }
 }
 
 @media only screen and (min-width: 350px) and (max-width: 450px) {
@@ -87,7 +120,8 @@
     /* Header */
 
     header {
-        margin-top: 20px
+        margin-top: 20px;
+        width: 90%;
     }
 
     header nav span {
@@ -109,13 +143,25 @@
         font-size: 20px;
         font-weight: 500;
     }
+
+    .barras {
+        width: 90%;
+    }
     
     /* Formulário */
 
     #formulario {
-        width: 80%;
+        width: 90%;
         padding: 20px 10px;
-        margin-top: 2%
+        margin-top: 1%
+    }
+
+    #formulario h1 {
+        margin-top: 0px;
+    }
+
+    #formulario #index {
+        text-align: center;
     }
 
     .inputGroup {
@@ -154,6 +200,16 @@
     #resumoColeta {
         font-size: 16px;
     }
+
+    /* Confirmação */
+
+    #confirmacao {
+        width: 90%;
+    }
+
+    #confirmacao #confButtons {
+        flex-direction: column;
+    }
 }
 
 @media only screen and (min-width: 450px) and (max-width: 750px) {
@@ -166,7 +222,8 @@
     /* Header */
 
     header {
-        margin-top: 20px
+        margin-top: 20px;
+        width: 90%;
     }
 
     header nav span {
@@ -188,13 +245,25 @@
         font-size: 20px;
         font-weight: 500;
     }
+
+    .barras {
+        width: 90%;
+    }
     
     /* Formulário */
 
     #formulario {
-        width: 80%;
+        width: 90%;
         padding: 20px 10px;
-        margin-top: 2%
+        margin-top: 1%
+    }
+
+    #formulario h1 {
+        margin-top: 0px;
+    }
+
+    #formulario #index {
+        text-align: center;
     }
 
     .inputGroup {
@@ -227,6 +296,16 @@
 
     #resumoColeta {
         font-size: 16px;
+    }
+
+    /* Confirmação */
+
+    #confirmacao {
+        width: 70%;
+    }
+
+    #confirmacao #confButtons {
+        flex-direction: column;
     }
 }
 
@@ -264,12 +343,16 @@
         font-weight: 500;
     }
 
+    #index p {
+        margin-left: 20px;
+    }
+
     /* Formulário */
 
     #formulario {
         width: 80%;
         padding: 20px 10px;
-        margin-top: 2%
+        margin-top: 1%
     }
 
     .inputGroup {
@@ -294,6 +377,12 @@
 
     #calendario #mesAtual {
         font-size: 30px;
+    }
+
+    /* Confirmação */
+
+    #confirmacao {
+        width: 70%;
     }
 }
 
@@ -327,7 +416,11 @@
 
     #formulario {
         padding: 25px;
-        margin-top: 2%;
+        margin-top: 1%;
+    }
+
+    #formulario #index {
+        font-size: 19px;
     }
 
     /* Formulário - Agendamento */
@@ -356,6 +449,8 @@
     button:not(#concluir) {
         font-size: 16px;
     }
+
+    /* Confirmação */
 }
 
 @media only screen and (min-width: 1300px) and (max-width: 1920px) {
@@ -388,7 +483,7 @@
 
     #formulario {
         padding: 25px;
-        margin-top: 2%;
+        margin-top: 1%;
     }
 
     /* Formulário - Agendamento */

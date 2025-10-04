@@ -180,7 +180,7 @@ header {
 
 #heroSection {
     height: auto;
-    background-color: #f5faf5;
+    background-color: rgba(144, 238, 144, 0.171);
 }
 
 #heroText, #heroImg {
@@ -346,7 +346,7 @@ header {
     align-items: center;
     flex-direction: column;
     height: auto;
-    background-color: #F5FAF5;
+    background-color: rgba(144, 238, 144, 0.171);
 }
 
 #funcOpts {
@@ -546,7 +546,7 @@ header {
 #reciclar {
     display: flex;
     height: auto;
-    background-color: #f5faf5;
+    background-color: rgba(144, 238, 144, 0.171);
     width: auto;
     gap: 30px;
 }

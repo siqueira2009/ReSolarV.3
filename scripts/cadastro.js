@@ -3,6 +3,7 @@
 let etapas = document.getElementsByClassName('etapa');
 let btns = document.getElementsByClassName('opt');
 let barra =  document.getElementById('barraVerde');
+let index = document.getElementsByClassName('index');
 
 function mudarEtapa(click) {
     Array.from(etapas).forEach(element => {
@@ -17,15 +18,20 @@ function mudarEtapa(click) {
     switch (click) {
             case 0:
                 barra.style.width = '25%';
+                index.innerHTML = '1/4';
                 break;
             case 1:
                 barra.style.width = '50%';
+                index.innerHTML = '2/4';
                 break;  
             case 2:
                 barra.style.width = '75%';
+                index.innerHTML = '3/4';
                 break;
             case 3:
                 barra.style.width = '100%'
+                index.innerHTML = '4/4';
+                break;
     }
 }
 
@@ -54,6 +60,7 @@ Array.from(inputsData).forEach(el => el.addEventListener('change', () => {
     } else {
         el.style.color = '#696969';
         el.style.fontStyle = 'italic';
+        el.style.boxShadow = 'none';
     }
 }));
 
@@ -111,7 +118,7 @@ function gerarCalendario(mes, ano) {
                 mesSelecao = mes;
                 const dd = String(i).padStart(2, '0');
                 const mm = String(mes + 1).padStart(2, '0');
-                inputData.value = `${dd}/${mm}/${ano}`;
+                inputData.value = `${ano}-${String(mes+1).padStart(2,'0')}-${String(i).padStart(2,'0')}`;
                 inputData.dispatchEvent(new Event("change"));
                 resumoColeta.scrollIntoView({behavior: "smooth"})
             });
@@ -128,22 +135,66 @@ function gerarCalendario(mes, ano) {
 }
 
 next.addEventListener("click", function(){
-    mesControle++;
-    if (mesControle > 11) { mesControle = 0; anoControle++; }
-    gerarCalendario(mesControle, anoControle);
-    mesElem.innerHTML = monthNames[mesControle];
-    anoElem.innerHTML = String(anoControle);
+    if (mesControle != 4) {
+        mesControle++;
+        if (mesControle > 11) { mesControle = 0; anoControle++; }
+        gerarCalendario(mesControle, anoControle);
+        mesElem.innerHTML = monthNames[mesControle];
+        anoElem.innerHTML = String(anoControle);
+    }
 });
 
 prev.addEventListener("click", function(){
-    mesControle--;
-    if (mesControle < 0) { mesControle = 11; anoControle--; }
-    gerarCalendario(mesControle, anoControle);
-    mesElem.innerHTML = monthNames[mesControle];
-    anoElem.innerHTML = String(anoControle);
+    if (mesControle != 6) {
+        mesControle--;
+        if (mesControle < 0) { mesControle = 11; anoControle--; }
+        gerarCalendario(mesControle, anoControle);
+        mesElem.innerHTML = monthNames[mesControle];
+        anoElem.innerHTML = String(anoControle);
+    }
 });
 
+window.addEventListener('load', () => {
+    const elementos = ['header', '.barras', 'form'];
+    const verificacao = ['marca=', 'modelo=', 'potencia=', 'dataFabr=', 'dataInst=', 'qtdCel=', 'tipo=', 'estado=', 'condicao=', 'motivo=', 'inversor=', 'comentarios=', 'tensao=', 'corrente=', 'eficiencia=', 'dimensao=', 'peso=', 'dataColeta=', 'endereco='];
+    const conf = document.getElementById('confirmacao');
+    const body = document.querySelector('body'); 
+    let href = window.location.href;
+    let aprovado = true;
+
+    for (let i = 0; i < verificacao.length; i++) {
+        if (href.includes(verificacao[i])) {
+            aprovado = true;
+        } else {
+            aprovado = false;
+            break;
+        }
+    }
+
+    if (aprovado == true) {
+        console.log('Já enviou!')
+        
+        Array.from(elementos).forEach(el => {
+            document.querySelector(el).classList.add('enviado');
+        });
+
+        conf.classList.add('ativo');
+        body.classList.add('ativo'); 
+    } else {
+        console.log('Ainda não enviou!');
+        
+        Array.from(elementos).forEach(el => {
+            document.querySelector(el).classList.remove('enviado');
+        });
+        
+        conf.classList.remove('ativo');
+        body.classList.remove('ativo');
+    }
+})
+
 document.addEventListener('DOMContentLoaded', () => {
+
+
     Array.from(select).forEach(el => {
         if (el.value != "") {
             el.style.color = '#333333';
@@ -176,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof mesControle === 'undefined') mesControle = mesA;
     if (typeof anoControle === 'undefined') anoControle = anoA;
 
-    if (inputData.value && inputData.value !== "--/--/----") {
+    if (inputData.value && inputData.value !== "") {
         const parts = inputData.value.split('/');
         if (parts.length === 3) {
             const inputDia = parseInt(parts[0], 10);
@@ -203,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    if (inputData.value == "--/--/----") {
+    if (inputData.value == "") {
         resumoColeta.style.display = 'none'
     }
 
@@ -213,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 inputData.addEventListener('change', () => {
-    resumoSpan[0].innerHTML = inputData.value;
+    resumoSpan[0].innerHTML = new Date(inputData.value).toLocaleDateString('pt-BR');
     resumoColeta.style.display = 'block';
 })
 
@@ -222,17 +273,27 @@ inputEndereco.addEventListener('keyup', () => {
     resumoColeta.style.display = 'block';
 })
 
-// Avançar/Retornar
+// Homepage/Dashboard
 
-let buttons = document.getElementsByClassName('button');
+let buttonHomepage = document.getElementsByClassName('homepage')
 
-buttons[0].addEventListener('click', () => {
-    window.location.href = "../../index.html";
-});
+Array.from(buttonHomepage).forEach(el => {
+    el.addEventListener('click', () => {
+        window.location.href = '../../index.html'
+    })
+})
+
+let buttonDashboard = document.getElementById('dashboard');
+
+buttonDashboard.addEventListener('click', () => {
+    window.location.href = '../dashboard/dashboard.html'
+})
+
 
 // Enviar sem value
 
 let concluir = document.getElementById('concluir');
+let form = document.querySelector('form');
 let inputs = document.querySelectorAll('input');
 let selects = document.querySelectorAll('select');
 let dias = document.getElementsByClassName('dia');
@@ -269,7 +330,7 @@ concluir.addEventListener('click', () => {
     Array.from(inputs).forEach((el, i) => {
         if (el.value == "" && el.id != 'dataColeta') {
             el.value = valoresPadroes[i];
-        } else if (el.id == 'dataColeta' && el.value == "--/--/----") {
+        } else if (el.id == 'dataColeta' && el.value == "") {
             document.getElementsByClassName('dia')[30].click();
         }
     });
@@ -279,6 +340,46 @@ concluir.addEventListener('click', () => {
             el.value = optionsPadroes[i];
             el.style.color = '#333333';
             el.style.fontStyle = 'normal';
+        }
+    });
+});
+
+
+// Código do cadastro
+
+let aleatorio = Math.random().toString();
+let aleatorioCortado = aleatorio.split('.')[1]
+let codigoCadastro = document.getElementById('codigo');
+codigoCadastro.innerHTML = aleatorioCortado;
+
+// Copiar código do cadastro
+
+let copyIcon = document.getElementById('copiar');
+
+copyIcon.addEventListener('click', () => {
+    navigator.clipboard.writeText(aleatorioCortado);
+
+    copyIcon.style.scale = '120%';
+
+    setTimeout(() => {
+        copyIcon.style.scale = '100%';
+    }, 250);
+})
+
+// Data inválida
+
+let datas = document.getElementsByClassName('typeDate');
+
+Array.from(datas).forEach(el => {
+    el.addEventListener('change', () => {
+        if (el.value === "") {
+            el.classList.remove('invalid');
+        } else {
+            if (!el.checkValidity()) {
+                el.classList.add('invalid');
+            } else {
+                el.classList.remove('invalid');
+            }
         }
     });
 });

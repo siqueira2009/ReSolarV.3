@@ -33,15 +33,33 @@ input[type=number] {
     -moz-appearance:textfield;
 }
 
+body {
+    background-color: rgba(144, 238, 144, 0.171);
+}
+
+body.ativo {
+    padding: 0px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.enviado {
+    display: none !important;
+}
+
 /* Opções (header) */
 
 header {
     width: 80%;
     height: auto;
     margin: 15px auto;
-    margin-bottom: 7px;
+    margin-bottom: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 12px;
+    background-color: white;
 }
 
 header nav {
@@ -81,11 +99,11 @@ header nav #primeiro {
 }
 
 header nav .atual {
-    background-color: #e2ebe2;
+    background-color: rgb(216, 215, 215);
 }
 
 header nav .atual:hover {
-    background-color: #e2ebe2;
+    background-color: rgb(216, 215, 215);
 }
 
 .barras {
@@ -108,8 +126,8 @@ header nav .atual:hover {
 /* Formulário */
 
 #formulario {
-    margin: 50px auto;
-    margin-bottom: 0px;
+    background-color: white;
+    margin: 0px auto;
     border-radius: 12px;
     width: 80%;
     height: auto;
@@ -210,7 +228,7 @@ header nav .atual:hover {
     font-style: italic;
 }
 
-#formulario input[type='date'] {
+#formulario .typeDate {
     color: #696969;
     font-style: italic;
 }
@@ -219,6 +237,23 @@ header nav .atual:hover {
     width: 100%;
     text-align: center;
     flex-direction: column;
+}
+
+.invalid {
+    box-shadow: 0 0 0 5px #b1191930;
+}
+
+.invalid:hover {
+    box-shadow: 0 0 0 5px #b1191944;
+    border: 1.5px solid #af4c4c;
+}
+
+.invalid ~ .label {
+    color: #af4c4c;
+}
+
+.invalid:hover ~ .label {
+    color: #af4c4c;
 }
 
 /* Formulário - Agendamento */
@@ -276,12 +311,17 @@ header nav .atual:hover {
     font-weight: 700;
 }
 
+.selecionado:hover {
+    background-color: #4CAF4F !important;
+    border-color: #4CAF4F;
+}
+
 .dia {
     transition: background-color 0.4s;
 }
 
 .dia:hover {
-    background-color: #b8e9ba;
+    background-color: #b7e9b9;
     transition: background-color 0.4s;
 }
 
@@ -308,6 +348,7 @@ header nav .atual:hover {
 }
 
 #resumoColeta {
+    margin-bottom: 20px;
     font-weight: 400;
 }
 
@@ -321,11 +362,11 @@ header nav .atual:hover {
     justify-content: center;
     align-items: center;
     gap: 30px;
+    margin-top: 10px;
 }
 
 button {
     cursor: pointer;
-    margin-top: 15px;
     padding: 15px 30px;
     border-radius: 12px;
     border: 0;
@@ -336,8 +377,80 @@ button {
     justify-content: center;
     align-items: center;
     gap: 10px;
+
+    transition: all 0.4s;
+}
+
+.index {
+    background-color: #4CAF4F;
+    border-radius: 12px;
+    padding: 15px;
+    color: white;
+    font-weight: 500;
+}
+
+button:hover {
+    scale: 105%;
 }
 
 #concluir i {
     margin-left: 10px;
+}
+
+/* Confirmação */
+
+#confirmacao {
+    width: 40%;
+    padding: 40px 20px;
+    height: auto;
+    max-width: 615px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 12px;
+    background-color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    display: none;
+}
+
+#confirmacao.ativo {
+    display: flex;
+}
+
+#confirmacao h1, #confirmacao p {
+    text-align: center;
+}
+
+#confirmacao h1 span {
+    color: #4CAF4F;
+}
+
+#confirmacao img {
+    max-width: 400px;
+}
+
+#confirmacao p span {
+    font-weight: 600;
+}
+
+#confirmacao p i {
+    margin-left: 5px;
+    color: #263238;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+#confirmacao p i:hover {
+    color: #121212;
+}
+
+#confButtons {
+    display: flex;
+    gap: 15px;
+    flex-direction: row;
+}
+
+#confButtons button {
+    margin: 0px;
 }
