@@ -49,10 +49,6 @@
         margin-top: 0px;
     }
 
-    #formulario #index {
-        text-align: center;
-    }
-
     .inputGroup {
         width: 90%;
     }
@@ -68,7 +64,17 @@
 
     .btns {
         flex-direction: column;
-        gap: 0px;
+        gap: 5px;
+        margin: 0px;
+    }
+
+    .btns .index {
+        display: none;
+    }
+
+    .btns .indexResp {
+        font-size: 12px;
+        padding: 10px;
     }
 
     /* Formulário - Agendamento */
@@ -160,10 +166,6 @@
         margin-top: 0px;
     }
 
-    #formulario #index {
-        text-align: center;
-    }
-
     .inputGroup {
         width: 80%;
     }
@@ -179,7 +181,17 @@
 
     .btns {
         flex-direction: column;
-        gap: 0px;
+        gap: 5px;
+        margin: 0px;
+    }
+
+    .btns .index {
+        display: none;
+    }
+
+    .btns .indexResp {
+        font-size: 12px;
+        padding: 10px;
     }
 
     /* Formulário - Agendamento */
@@ -279,6 +291,19 @@
         font-size: 28px;
     }
 
+    .btns {
+        gap: 15px;
+    }
+
+    .indexResp {
+        display: none;
+    }
+
+    .index {
+        padding: 10px;
+        font-size: 14px;
+    }
+
     /* Formulário - Agendamento */
 
     #calendario {
@@ -368,6 +393,10 @@
         font-size: 28px;
     }
 
+    .indexResp {
+        display: none;
+    }
+
     /* Formulário - Agendamento */
 
     #calendario #dias div {
@@ -419,8 +448,8 @@
         margin-top: 1%;
     }
 
-    #formulario #index {
-        font-size: 19px;
+    .indexResp {
+        display: none;
     }
 
     /* Formulário - Agendamento */
@@ -482,6 +511,10 @@
     #formulario {
         padding: 25px;
         margin-top: 1%;
+    }
+
+    .indexResp {
+        display: none;
     }
 
     /* Formulário - Agendamento */

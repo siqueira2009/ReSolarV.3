@@ -381,7 +381,7 @@ button {
     transition: all 0.4s;
 }
 
-.index {
+.index, .indexResp {
     background-color: #4CAF4F;
     border-radius: 12px;
     padding: 15px;
