@@ -176,5 +176,26 @@ body.addEventListener('click', function(event){
 // Formulário
 
 function cadastro() {
-  window.location.href = "../../html/painel/cadastro.html";
+  window.location.href = "html/painel/cadastro.html";
 }
+
+// Ler Mais
+
+let lerMais = document.getElementById('propLerMais');
+let textResp = document.getElementById('propTextResp')
+let textRespMais = document.getElementById('propTextMais');
+let lerMaisAberto = false;
+
+lerMais.addEventListener('click', () => {
+    if (lerMaisAberto == false) {
+        textResp.style.display = 'none';
+        textRespMais.style.display = 'block';
+        lerMais.innerHTML = 'Ler menos'
+        lerMaisAberto = true;
+    } else {
+        textRespMais.style.display = 'none';
+        textResp.style.display = 'block';
+        lerMais.innerHTML = 'Ler mais'
+        lerMaisAberto = false;
+    }
+});
