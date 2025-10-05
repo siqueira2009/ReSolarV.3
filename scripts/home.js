@@ -199,3 +199,44 @@ lerMais.addEventListener('click', () => {
         lerMaisAberto = false;
     }
 });
+
+// Termos
+
+let btnTermos = document.getElementById('aTermos');
+
+btnTermos.addEventListener('click', () => {
+    let header = document.querySelector('header');
+    let termos = document.getElementById('termos');
+    let body = document.querySelector('body');
+
+    Array.from(body.children).forEach(el => {
+        if (el.id != "termos") {
+            el.style.filter = 'blur(1px)';
+            el.style.pointerEvents = 'none';
+        }
+    })
+
+    header.scrollIntoView({behavior: 'smooth'});
+    termos.style.display = 'flex';
+
+    setTimeout(() => {
+        body.style.overflow = 'hidden';
+    }, 1000);
+})
+
+let btnOkay = document.getElementById('termosOkay');
+
+btnOkay.addEventListener('click', () => {
+    let body = document.querySelector('body');
+    let termos = document.getElementById('termos');
+
+    Array.from(body.children).forEach(el => {
+        if (el.id != "termos") {
+            el.style.filter = 'blur(0px)';
+            el.style.pointerEvents = 'all';
+        }
+    })
+
+    termos.style.display = 'none';
+    body.style.overflow = 'visible';
+})

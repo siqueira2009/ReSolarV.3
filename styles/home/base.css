@@ -22,7 +22,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
+    background-color: white;
 }
 
 #logo img {
@@ -66,11 +66,11 @@ header {
 #reciclarBtn > i {
     margin-right: 10px;
     font-size: 20px;
-    color: #fff;
+    color: white;
 }
 
 #reciclarBtn > a {
-    color: #fff;
+    color: white;
 }
 
 #user {
@@ -136,7 +136,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-color: #fff;
+    background-color: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
     margin-top: 50px;
     padding: 0.3em 0.6em;
@@ -386,7 +386,7 @@ header {
     color: black;
     cursor: pointer;
     transition: all 0.3s;
-    background-color: #fff;
+    background-color: white;
 }
 
 .option {
@@ -402,6 +402,7 @@ header {
     color: black;
     cursor: pointer;
     transition: all 0.3s;
+    background-color: white;
 }
 
 .option:hover {
@@ -410,8 +411,23 @@ header {
 
 .option.selected, .optionResp.selected {
     background-color: #4CAF4F;
-    color: #fff;
+    color: white;
     transition: all 0.3s;
+}
+
+.divOpts {
+    width: 100%;
+    padding: 5px 0px;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#logado {
+    display: none;
+}
+
+#naoLogado {
+    display: flex;
 }
 
 #funcInfo {
@@ -663,7 +679,7 @@ footer ul {
 }
 
 .listTitle {
-    color: #fff;
+    color: white;
     font-weight: 700;
     font-size: 18px;
     margin-bottom: 10px;
@@ -730,4 +746,65 @@ footer ul li a, footer ul li {
 
 #footerRight ul li:hover {
     background-color: #596870;
+}
+
+/* Termos e Condições */
+
+#termos {
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    background-color: white;
+    border-radius: 12px;
+    width: 70%;
+    height: 80vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+}
+
+#termos ol {
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#termos ol li {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#termos ol .termosTitle {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 20px;
+}
+
+#termos button {
+    margin-top: 15px;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #4CAF4F;
+    border: 0px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+#termos button:hover {
+    scale: 105%;
+}
+
+#termos button i {
+    margin-left: 10px;
 }

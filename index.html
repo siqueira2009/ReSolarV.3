@@ -11,15 +11,76 @@
 </head>
 <body>
     <!-- Tela de indisponibilidade para telas muito pequenas -->
+
     <div id="indisponivel">
         <h2>Site indisponível para sua resolução de tela</h2>
         <p>Lamentamos por isto! &#128546;</p>
     </div>
 
+    <!-- Termos e condições -->
+    <div id="termos" style="display: none;">
+        <h1 class="title">Termos e Condições</h1>
+        <p class="desc">Última atualização: 05/10/2025</p>
+
+        <ol>
+            <li>
+                <span class="termosTitle">1. Aceitação dos Termos</span>
+                <br/>
+                Ao utilizar a ReSolar, você declara que leu, entendeu e concorda em cumprir estes Termos e Condições, bem como nossa Política de Privacidade.
+                Caso não concorde com algum dos termos, não utilize nossos serviços.
+            </li>
+            <li>
+                <span class="termosTitle">2. Uso da Plataforma</span>
+                <br/>
+                A ReSolar disponibiliza informações, ferramentas e funcionalidades voltadas para o reaproveitamento e descarte consciente de painéis solares.
+                Você se compromete a utilizar o site de forma ética e responsável, sem violar leis ou direitos de terceiros.
+            </li>
+            <li>
+                <span class="termosTitle">3. Cadastro e Responsabilidade do Usuário</span>
+                <br/>
+                Para acessar certas funcionalidades, pode ser necessário criar uma conta.
+                O usuário é responsável por manter a confidencialidade de suas informações de login e pelos dados fornecidos, que devem ser verdadeiros e atualizados.
+            <li>
+                <span class="termosTitle">4. Direitos de Propriedade Intelectual</span>
+                <br/>
+                Todo o conteúdo da ReSolar (textos, imagens, logotipos, códigos e design) é protegido por direitos autorais e pertencem à ReSolar.
+                É proibido copiar, reproduzir ou redistribuir qualquer material sem autorização expressa.
+            </li>
+            <li>
+                <span class="termosTitle">5. Coleta e Uso de Dados</span>
+                <br/>
+                Os dados coletados são utilizados apenas para fins de funcionamento e melhoria dos serviços, conforme descrito na Política de Privacidade.
+                A ReSolar não compartilha informações pessoais sem consentimento.
+            </li>
+            <li>
+                <span class="termosTitle">6. Limitação de Responsabilidade</span>
+                <br/>
+                A ReSolar não se responsabiliza por danos diretos ou indiretos resultantes do uso indevido da plataforma ou de informações incorretas fornecidas pelos usuários.
+                Nosso serviço é oferecido “como está”, sem garantias de desempenho contínuo ou ausência de erros.
+            <li>
+                <span class="termosTitle">7. Alterações nos Termos</span>
+                <br/>
+                A ReSolar pode atualizar estes Termos a qualquer momento. A versão mais recente estará sempre disponível nesta página.
+                O uso contínuo do site após as alterações implica na aceitação das novas condições.
+            </li>
+            <li>
+                <span class="termosTitle">8. Política de Privacidade</span>
+                <br/>
+                A ReSolar coleta apenas os dados necessários para o funcionamento da plataforma — como nome, e-mail e informações dos painéis solares cadastrados.
+                Esses dados servem para registrar coletas, calcular créditos e melhorar o serviço.
+
+                Seguimos a Lei Geral de Proteção de Dados (Lei nº 13.709/2018), garantindo o uso responsável e seguro das informações.
+                <span style="font-weight: 500;">Não compartilhamos dados pessoais com terceiros sem consentimento, exceto quando exigido por lei.</span>
+            </li>
+        </ol>
+
+        <button type="button" id="termosOkay">Ciente<i class="fa-solid fa-check"></i></button>
+    </div>
+
     <!-- Cabeçalho -->
     <header>
         <div id="logo">
-            <img src="imgs/SVGs/Logo.svg" alt="Logo">
+            <a href="index.html"><img src="imgs/SVGs/Logo.svg" alt="Logo"></a>
         </div>
 
         <nav id="navPC">
@@ -37,12 +98,16 @@
                         <i id="user" class="fa-solid fa-circle-user nav1"></i>
                     </a>
                     <ul id="userOpt">
-                        <li><a href="html/conta/entrar.html">Entrar na conta</a></li>
+                        <div id="naoLogado" class="divOpts">
+                            <li><a href="html/conta/entrar.html"><i class="fa-solid fa-user-plus"></i>Entrar</a></li>
+                        </div>
 
-                        <!-- <li><a href="https://google.com.br"><i class="fa-solid fa-user-pen"></i>Minha Conta</a></li>
-                        <li><a href="https://google.com.br"><i class="fa-solid fa-solar-panel"></i>Meus Painéis</a></li>
-                        <li><a href="https://google.com.br"><i class="fa-solid fa-gear"></i>Configurações</a></li>
-                        <li><a href="https://google.com.br"><i class="fa-solid fa-right-from-bracket"></i>Sair</a></li> -->
+                        <div id="logado" class="divOpts">
+                            <li><a href="https://google.com.br"><i class="fa-solid fa-user-pen"></i>Minha Conta</a></li>
+                            <li><a href="https://google.com.br"><i class="fa-solid fa-solar-panel"></i>Meus Painéis</a></li>
+                            <li><a href="https://google.com.br"><i class="fa-solid fa-gear"></i>Configurações</a></li>
+                            <li><a href="https://google.com.br"><i class="fa-solid fa-right-from-bracket"></i>Sair</a></li>
+                        </div>
                     </ul>
                 </li>
             </ul>
@@ -75,7 +140,7 @@
                 <td id="heroText">
                     <h1><span>Receba</span> pelo descarte correto</h1>
                     <p>Participe do processo de reciclagem do seu painel e receba por isto.</p>
-                    <button id="saberMais" onmouseenter="saberMaisAnim()"><i id="saberMaisIcon" class="fa-solid fa-arrow-down"></i>Saber mais</button>
+                    <button id="saberMais"><i id="saberMaisIcon" class="fa-solid fa-arrow-down"></i>Saber mais</button>
                 </td>
                 <td id="heroImg">
                     <img src="imgs/SVGs/Dinheiro.svg" alt="">
@@ -89,9 +154,20 @@
         <p id="propTitle" class="title">Por que existimos?</p>
         <p id="propDesc" class="desc">Nosso objetivo é facilitar o descarte correto de painéis solares</p>  
         <div id="propContent">
-            <p id="propText">Nós exisitimos, simplesmente, para acabar com o ciclo maléfico do descarte de painéis solares. Atualmente, esses equipamentos, quando quebrados ou trocados, são descartados de uma maneira incorreta. Por causa deste descarte, daqui a alguns anos, quando diversos painéis chegarem ao fim da sua vida útil, causará diversos problemas no solo, nos mares e nos ecossistemas, por causa dos materiais que constituem esses equipamentos. Nós exisitimos, simplesmente, para acabar com o ciclo maléfico do descarte de painéis solares. Atualmente, esses equipamentos, quando quebrados ou trocados, são descartados de uma maneira incorreta. Por causa deste descarte, daqui a alguns anos, quando diversos painéis chegarem ao fim da sua vida útil. Por causa deste descarte, daqui a alguns anos, quando diversos painéis chegarem ao fim da sua vida útil. Por causa deste descarte, daqui a alguns anos, quando diversos painéis chegarem ao fim da sua vida útil. Por causa deste descarte, daqui a alguns anos, quando diversos painéis chegarem ao fim da sua vida útil.</p>
+            <p id="propText">
+                Nós existimos, simplesmente, para acabar com o ciclo maléfico do descarte de painéis solares. Atualmente, esses equipamentos, quando quebrados ou substituídos, são descartados de maneira incorreta. Esse tipo de descarte representa uma ameaça silenciosa: em poucos anos, quando milhares de painéis chegarem ao fim da sua vida útil, os impactos ambientais serão enormes. Metais pesados, vidros e componentes químicos poderão contaminar o solo, os mares e os ecossistemas inteiros.
+                <br/>
+                Nosso propósito é transformar esse problema em uma oportunidade. Acreditamos que a energia solar deve ser limpa do início ao fim — da geração ao descarte. Por isso, trabalhamos para dar um novo destino aos painéis usados, promovendo a reciclagem, o reaproveitamento e a responsabilidade ambiental.
+                <br/>
+                Mais do que uma iniciativa sustentável, somos parte de um movimento por um futuro realmente verde, em que tecnologia e natureza coexistem em equilíbrio.
+            </p>
             <p id="propTextResp">Nós exisitimos, simplesmente, para acabar com o ciclo maléfico do descarte de painéis solares. Atualmente, esses equipamentos, quando quebrados ou trocados, são descartados de uma maneira incorreta.</p>
-            <p id="propTextMais" style="display: none;">Nós exisitimos, simplesmente, para acabar com o ciclo maléfico do descarte de painéis solares. Atualmente, esses equipamentos, quando quebrados ou trocados, são descartados de uma maneira incorreta. Por causa deste descarte, daqui a alguns anos, quando diversos painéis chegarem ao fim da sua vida útil, causará diversos problemas no solo, nos mares e nos ecossistemas, por causa dos materiais que constituem esses equipamentos.</p>
+            <p id="propTextMais" style="display: none;">Nós exisitimos, simplesmente, para acabar com o ciclo maléfico do descarte de painéis solares. Atualmente, esses equipamentos, quando quebrados ou trocados, são descartados de uma maneira incorreta. Por causa deste descarte, daqui a alguns anos, quando diversos painéis chegarem ao fim da sua vida útil, causará diversos problemas no solo, nos mares e nos ecossistemas, por causa dos materiais que constituem esses equipamentos.
+                <br/>
+                Nosso propósito é transformar esse problema em uma oportunidade. Acreditamos que a energia solar deve ser limpa do início ao fim — da geração ao descarte. Por isso, trabalhamos para dar um novo destino aos painéis usados, promovendo a reciclagem, o reaproveitamento e a responsabilidade ambiental.
+                <br/>
+                Mais do que uma iniciativa sustentável, somos parte de um movimento por um futuro realmente verde, em que tecnologia e natureza coexistem em equilíbrio.
+            </p>
             <p id="propLerMais">Ler Mais</p>
             <img id="propImg" src="imgs/SVGs/Lixão.svg" alt="">
             <div id="prop1400">
@@ -174,6 +250,10 @@
                 <h3 class="duvida" onclick="duvida(5)"><i class="fa-solid fa-magnifying-glass lupinha"></i>Como a empresa se sustenta?<i class="fa-solid fa-angle-down seta-abrir"></i></h3>
                 <div id="resposta5" class="respostas">
                     <p>Uma porcentagem dos lucros recebidos nas vendas dos painéis solares reparados e das matérias primas recicladas é voltada para a empresa e uma outra porcentagem é voltada para a bonificação dos usuários.</p>
+                </div>
+                <h3 class="duvida" onclick="duvida(6)"><i class="fa-solid fa-magnifying-glass lupinha"></i>Como sei a quantidade de créditos que irei receber?<i class="fa-solid fa-angle-down seta-abrir"></i></h3>
+                <div id="resposta6" class="respostas">
+                    <p>A quantidade de créditos recebida é proporcional ao quão velho é o aparelho e o quanto de lucro que pode ser obtido dele. Após realizar o cadastro, os seus cadastro aparecem no dashboard, junto com as informações do seu cadastro.</p>
                 </div>
             </div>
         </div>
