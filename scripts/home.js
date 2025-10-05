@@ -202,41 +202,37 @@ lerMais.addEventListener('click', () => {
 
 // Termos
 
-let btnTermos = document.getElementById('aTermos');
+let termos = document.getElementById('termos');
+let aTermos = document.getElementById('aTermos');
+let termosOkay = document.getElementById('termosOkay');
+let header = document.querySelector('header');
+let bodyChildren = body.children
 
-btnTermos.addEventListener('click', () => {
-    let header = document.querySelector('header');
-    let termos = document.getElementById('termos');
-    let body = document.querySelector('body');
-
-    Array.from(body.children).forEach(el => {
-        if (el.id != "termos") {
-            el.style.filter = 'blur(1px)';
-            el.style.pointerEvents = 'none';
-        }
-    })
-
+aTermos.addEventListener('click', () => {
     header.scrollIntoView({behavior: 'smooth'});
-    termos.style.display = 'flex';
-
+    
     setTimeout(() => {
         body.style.overflow = 'hidden';
     }, 1000);
-})
+    
+    termos.classList.add('visivel');
+    termos.classList.remove('invisivel');
 
-let btnOkay = document.getElementById('termosOkay');
-
-btnOkay.addEventListener('click', () => {
-    let body = document.querySelector('body');
-    let termos = document.getElementById('termos');
-
-    Array.from(body.children).forEach(el => {
-        if (el.id != "termos") {
-            el.style.filter = 'blur(0px)';
-            el.style.pointerEvents = 'all';
+    Array.from(bodyChildren).forEach(el => {
+        if (el.id != 'termos') {
+            el.style.filter = 'blur(2px)';
+            el.style.pointerEvents = 'none';
         }
     })
+});
 
-    termos.style.display = 'none';
+termosOkay.addEventListener('click', () => {
     body.style.overflow = 'visible';
-})
+    termos.classList.remove('visivel');
+    termos.classList.add('invisivel');
+
+    Array.from(bodyChildren).forEach(el => {
+        el.style.filter = '';
+        el.style.pointerEvents = '';
+    })
+});
