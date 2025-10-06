@@ -209,7 +209,7 @@ let header = document.querySelector('header');
 let bodyChildren = body.children
 
 aTermos.addEventListener('click', () => {
-    header.scrollIntoView({behavior: 'smooth'});
+    header.scrollIntoView({behavior: 'instant'});
     
     setTimeout(() => {
         body.style.overflow = 'hidden';

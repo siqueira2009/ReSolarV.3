@@ -38,22 +38,27 @@
             </div>
 
             <div class="inputGroup">
-                <input required="" type="number" name="cpf" autocomplete="off" class="input"> 
-                <label for="cpf" class="label">CPF/CNPJ (números)</label>
+                <input required="" type="text" name="cpf" autocomplete="off" class="input"> 
+                <label for="cpf" class="label">CPF/CNPJ</label>
+                <i id="gerarCpf" class="fa-solid fa-dice icon"></i>
             </div>
             
             <div class="inputGroup">
                 <input id="senha" required="" type="password" name="senha" autocomplete="off" class="input">
                 <label for="senha" class="label">Senha</label>
-                <i id="verSenha1" class="fa-solid fa-eye eye"></i>
+                <i id="verSenha1" class="fa-solid fa-eye icon"></i>
             </div>
 
             <div class="inputGroup">
                 <input title="Digite a senha primeiro." id="confirmarSenha" required="" type="password" name="senha" autocomplete="off" class="input" disabled>
                 <label for="senha" class="label">Confirme sua senha</label>
-                <i id="verSenha2" class="fa-solid fa-eye eye"></i>
+                <i id="verSenha2" class="fa-solid fa-eye icon"></i>
+            </div>
+
+            <div id="erros">
                 <p id="erroSenha" class="erro">Digite a mesma senha!</p>
                 <p id="erroCampos" class="erro">Preencha todos os campos!</p>
+                <p id="erroCpf" class="erro">Número inválido de dígitos do CPF/CNPJ!</p>
                 <a class="btn entrar" href="entrar.html">Já tem conta? Entre agora</a>
             </div>
 
@@ -86,14 +91,14 @@
             </div>
 
             <div class="inputGroup">
-                <input id="cpfRev" disabled required="" type="number" name="cpf" autocomplete="off" class="input">
-                <label for="cpf" class="label">CPF/CNPJ (números)</label>
+                <input id="cpfRev" disabled required="" type="text" name="cpf" autocomplete="off" class="input">
+                <label for="cpf" class="label">CPF/CNPJ</label>
             </div>
 
             <div class="inputGroup">
-                <input id="senhaRev" disabled id="senha" required="" type="password" name="senha" autocomplete="off" class="input">
+                <input id="senhaRev" disabled required="" type="password" name="senha" autocomplete="off" class="input">
                 <label for="senha" class="label">Senha</label>
-                <i id="verSenha3" class="fa-solid fa-eye eye"></i>
+                <i id="verSenha3" class="fa-solid fa-eye icon"></i>
             </div>
 
             <div class="buttons">

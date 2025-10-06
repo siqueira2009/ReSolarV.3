@@ -5,15 +5,15 @@ let confirmacao = document.getElementById('confirmação');
 let btnAvancar = document.getElementById('proximo');
 let inputs = forms.querySelectorAll('input');
 let erroSenha = document.getElementById('erroSenha');
-let erroCampos = document.getElementById('erroCampos');
+let erroCampos = document.getElementById('erroCampos');    
+let erroCpf = document.getElementById('erroCpf');
 let senhaChanges = 0;
 let btnVoltar = document.getElementById('voltar2');
 let verSenha1 = document.getElementById('verSenha1');
 let verSenha2 = document.getElementById('verSenha2');
 let verSenha3 = document.getElementById('verSenha3');
-let ver1type = 'invisivel';
-let ver2type = 'invisivel';
-let ver3type = 'invisivel';
+let gerarCPF = document.getElementById('gerarCpf');
+let tipoDigitado;
 
 let nomeRev = document.getElementById('nomeRev');
 let emailRev = document.getElementById('emailRev');
@@ -32,39 +32,107 @@ inputSenha.addEventListener('change', function(){
     }
 });
 
-// Visualizar senha (SEGURAR)
+// Gerar CPF
 
-// Primeiro botão
-verSenha1.addEventListener('mousedown', function(){
-    inputs[3].type = 'text';
-    verSenha1.classList.replace('fa-eye', 'fa-eye-slash');
+gerarCPF.addEventListener('click', () => {
+    let aleatorio = (Math.floor(Math.random() * (10**11 - 10**10 + 1)) + 10**10).toString();
+    let cpfAleatorio = aleatorio.substring(0, 3) + '.' + aleatorio.substring(3, 6) + '.' + aleatorio.substring(6, 9) + '-' + aleatorio.substring(9, 11);
+
+    inputs[2].value = cpfAleatorio;
+    inputs[2].dispatchEvent(new Event("change"));   
+})
+
+
+// Formatar CPF 
+
+inputs[2].addEventListener('change', () => {
+    let valorDigitado = inputs[2].value;
+    erroCpf.style.display = 'none';
+
+    let apenasNumeros = valorDigitado.replace(/\D/g, '');
+
+    if (/^\d{11}$/.test(apenasNumeros)) {
+        tipoDigitado = valorDigitado.includes('.') && valorDigitado.includes('-') ? 'cpf formatado' : 'cpf não formatado';
+    } 
+    else if (/^\d{14}$/.test(apenasNumeros)) {
+        tipoDigitado = valorDigitado.includes('/') && valorDigitado.includes('.') ? 'cnpj formatado' : 'cnpj não formatado';
+    } 
+    else {
+        tipoDigitado = 'inválido';
+    }
+
+    console.log(tipoDigitado);
+
+    switch (tipoDigitado) {
+        case 'cpf formatado':
+            inputs[2].value = valorDigitado;
+            break;
+        case 'cpf não formatado':
+            let valorFormatCpf = valorDigitado.substring(0, 3) + '.' + valorDigitado.substring(3, 6) + '.' + valorDigitado.substring(6, 9) + '-' + valorDigitado.substring(9, 11);
+            inputs[2].value = valorFormatCpf;
+            break;
+        case 'cnpj formatado':
+            inputs[2].value = valorDigitado;
+            break;
+        case 'cnpj não formatado':
+            let valorFormatCnpj = valorDigitado.substring(0,2) + '.' + valorDigitado.substring(2, 5) + '.' + valorDigitado.substring(5, 8) + '/' + valorDigitado.substring(8, 12) + '-' + valorDigitado.substring(12, 14);
+            inputs[2].value = valorFormatCnpj;
+            break;
+        case 'inválido':
+            if (inputs[2].value == "") {
+                erroCpf.style.display = 'none';
+            } else {
+                erroCpf.style.display = 'block';
+            }
+            break;
+    }
+
+    console.log(inputs[2].value)
 });
 
-verSenha1.addEventListener('mouseup', function(){
-    inputs[3].type = 'password';
-    verSenha1.classList.replace('fa-eye-slash', 'fa-eye');
+
+// Visualizar senha (SEGURAR)
+
+let ver1 = false;
+let ver2 = false
+let ver3 = false;
+
+// Primeiro botão
+verSenha1.addEventListener('click', function(){
+    if (ver1 == false) {
+        inputs[3].type = 'text';
+        verSenha1.classList.replace('fa-eye', 'fa-eye-slash');
+    } else {
+        inputs[3].type = 'password';
+        verSenha1.classList.replace('fa-eye-slash', 'fa-eye');
+    }
+    ver1 = !ver1;
 });
 
 // Segundo botão
-verSenha2.addEventListener('mousedown', function(){
-    inputs[4].type = 'text';
-    verSenha2.classList.replace('fa-eye', 'fa-eye-slash');
-});
 
-verSenha2.addEventListener('mouseup', function(){
-    inputs[4].type = 'password';
-    verSenha2.classList.replace('fa-eye-slash', 'fa-eye');
+verSenha2.addEventListener('click', function(){
+    if (ver2 == false) {
+        inputs[4].type = 'text';
+        verSenha2.classList.replace('fa-eye', 'fa-eye-slash');
+    } else {
+        inputs[4].type = 'password';
+        verSenha2.classList.replace('fa-eye-slash', 'fa-eye');
+    }
+    ver2 = !ver2;
 });
 
 // Terceiro botão
-verSenha3.addEventListener('mousedown', function(){
-    document.getElementById('senhaRev').type = 'text';
-    verSenha3.classList.replace('fa-eye', 'fa-eye-slash');
-});
 
-verSenha3.addEventListener('mouseup', function(){
-    document.getElementById('senhaRev').type = 'password';
-    verSenha3.classList.replace('fa-eye-slash', 'fa-eye');
+verSenha3.addEventListener('click', function(){
+    if (ver3 == false) {
+        document.getElementById('senhaRev').type = 'text';
+        verSenha3.classList.replace('fa-eye', 'fa-eye-slash');
+    } else {
+        document.getElementById('senhaRev').type = 'password';
+        verSenha3.classList.replace('fa-eye-slash', 'fa-eye');
+    }
+    ver3 = !ver3;
 });
 
 // Avançar
@@ -114,6 +182,10 @@ btnAvancar.addEventListener('click', function(){
     if (inputs[3].value != inputs[4].value) {
         liberado = false;
         erroSenha.style.display = 'block';
+    }
+
+    if (tipoDigitado == 'inválido') {
+        liberado = false;
     }
 
     if (liberado == true) {
