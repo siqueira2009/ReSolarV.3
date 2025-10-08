@@ -210,10 +210,7 @@ let bodyChildren = body.children
 
 aTermos.addEventListener('click', () => {
     header.scrollIntoView({behavior: 'instant'});
-    
-    setTimeout(() => {
-        body.style.overflow = 'hidden';
-    }, 1000);
+    body.style.overflow = 'hidden';
     
     termos.classList.add('visivel');
     termos.classList.remove('invisivel');

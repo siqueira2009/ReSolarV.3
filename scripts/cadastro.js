@@ -154,44 +154,6 @@ prev.addEventListener("click", function(){
     }
 });
 
-window.addEventListener('load', () => {
-    const elementos = ['header', '.barras', 'form'];
-    const verificacao = ['marca=', 'modelo=', 'potencia=', 'dataFabr=', 'dataInst=', 'qtdCel=', 'tipo=', 'estado=', 'condicao=', 'motivo=', 'inversor=', 'comentarios=', 'tensao=', 'corrente=', 'eficiencia=', 'dimensao=', 'peso=', 'dataColeta=', 'endereco='];
-    const conf = document.getElementById('confirmacao');
-    const body = document.querySelector('body'); 
-    let href = window.location.href;
-    let aprovado = true;
-
-    for (let i = 0; i < verificacao.length; i++) {
-        if (href.includes(verificacao[i])) {
-            aprovado = true;
-        } else {
-            aprovado = false;
-            break;
-        }
-    }
-
-    if (aprovado == true) {
-        console.log('Já enviou!')
-        
-        Array.from(elementos).forEach(el => {
-            document.querySelector(el).classList.add('enviado');
-        });
-
-        conf.classList.add('ativo');
-        body.classList.add('ativo'); 
-    } else {
-        console.log('Ainda não enviou!');
-        
-        Array.from(elementos).forEach(el => {
-            document.querySelector(el).classList.remove('enviado');
-        });
-        
-        conf.classList.remove('ativo');
-        body.classList.remove('ativo');
-    }
-})
-
 document.addEventListener('DOMContentLoaded', () => {
 
 
@@ -283,13 +245,6 @@ Array.from(buttonHomepage).forEach(el => {
     })
 })
 
-let buttonDashboard = document.getElementById('dashboard');
-
-buttonDashboard.addEventListener('click', () => {
-    window.location.href = '../dashboard/dashboard.html'
-})
-
-
 // Enviar sem value
 
 let concluir = document.getElementById('concluir');
@@ -308,7 +263,7 @@ let valoresPadroes = [
     43.76,
     13.71,
     22.22,
-    43.76,
+    '20x20x2',
     13.71,
     '30/10/2025',
     'Av. Orosimbo Maia, 2600 - Cambuí, Campinas - SP, 13024-045'
@@ -343,28 +298,6 @@ concluir.addEventListener('click', () => {
         }
     });
 });
-
-
-// Código do cadastro
-
-let aleatorio = Math.random().toString();
-let aleatorioCortado = aleatorio.split('.')[1]
-let codigoCadastro = document.getElementById('codigo');
-codigoCadastro.innerHTML = aleatorioCortado;
-
-// Copiar código do cadastro
-
-let copyIcon = document.getElementById('copiar');
-
-copyIcon.addEventListener('click', () => {
-    navigator.clipboard.writeText(aleatorioCortado);
-
-    copyIcon.style.scale = '120%';
-
-    setTimeout(() => {
-        copyIcon.style.scale = '100%';
-    }, 250);
-})
 
 // Data inválida
 

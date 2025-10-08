@@ -1,0 +1,59 @@
+@media screen and (max-width: 260px) {
+    #container {
+        display: none;
+    }
+    #indisponivel {
+        display: flex !important;
+    }
+}
+
+@media screen and (min-width: 260px) and (max-width: 400px) {
+    #menu {
+        width: 70px;
+        z-index: 20;
+        position: fixed;
+        left: 0;
+        top: 0;
+        transition: width 0.3s ease;
+    }
+    
+    #menu:not(.closed) {
+        width: 100%;
+    }
+    
+    #informacoes {
+        width: calc(100% - 70px);
+        margin-left: 70px;
+    }
+    
+    #bentoGrid {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 1100px) {
+    #menu {
+        width: 70px;
+        z-index: 20;
+        position: fixed;
+        left: 0;
+        top: 0;
+        transition: width 0.3s;
+    }
+    
+    #menu:not(.closed) {
+        max-width: 400px;
+        width: 60%;
+    }
+    
+    #informacoes {
+        width: calc(100% - 70px);
+        margin-left: 70px;
+    }
+    
+    #bentoGrid {
+        display: flex;
+        flex-direction: column;
+    }
+}

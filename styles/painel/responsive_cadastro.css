@@ -1,6 +1,6 @@
 @media only screen and (max-width: 260px) {
-    header, .barras, #formulario, #confirmacao {
-        display: none;
+    header, .barras, #formulario {
+        display: none !important;
     }
 
     #indisponivel {
@@ -94,25 +94,6 @@
 
     #resumoColeta {
         font-size: 16px;
-    }
-
-    /* Confirmação */
-
-    #confirmacao {
-        width: 90%;
-    }
-
-    #confirmacao h1 {
-        font-size: 27px;
-    }
-
-    #confirmacao img {
-        width: 100%;
-        min-width: 220px;
-    }
-
-    #confirmacao #confButtons {
-        flex-direction: column;
     }
 }
 
@@ -211,16 +192,6 @@
 
     #resumoColeta {
         font-size: 16px;
-    }
-
-    /* Confirmação */
-
-    #confirmacao {
-        width: 90%;
-    }
-
-    #confirmacao #confButtons {
-        flex-direction: column;
     }
 }
 
@@ -322,16 +293,6 @@
     #resumoColeta {
         font-size: 16px;
     }
-
-    /* Confirmação */
-
-    #confirmacao {
-        width: 70%;
-    }
-
-    #confirmacao #confButtons {
-        flex-direction: column;
-    }
 }
 
 @media only screen and (min-width: 750px) and (max-width: 1100px) {
@@ -406,12 +367,6 @@
 
     #calendario #mesAtual {
         font-size: 30px;
-    }
-
-    /* Confirmação */
-
-    #confirmacao {
-        width: 70%;
     }
 }
 

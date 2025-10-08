@@ -411,6 +411,7 @@ header {
 
 .option.selected, .optionResp.selected {
     background-color: #4CAF4F;
+    border: 1px #4CAF4F solid;
     color: white;
     transition: all 0.3s;
 }

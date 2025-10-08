@@ -1,5 +1,8 @@
 let inputSenha = document.getElementById('senha');
 let inputConfirmarSenha = document.getElementById('confirmarSenha');
+let inputCpf = document.getElementById('cpf')
+let inputNome = document.getElementById('nome');
+let inputEmail = document.getElementById('email');
 let forms = document.getElementById('formsEntrada');
 let confirmacao = document.getElementById('confirmação');
 let btnAvancar = document.getElementById('proximo');
@@ -38,15 +41,15 @@ gerarCPF.addEventListener('click', () => {
     let aleatorio = (Math.floor(Math.random() * (10**11 - 10**10 + 1)) + 10**10).toString();
     let cpfAleatorio = aleatorio.substring(0, 3) + '.' + aleatorio.substring(3, 6) + '.' + aleatorio.substring(6, 9) + '-' + aleatorio.substring(9, 11);
 
-    inputs[2].value = cpfAleatorio;
-    inputs[2].dispatchEvent(new Event("change"));   
+    inputCpf.value = cpfAleatorio;
+    inputCpf.dispatchEvent(new Event("change"));   
 })
 
 
 // Formatar CPF 
 
-inputs[2].addEventListener('change', () => {
-    let valorDigitado = inputs[2].value;
+inputCpf.addEventListener('change', () => {
+    let valorDigitado = inputCpf.value;
     erroCpf.style.display = 'none';
 
     let apenasNumeros = valorDigitado.replace(/\D/g, '');
@@ -65,21 +68,21 @@ inputs[2].addEventListener('change', () => {
 
     switch (tipoDigitado) {
         case 'cpf formatado':
-            inputs[2].value = valorDigitado;
+            inputCpf.value = valorDigitado;
             break;
         case 'cpf não formatado':
             let valorFormatCpf = valorDigitado.substring(0, 3) + '.' + valorDigitado.substring(3, 6) + '.' + valorDigitado.substring(6, 9) + '-' + valorDigitado.substring(9, 11);
-            inputs[2].value = valorFormatCpf;
+            inputCpf.value = valorFormatCpf;
             break;
         case 'cnpj formatado':
-            inputs[2].value = valorDigitado;
+            inputCpf.value = valorDigitado;
             break;
         case 'cnpj não formatado':
             let valorFormatCnpj = valorDigitado.substring(0,2) + '.' + valorDigitado.substring(2, 5) + '.' + valorDigitado.substring(5, 8) + '/' + valorDigitado.substring(8, 12) + '-' + valorDigitado.substring(12, 14);
-            inputs[2].value = valorFormatCnpj;
+            inputCpf.value = valorFormatCnpj;
             break;
         case 'inválido':
-            if (inputs[2].value == "") {
+            if (inputCpf.value == "") {
                 erroCpf.style.display = 'none';
             } else {
                 erroCpf.style.display = 'block';
@@ -87,7 +90,7 @@ inputs[2].addEventListener('change', () => {
             break;
     }
 
-    console.log(inputs[2].value)
+    console.log(inputCpf.value)
 });
 
 
@@ -100,10 +103,10 @@ let ver3 = false;
 // Primeiro botão
 verSenha1.addEventListener('click', function(){
     if (ver1 == false) {
-        inputs[3].type = 'text';
+        inputSenha.type = 'text';
         verSenha1.classList.replace('fa-eye', 'fa-eye-slash');
     } else {
-        inputs[3].type = 'password';
+        inputSenha.type = 'password';
         verSenha1.classList.replace('fa-eye-slash', 'fa-eye');
     }
     ver1 = !ver1;
@@ -113,10 +116,10 @@ verSenha1.addEventListener('click', function(){
 
 verSenha2.addEventListener('click', function(){
     if (ver2 == false) {
-        inputs[4].type = 'text';
+        inputConfirmarSenha.type = 'text';
         verSenha2.classList.replace('fa-eye', 'fa-eye-slash');
     } else {
-        inputs[4].type = 'password';
+        inputConfirmarSenha.type = 'password';
         verSenha2.classList.replace('fa-eye-slash', 'fa-eye');
     }
     ver2 = !ver2;
@@ -137,9 +140,9 @@ verSenha3.addEventListener('click', function(){
 
 // Avançar
 
-inputs[3].addEventListener('change', function(){
-    if (inputs[3].value == "") {
-        inputs[4].value = "";
+inputSenha.addEventListener('change', function(){
+    if (inputSenha.value == "") {
+        inputConfirmarSenha.value = "";
     }
 });
 
@@ -150,15 +153,15 @@ inputs.forEach(input => {
     });
 })
 
-inputs[4].addEventListener('focusout', function(){
-    if (inputs[4].value != inputs[3].value) {
+inputConfirmarSenha.addEventListener('focusout', function(){
+    if (inputConfirmarSenha.value != inputSenha.value) {
         erroSenha.style.display = 'block';
     }
 })
 
-inputs[3].addEventListener('change', function(){
+inputSenha.addEventListener('change', function(){
     if (senhaChanges > 0) {
-        if (inputs[4].value != inputs[3].value) {
+        if (inputConfirmarSenha.value != inputSenha.value) {
             erroSenha.style.display = 'block';
         }
     }
@@ -179,7 +182,7 @@ btnAvancar.addEventListener('click', function(){
         }
     }
 
-    if (inputs[3].value != inputs[4].value) {
+    if (inputSenha.value != inputConfirmarSenha.value) {
         liberado = false;
         erroSenha.style.display = 'block';
     }
@@ -193,10 +196,10 @@ btnAvancar.addEventListener('click', function(){
         confirmacao.style.display = 'flex'
 
         // Confirmação
-        nomeRev.value = inputs[0].value;
-        emailRev.value = inputs[1].value;
-        cpfRev.value = inputs[2].value;
-        senhaRev.value = inputs[3].value;
+        nomeRev.value = inputNome.value;
+        emailRev.value = inputEmail.value;
+        cpfRev.value = inputCpf.value;
+        senhaRev.value = inputSenha.value;
     }
 });
 
