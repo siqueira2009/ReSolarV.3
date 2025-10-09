@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil</title>
+    <link rel="icon" type="image/x-icon" href="/imgs/LogoSemNome.png">
+    <link rel="stylesheet" href="/styles/conta/perfil.css">
+    <link rel="stylesheet" href="/styles/conta/responsive_perfil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Tela de indisponibilidade para telas muito pequenas -->
+
+    <div id="indisponivel">
+        <h2>Site indisponível para sua resolução de tela</h2>
+        <p>Lamentamos por isto! &#128546;</p>
+    </div>
+
+    <div id="container">
+        <div id="banner">
+            <div id="imgPerfil">
+                <i class="fa-solid fa-pencil"></i>
+            </div>
+            <h2 id="saudacoes"><span id="bom"></span>, Lucas!</h2>
+        </div>
+
+        <div id="info">
+            <h2>Informações Pessoais</h2>
+            <div class="opcoes">
+                <ul>
+                    <li><i class="fa-solid fa-user"></i></li>
+                    <li><i class="fa-solid fa-envelope"></i></li>
+                    <li><i class="fa-solid fa-id-card"></i></li>
+                    <li><i class="fa-solid fa-key"></i></li>
+                    <li><i class="fa-solid fa-cake"></i></li>
+                </ul>
+                <ul id="informacoesPessoais">
+                    <li id="nome" class="info">Lucas de Souza Siqueira</li>
+                    <li id="nomeInputContainer" class="inputContainer" style="display: none;">
+                        <input id="nomeInput" type="text" name="nome">
+                    </li>
+                    <li id="email" class="info">lucas.s.siqueira.2009@yahoo.com.br</li>
+                    <li id="emailInputContainer" class="inputContainer" style="display: none;">
+                        <input id="emailInput" type="text" name="email">
+                    </li>
+                    <li id="cpf" class="info">064.829.287-81</li>
+                    <li id="cpfInputContainer" class="inputContainer" style="display: none;">
+                        <input id="cpfInput" type="text" name="cpf">
+                    </li>
+                    <li id="senha" class="info">senhaB@cn4d-</li>
+                    <li id="senhaInputContainer" class="inputContainer" style="display: none;">
+                        <input id="senhaInput" type="text" name="cpf">
+                    </li>
+                    <li id="criacao">09/10/2025</li>
+                </ul>
+                <ul id="alterar">
+                    <li><i class="fa-solid fa-pen" id="alterarNome"></i></li>
+                    <li><i class="fa-solid fa-pen" id="alterarEmail"></i></li>
+                    <li><i class="fa-solid fa-pen" id="alterarCpf"></i></li>
+                    <li><i class="fa-solid fa-pen" id="alterarSenha"></i></li>
+                </ul>
+            </div>
+            <br/>
+            <h2>Outras Opções</h2>
+            <div class="opcoes">
+                <ul>
+                    <li><i class="fa-solid fa-question"></i></li>
+                    <li><i class="fa-solid fa-right-from-bracket"></i></li>
+                    <li><i class="fa-solid fa-remove"></i></li>
+                </ul>
+                <ul>
+                    <li id="suporte"><a href="mailto:lucas.s.siqueira.2009@gmail.com" target="_blank">Suporte</a></li>
+                    <li id="sair"><a href="">Sair</a></li>
+                    <li id="deletar"><a href="">Deletar conta</a></li>
+                </ul>
+            </div>
+
+            <a id="concluido" href="/index.html">Concluído</a>
+        </div>
+    </div>
+
+    <script src="/scripts/perfil.js"></script>
+</body>
+</html>

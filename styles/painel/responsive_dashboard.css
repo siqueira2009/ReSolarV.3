@@ -8,6 +8,8 @@
 }
 
 @media screen and (min-width: 260px) and (max-width: 400px) {
+    /* Menu */
+
     #menu {
         width: 70px;
         z-index: 20;
@@ -20,6 +22,28 @@
     #menu:not(.closed) {
         width: 100%;
     }
+
+    #menuContent:hover {
+        color: #2C2C2C;
+    }
+
+    #menuContent:hover i {
+        color: #2C2C2C;
+    }
+
+    .menuItem:hover {
+        color: #2C2C2C;
+    }
+
+    #home:hover, #user:hover {
+        color: #2C2C2C;
+    }
+
+    #adicionar img {
+        max-width: 250px;
+    }
+
+    /* Cards */
     
     #informacoes {
         width: calc(100% - 70px);
@@ -33,6 +57,8 @@
 }
 
 @media screen and (min-width: 400px) and (max-width: 1100px) {
+    /* Menu */
+
     #menu {
         width: 70px;
         z-index: 20;
@@ -40,12 +66,34 @@
         left: 0;
         top: 0;
         transition: width 0.3s;
+        max-width: 400px;
     }
     
     #menu:not(.closed) {
-        max-width: 400px;
         width: 60%;
     }
+    
+    #menuContent:hover {
+        color: #2C2C2C;
+    }
+
+    #menuContent:hover i {
+        color: #2C2C2C;
+    }
+
+    .menuItem:hover {
+        color: #2C2C2C;
+    }
+
+    #home:hover, #user:hover {
+        color: #2C2C2C;
+    }
+
+    #adicionar img {
+        max-width: 250px;
+    }
+
+    /* Cards */
     
     #informacoes {
         width: calc(100% - 70px);

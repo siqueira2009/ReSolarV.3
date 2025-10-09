@@ -1,0 +1,33 @@
+@media screen and (max-width: 260px) {
+    body {
+        height: 100dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #container {
+        display: none;
+    }
+
+    #indisponivel {
+        display: block;
+    }
+
+}
+
+@media screen and (min-width: 260px) and (max-width: 800px) {
+    /* Header */
+
+    header {
+        padding: 10px 35px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    /* Header */
+
+    header {
+        padding: 10px 75px;
+    }
+}
