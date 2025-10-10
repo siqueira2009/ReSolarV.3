@@ -16,18 +16,79 @@
 
 }
 
-@media screen and (min-width: 260px) and (max-width: 800px) {
-    /* Header */
+@media screen and (min-width: 260px) and (max-width: 550px) {
+    #container {
+        width: 90dvw;
+    }
 
-    header {
-        padding: 10px 35px;
+    #banner {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #imgPerfil {
+        width: 100px;
+        height: 100px;
+    }
+
+    #saudacoes {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .parte {
+        gap: 20px;
+    }
+
+    #inputsIcon li {
+        padding: 0px 10px;
+        height: 48.4px;
+    }
+
+    #inputs {
+        width: 100%;
+    }
+
+    .inputGroup .input {
+        font-size: 14px;
+    }
+
+    #divOutros, #opcoes {
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+    #opcoesMobile {
+        display: none;
+    }
+
+    #divOutros {
+        width: 100%;
     }
 }
 
-@media screen and (min-width: 800px) {
-    /* Header */
+@media screen and (min-width: 550px) and (max-width: 800px) {
+    #container {
+        width: 90dvw;
+    }
 
-    header {
-        padding: 10px 75px;
+    #opcoes {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1330px) {
+    #container {
+        width: 90dvw;
+    }
+
+    #opcoesMobile {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1330px) {
+    #opcoesMobile {
+        display: none;
     }
 }

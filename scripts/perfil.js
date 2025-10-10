@@ -2,13 +2,9 @@ let saudacoes = document.getElementById('bom');
 let dataAtual = new Date();
 let horaAtual = dataAtual.getHours();
 
-let nome = document.getElementById('nome');
-let email = document.getElementById('email');
-let emailContent = email.textContent;
 let cpf = document.getElementById('cpf');
-let cpfContent = cpf.textContent;
-let senha = document.getElementById('senha');
-let senhaContent = senha.textContent;
+let cpfContent = cpf.value;
+let valueCpf = cpfContent;
 
 // Saudações
 
@@ -20,33 +16,51 @@ if (horaAtual > 5 && horaAtual < 12) {
     saudacoes.innerHTML = 'Boa noite'
 }
 
-// Esconder informações
-
-// Email
-
-let cortarArroba = emailContent.split('@');
-let emailNome = cortarArroba[0];
-let emailDominio = cortarArroba[1];
-let tamanhoEscondidoEmail = ((50 * emailNome.length) / 100).toFixed()
-let parteVisivelEmail = emailNome.slice(tamanhoEscondidoEmail);
-let parteInvisivelEmail = '*'.repeat(tamanhoEscondidoEmail);
-let emailEscondido = parteInvisivelEmail + parteVisivelEmail + '@' + emailDominio
-email.innerHTML = emailEscondido;
-
-// CPF
+// Esconder CPF
 
 let tamanhoEscondidoCpf = ((50 * cpfContent.length) / 100).toFixed()
-
 let parteVisivelCpf = cpfContent.slice(0, -tamanhoEscondidoCpf);
 let parteInvisivelCpf = '*'.repeat(tamanhoEscondidoCpf);
+
+
+if (cpfContent.length == 14) {
+    parteInvisivelCpf = parteInvisivelCpf.replace('*******', '.***-**')
+} else {
+    parteInvisivelCpf = parteInvisivelCpf.replace('*********', '*/****-**')
+}
+
 let cpfEscondido = parteVisivelCpf + parteInvisivelCpf;
-cpf.innerHTML = cpfEscondido;
+cpf.value = cpfEscondido;
 
-// Senha
+// Editar informações
 
-let tamanhaEscondidoSenha = ((100 * senhaContent.length) / 100).toFixed()
+let inputs = document.querySelectorAll('.input');
 
-let parteInvisivelSenha = '*'.repeat(tamanhaEscondidoSenha);
-senha.innerHTML = parteInvisivelSenha;
+Array.from(inputs).forEach(el => {
+    let oldValue = el.value;
+    
+    el.addEventListener('focus', () => {
+        oldValue = el.value;
+    });
+    
+    el.addEventListener('blur', () => {
+        if (el.value.trim() === "") {
+            el.value = oldValue;
+        }
+    });
+});
 
-// Alterar Informações
+// Ver senha
+
+let senhaIcon = document.getElementById('verSenha');
+let inputSenha = document.getElementById('senha')
+
+senhaIcon.addEventListener('click', () => {
+    if (inputSenha.type == 'password') {
+        inputSenha.type = 'text'
+        senhaIcon.classList.replace('fa-eye', 'fa-eye-slash')
+    } else {
+        inputSenha.type = 'password'
+        senhaIcon.classList.replace('fa-eye-slash', 'fa-eye')
+    }
+})

@@ -26,57 +26,55 @@
         </div>
 
         <div id="info">
-            <h2>Informações Pessoais</h2>
-            <div class="opcoes">
-                <ul>
-                    <li><i class="fa-solid fa-user"></i></li>
-                    <li><i class="fa-solid fa-envelope"></i></li>
-                    <li><i class="fa-solid fa-id-card"></i></li>
-                    <li><i class="fa-solid fa-key"></i></li>
-                    <li><i class="fa-solid fa-cake"></i></li>
-                </ul>
-                <ul id="informacoesPessoais">
-                    <li id="nome" class="info">Lucas de Souza Siqueira</li>
-                    <li id="nomeInputContainer" class="inputContainer" style="display: none;">
-                        <input id="nomeInput" type="text" name="nome">
-                    </li>
-                    <li id="email" class="info">lucas.s.siqueira.2009@yahoo.com.br</li>
-                    <li id="emailInputContainer" class="inputContainer" style="display: none;">
-                        <input id="emailInput" type="text" name="email">
-                    </li>
-                    <li id="cpf" class="info">064.829.287-81</li>
-                    <li id="cpfInputContainer" class="inputContainer" style="display: none;">
-                        <input id="cpfInput" type="text" name="cpf">
-                    </li>
-                    <li id="senha" class="info">senhaB@cn4d-</li>
-                    <li id="senhaInputContainer" class="inputContainer" style="display: none;">
-                        <input id="senhaInput" type="text" name="cpf">
-                    </li>
-                    <li id="criacao">09/10/2025</li>
-                </ul>
-                <ul id="alterar">
-                    <li><i class="fa-solid fa-pen" id="alterarNome"></i></li>
-                    <li><i class="fa-solid fa-pen" id="alterarEmail"></i></li>
-                    <li><i class="fa-solid fa-pen" id="alterarCpf"></i></li>
-                    <li><i class="fa-solid fa-pen" id="alterarSenha"></i></li>
-                </ul>
-            </div>
-            <br/>
-            <h2>Outras Opções</h2>
-            <div class="opcoes">
-                <ul>
-                    <li><i class="fa-solid fa-question"></i></li>
-                    <li><i class="fa-solid fa-right-from-bracket"></i></li>
-                    <li><i class="fa-solid fa-remove"></i></li>
-                </ul>
-                <ul>
-                    <li id="suporte"><a href="mailto:lucas.s.siqueira.2009@gmail.com" target="_blank">Suporte</a></li>
-                    <li id="sair"><a href="">Sair</a></li>
-                    <li id="deletar"><a href="">Deletar conta</a></li>
-                </ul>
+            <span>Informações Pessoais</span>
+            <p>Clique para alterar as informações</p>
+            <div class="parte">
+                <div id="inputs">
+                    <div class="inputGroup">
+                        <input value="Lucas de Souza Siqueira" id="nome" required="" type="text" name="nome" class="input">
+                        <label for="nome" class="label">Nome</label>
+                    </div>
+                    <div class="inputGroup">
+                        <input value="lucas.s.siqueira.2009@gmail.com" id="email" required="" type="text" name="email" class="input">
+                        <label for="email" class="label">E-mail</label>
+                    </div>
+                    <div class="inputGroup">
+                        <input title="Não é possível alterar esta informação no momento..." value="09.346.601/0001-25" id="cpf" required="" type="text" name="cpf" class="input" disabled>
+                        <label for="cpf" class="label">CPF/CNPJ</label>
+                    </div>
+                    <div class="inputGroup">
+                        <input value="senhabacanuda" id="senha" required="" type="password" name="senha" class="input">
+                        <label for="senha" class="label">Senha</label>
+                        <i id="verSenha" class="fa-solid fa-eye icon"></i>
+                    </div>
+                </div>
             </div>
 
-            <a id="concluido" href="/index.html">Concluído</a>
+            <div class="parte">
+                <div id="opcoes">
+                    <div id="divDeletar">
+                        <a href="" id="deletar"><i class="fa-solid fa-trash"></i>Deletar conta</a>
+                    </div>
+
+                    <div id="divOutros">
+                        <a href="" id="sair"><i class="fa-solid fa-right-from-bracket"></i>Sair</a>
+                        <a href="" id="cancelar"><i class="fa-solid fa-remove"></i>Cancelar</a>
+                        <a href="" id="salvar"><i class="fa-solid fa-save"></i>Salvar</a>
+                    </div>
+                </div>
+
+                <div id="opcoesMobile">
+                    <div id="divOutros">
+                        <a href="" id="cancelar"><i class="fa-solid fa-remove"></i>Cancelar</a>
+                        <a href="" id="salvar"><i class="fa-solid fa-save"></i>Salvar</a>
+                    </div>
+                    <div id="divDeletar">
+                        <a href="" id="deletar"><i class="fa-solid fa-trash"></i>Deletar conta</a>
+                        <a href="" id="sair"><i class="fa-solid fa-right-from-bracket"></i>Sair</a>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </div>
 
