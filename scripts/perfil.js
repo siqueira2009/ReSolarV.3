@@ -1,27 +1,35 @@
+// Variáveis
+
 let saudacoes = document.getElementById('bom');
 let dataAtual = new Date();
 let horaAtual = dataAtual.getHours();
-
+let nomeSaudacoes = document.getElementById('nomeSaudacoes');
+let nomeInput = document.getElementById('nome').value
+let primeiroNome = nomeInput.split(' ')[0];
 let cpf = document.getElementById('cpf');
 let cpfContent = cpf.value;
 let valueCpf = cpfContent;
+let tamanhoEscondidoCpf = ((50 * cpfContent.length) / 100).toFixed()
+let parteVisivelCpf = cpfContent.slice(0, -tamanhoEscondidoCpf);
+let parteInvisivelCpf = '*'.repeat(tamanhoEscondidoCpf);
+let cpfEscondido = parteVisivelCpf + parteInvisivelCpf;
+let inputs = document.querySelectorAll('.input');
+let senhaIcon = document.getElementById('verSenha');
+let inputSenha = document.getElementById('senha');
 
 // Saudações
 
-if (horaAtual > 5 && horaAtual < 12) {
+if (horaAtual >= 5 && horaAtual < 12) {
     saudacoes.innerHTML = 'Bom dia'
-} else if (horaAtual > 12 && horaAtual < 18) {
+} else if (horaAtual >= 12 && horaAtual < 18) {
     saudacoes.innerHTML = 'Boa tarde'
 } else {
     saudacoes.innerHTML = 'Boa noite'
 }
 
+nomeSaudacoes.innerHTML = primeiroNome
+
 // Esconder CPF
-
-let tamanhoEscondidoCpf = ((50 * cpfContent.length) / 100).toFixed()
-let parteVisivelCpf = cpfContent.slice(0, -tamanhoEscondidoCpf);
-let parteInvisivelCpf = '*'.repeat(tamanhoEscondidoCpf);
-
 
 if (cpfContent.length == 14) {
     parteInvisivelCpf = parteInvisivelCpf.replace('*******', '.***-**')
@@ -29,12 +37,9 @@ if (cpfContent.length == 14) {
     parteInvisivelCpf = parteInvisivelCpf.replace('*********', '*/****-**')
 }
 
-let cpfEscondido = parteVisivelCpf + parteInvisivelCpf;
 cpf.value = cpfEscondido;
 
 // Editar informações
-
-let inputs = document.querySelectorAll('.input');
 
 Array.from(inputs).forEach(el => {
     let oldValue = el.value;
@@ -51,9 +56,6 @@ Array.from(inputs).forEach(el => {
 });
 
 // Ver senha
-
-let senhaIcon = document.getElementById('verSenha');
-let inputSenha = document.getElementById('senha')
 
 senhaIcon.addEventListener('click', () => {
     if (inputSenha.type == 'password') {

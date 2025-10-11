@@ -11,46 +11,50 @@
 </head>
 <body>
     <!-- Tela de indisponibilidade para telas muito pequenas -->
-
     <div id="indisponivel">
         <h2>Site indisponível para sua resolução de tela</h2>
         <p>Lamentamos por isto! &#128546;</p>
     </div>
 
+    <!-- Container com o conteúdo -->
     <div id="container">
+        <!-- Banner com saudações -->
         <div id="banner">
             <div id="imgPerfil">
-                <i class="fa-solid fa-pencil"></i>
             </div>
-            <h2 id="saudacoes"><span id="bom"></span>, Lucas!</h2>
+            <h2 id="saudacoes"><span id="bom"></span>, <span id="nomeSaudacoes"></span>!</h2>
         </div>
 
+
+        <!-- Outras Informações -->
         <div id="info">
+            <!-- Informações Pessoais -->
             <span>Informações Pessoais</span>
             <p>Clique para alterar as informações</p>
-            <div class="parte">
+            <div class="div">
                 <div id="inputs">
                     <div class="inputGroup">
-                        <input value="Lucas de Souza Siqueira" id="nome" required="" type="text" name="nome" class="input">
+                        <input value="" id="nome" required="" type="text" name="nome" class="input">
                         <label for="nome" class="label">Nome</label>
                     </div>
                     <div class="inputGroup">
-                        <input value="lucas.s.siqueira.2009@gmail.com" id="email" required="" type="text" name="email" class="input">
+                        <input value="" id="email" required="" type="text" name="email" class="input">
                         <label for="email" class="label">E-mail</label>
                     </div>
                     <div class="inputGroup">
-                        <input title="Não é possível alterar esta informação no momento..." value="09.346.601/0001-25" id="cpf" required="" type="text" name="cpf" class="input" disabled>
+                        <input title="Não é possível alterar esta informação no momento..." value="" id="cpf" required="" type="text" name="cpf" class="input" disabled>
                         <label for="cpf" class="label">CPF/CNPJ</label>
                     </div>
                     <div class="inputGroup">
-                        <input value="senhabacanuda" id="senha" required="" type="password" name="senha" class="input">
+                        <input value="" id="senha" required="" type="password" name="senha" class="input">
                         <label for="senha" class="label">Senha</label>
                         <i id="verSenha" class="fa-solid fa-eye icon"></i>
                     </div>
                 </div>
             </div>
 
-            <div class="parte">
+            <!-- Outras Opções (sair, excluir, salvar e cancelar) -->
+            <div class="div">
                 <div id="opcoes">
                     <div id="divDeletar">
                         <a href="" id="deletar"><i class="fa-solid fa-trash"></i>Deletar conta</a>

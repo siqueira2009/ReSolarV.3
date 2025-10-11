@@ -1,4 +1,7 @@
 @media screen and (max-width: 260px) {
+    
+    /* Indisponibilidade */
+
     body {
         height: 100dvh;
         display: flex;
@@ -17,9 +20,18 @@
 }
 
 @media screen and (min-width: 260px) and (max-width: 550px) {
+   
+    /* Container e divs */
+
     #container {
         width: 90dvw;
     }
+
+    .div {
+        gap: 20px;
+    }
+
+    /* Banner com saudações */
 
     #banner {
         flex-direction: column;
@@ -36,14 +48,7 @@
         font-size: 30px;
     }
 
-    .parte {
-        gap: 20px;
-    }
-
-    #inputsIcon li {
-        padding: 0px 10px;
-        height: 48.4px;
-    }
+    /* Informações Pessoais */
 
     #inputs {
         width: 100%;
@@ -52,6 +57,8 @@
     .inputGroup .input {
         font-size: 14px;
     }
+
+    /* Outras Opções */
 
     #divOutros, #opcoes {
         flex-direction: column-reverse;
@@ -76,9 +83,14 @@
 }
 
 @media screen and (min-width: 550px) and (max-width: 800px) {
+    
+    /* Container */
+
     #container {
         width: 90dvw;
     }
+
+    /* Outras opções */
 
     #opcoes {
         display: none;
@@ -94,9 +106,14 @@
 }
 
 @media screen and (min-width: 800px) and (max-width: 1330px) {
+    
+    /* Container */
+
     #container {
         width: 90dvw;
     }
+
+    /* Outras opções */
 
     #opcoesMobile {
         display: none;
@@ -104,6 +121,9 @@
 }
 
 @media screen and (min-width: 1330px) {
+
+    /* Outras opções */
+    
     #opcoesMobile {
         display: none;
     }

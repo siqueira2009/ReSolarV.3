@@ -239,6 +239,41 @@ body {
     overflow: scroll;
 }
 
+#header {
+    padding: 20px;
+    padding-top: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#creditosContent {
+    padding: 10px 20px;
+    background-color: #4CAF4F;
+    color: white;
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+#creditosContent:hover {
+    scale: 102%;
+}
+
+#qtdCreditos {
+    font-weight: 700;
+}
+
+#porcentagem {
+    font-size: 12px;
+}
+
 #bentoGrid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -257,7 +292,6 @@ body {
     text-align: center;
     position: relative;
     overflow: hidden;
-    cursor: pointer;
     transition: all 0.2s;
 }
 

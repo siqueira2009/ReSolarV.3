@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <!-- Tela de Indisponibilidade -->
     <div id="indisponivel">
         <h2>Site indisponível para sua resolução de tela</h2>
         <p>Lamentamos por isto! &#128546;</p>
     </div>
 
+    <!-- Container com conteúdo -->
     <div id="container">
 
         <!-- Menu Lateral -->
@@ -30,14 +32,15 @@
 
             <!-- Lista de painéis cadastrados -->
             <div id="menuItems">
+                <!-- Painéis em si -->
                 <div id="itens">
                     <div class="menuItem">
                         <i class="fa-solid fa-solar-panel"></i>
                         <span>Painel #1</span>
                     </div>
-
                 </div>
 
+                <!-- Imagem de cadastro -->
                 <div id="adicionar">
                     <img src="../../imgs/SVGs/Adicionar.svg" alt="Adicionar">
                     <br/>
@@ -45,9 +48,9 @@
                 </div>
             </div>
 
-            <!-- Botão para voltar para a homepage -->
+            <!-- Botão para ir para a homepage/perfil -->
             <div id="menuHome">
-                <a id="user" href="../../index.html" class="options">
+                <a id="user" href="../../html/conta/perfil.html" class="options">
                     <i class="fa-solid fa-user"></i>
                     <span>Perfil</span>
                 </a>
@@ -55,128 +58,131 @@
                     <i class="fa-solid fa-house"></i>
                     <span>Início</span>
                 </a>
-
             </div>
 
         </div>
 
         <!-- Cards com informações -->
         <div id="informacoes">
+            <div id="header">
+                <h1 id="painelAtual">Painel #1</h1>
+                <p id="creditosContent">🪙 Créditos gerados: <span id="qtdCreditos">0</span><span id="porcentagem"></span></p>
+            </div>
             <div id="bentoGrid">
                 <div class="card card-large">
                     <div class="card-icon">🗓️</div>
                     <h3 class="card-title">Data da coleta</h3>
-                    <p id="dataColeta" class="card-desc">30/10/2025</p>
-                    <p id="diaSemana" class="card-desc">Dia da Semana: Quinta-Feira</p>
+                    <p id="dataColeta" class="card-desc">07/07/2009</p>
+                    <p class="card-desc">Dia da Semana: <span id="diaSemana"></span></p>
                 </div>
 
                 <div class="card card-large">
                     <div class="card-icon">📍</div>
                     <h3 class="card-title">Endereço da coleta</h3>
-                    <p id="enderecoColeta" class="card-desc">Av. Orosimbo Maia, 2600 - Cambuí, Campinas - SP, 13024-045</p>
-                    <a id="maps" target="_blank" class="card-desc" href="https://www.google.com/maps/place/Av. Orosimbo Maia, 2600 - CambuÃ­, Campinas - SP, 13024-045">Abrir no maps</a>
+                    <p id="enderecoColeta" class="card-desc"></p>
+                    <a id="maps" target="_blank" class="card-desc" href="">Abrir no maps</a>
                 </div>
 
                 <div class="card card-medium">
                     <div class="card-icon">💬</div>
                     <h3 class="card-title">Comentários</h3>
-                    <p class="card-desc">Painel apresentou excelente desempenho nos últimos 6 meses. Recomenda-se limpeza trimestral para manter a eficiência máxima. Última manutençãoo realizada em 10/09/2024.</p>
+                    <p id="comentarios" class="card-desc"></p>
                 </div>
 
                 <div class="card card-small">
                     <div class="card-icon">🏭</div>
                     <h3 class="card-title">Fabricante</h3>
-                    <p class="card-desc">ReSolar BQ</p>    
+                    <p id="fabricante" class="card-desc"></p>    
                 </div>
 
                 <div class="card card-small">
                     <div class="card-icon">🏷️</div>
                     <h3 class="card-title">Modelo</h3>
-                    <p class="card-desc">GL091025-1015</p>
+                    <p id="modelo" class="card-desc"></p>
                 </div>
 
                 <div class="card card-small">
                     <div class="card-icon">⚡</div>
                     <h3 class="card-title">Potência (W)</h3>
-                    <p class="card-desc">550</p>
+                    <p id="potencia" class="card-desc"></p>
                 </div>
 
                 <div class="card card-small">
                     <div class="card-icon">🛠️</div>
                     <h3 class="card-title">Data de Fabricação</h3>
-                    <p class="card-desc">08/04/2023</p>
+                    <p id="fabricacao" class="card-desc"></p>
                 </div>
 
                 <div class="card card-small">
                     <div class="card-icon">🔧</div>
                     <h3 class="card-title">Data de Instalação</h3>
-                    <p class="card-desc">18/03/2024</p>
+                    <p id="instalacao" class="card-desc"></p>
                 </div>
 
                 <div class="card card-small">
                     <div class="card-icon">🔢</div>
                     <h3 class="card-title">Quantidade de Células</h3>
-                    <p class="card-desc">60</p>
+                    <p id="celulas" class="card-desc"></p>
                 </div>
 
                 <div class="card card-small">
                     <div class="card-icon">🌞</div>
                     <h3 class="card-title">Tipo da Placa</h3>
-                    <p class="card-desc">Monocristalino</p>
+                    <p id="tipo" class="card-desc"></p>
                 </div>
 
                 <div class="card card-small">
                     <div class="card-icon">🛑</div>
                     <h3 class="card-title">Estado da Placa</h3>
-                    <p class="card-desc">Funciona</p>
+                    <p id="funcionamento" class="card-desc"></p>
                 </div>
 
                 <div class="card card-small">
                     <div class="card-icon">🧱</div>
                     <h3 class="card-title">Condições da Placa</h3>
-                    <p class="card-desc">Trincada</p>
+                    <p id="condicoes" class="card-desc"></p>
                 </div>
 
                 <div class="card card-small">
                     <div class="card-icon">♻️</div>
                     <h3 class="card-title">Motivo para Descarte</h3>
-                    <p class="card-desc">Troca</p>
+                    <p id="motivo" class="card-desc"></p>
                 </div>
 
                 <div class="card card-small">
                     <div class="card-icon">🔁</div>
                     <h3 class="card-title">Inversor do Sistema</h3>
-                    <p class="card-desc">On-Grid</p>
+                    <p id="inversor" class="card-desc"></p>
                 </div>
 
                 <div class="card card-small">
                     <div class="card-icon">🔌</div>
                     <h3 class="card-title">Tensão (V)</h3>
-                    <p class="card-desc">43.76</p>
+                    <p id="tensao" class="card-desc"></p>
                 </div>
 
                 <div class="card card-small">
                     <div class="card-icon">🔋</div>
                     <h3 class="card-title">Corrente (I)</h3>
-                    <p class="card-desc">13.71</p>
+                    <p id="corrente" class="card-desc"></p>
                 </div>
 
                 <div class="card card-small">
                     <div class="card-icon">📈</div>
                     <h3 class="card-title">Eficiência</h3>
-                    <p class="card-desc">22.22%</p>
+                    <p id="eficiencia" class="card-desc"></p>
                 </div>
 
                 <div class="card card-small">
                     <div class="card-icon">📐</div>
                     <h3 class="card-title">Dimensões</h3>
-                    <p class="card-desc">800m³ (20x20x2)</p>
+                    <p id="dimensao" class="card-desc"><span id="espaco"> </span><span id="calculada"></span></p>
                 </div>
 
                 <div class="card card-small">
                     <div class="card-icon">⚖️</div>
                     <h3 class="card-title">Peso estimado</h3>
-                    <p class="card-desc">13.71</p>
+                    <p id="peso" class="card-desc"></p>
                 </div>
             </div>
         </div>
