@@ -16,6 +16,7 @@ let cpfEscondido = parteVisivelCpf + parteInvisivelCpf;
 let inputs = document.querySelectorAll('.input');
 let senhaIcon = document.getElementById('verSenha');
 let inputSenha = document.getElementById('senha');
+let imgPerfil = document.getElementById('imgPerfil');
 
 // Saudações
 
@@ -64,5 +65,25 @@ senhaIcon.addEventListener('click', () => {
     } else {
         inputSenha.type = 'password'
         senhaIcon.classList.replace('fa-eye-slash', 'fa-eye')
+    }
+})
+
+// Alterar avatar
+
+let alteracoesPerfil = 0;
+
+imgPerfil.addEventListener('click', () => {
+    if (alteracoesPerfil == 0) {
+        imgPerfil.style.backgroundImage = 'url("../../imgs/SVGs/Avatares/Profile_2.svg")'
+
+        alteracoesPerfil++;
+    } else if (alteracoesPerfil == 1) {
+        imgPerfil.style.backgroundImage = 'url("../../imgs/SVGs/Avatares/Profile_3.svg")'
+
+        alteracoesPerfil++;
+    } else if (alteracoesPerfil == 2) {
+        imgPerfil.style.backgroundImage = 'url("../../imgs/SVGs/Avatares/Profile_1.svg")'
+
+        alteracoesPerfil = 0;
     }
 })

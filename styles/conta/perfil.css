@@ -71,6 +71,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0px;
+
+    cursor: pointer;
 }
 
 /* Informações (geral) */

@@ -81,5 +81,7 @@ Array.from(painelButton).forEach(el => {
         let porcentagem = ((creditosGanhos/25) * 100).toFixed();
         creditos.textContent = creditosGanhos + ' de 25';
         porcentagemTotal.textContent = '(' + porcentagem + '%)';
+
+        menu.classList.add('closed');
     })
 })
