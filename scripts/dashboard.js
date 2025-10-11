@@ -49,32 +49,36 @@ function formulaCredtios(potencia, eficiencia, fabricacao, condicao, funcionamen
     let fF;
     let eficienciaPonto;
     let idadeAnos = 2025 - fabricacao;
-    
-    if (condicao == 'Inteiro') {
-        fC = 1;
-    } else if (condicao == 'Tricando') {
-        fC = 0.6;
-    } else {
-        fC = 0.3;
-    }
 
-    if (funcionamento == 'Funciona') {
-        fF = 1;
-    } else if (funcionamento == 'Parcialmente') {
-        fF = 0.5;
-    } else {
-        fF = 0.2;
-    }
+    // Condição
+    if (condicao == 'Inteiro') fC = 1;
+    else if (condicao == 'Trincado') fC = 0.6;
+    else fC = 0.3;
 
-    eficienciaPonto = eficiencia/100;
+    // EFuncionamento
+    if (funcionamento == 'Funciona') fF = 1;
+    else if (funcionamento == 'Parcialmente') fF = 0.5;
+    else fF = 0.2;
 
-    return (potencia * eficienciaPonto * (1 + 0.05 * idadeAnos) * fC * fF);
+    eficienciaPonto = eficiencia / 100;
+
+    // Bônus por idade
+    let bonusIdade = 1 + 0.03 * idadeAnos;
+
+    // Fórmula
+    let resultado = potencia * eficienciaPonto * bonusIdade * fC * fF;
+
+    // Regulador
+    let creditos = (resultado / 150) * 25;
+
+    return Math.min(creditos, 25);
 }
+
 
 Array.from(painelButton).forEach(el => {
     el.addEventListener('click', () => {
         let creditosGanhos = formulaCredtios(potencia, eficiencia, fabricacao, condicao, funcionamento).toFixed();
-        let porcentagem = (creditosGanhos/25) * 100;
+        let porcentagem = ((creditosGanhos/25) * 100).toFixed();
         creditos.textContent = creditosGanhos + ' de 25';
         porcentagemTotal.textContent = '(' + porcentagem + '%)';
     })
